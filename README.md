@@ -14,7 +14,7 @@ While many scripts are outdated due to advancements in web development, they rep
 - [Upload Files Without COM version 2](./ASP/UploadFileWithoutCOMv2)
 - [Upload Files Without COM version 3](./ASP/UploadFileWithoutCOMv3)
 
-**SHA-1 Hash Algorithm:** This script, available in Classic ASP and JavaScript, gained unexpected popularity. While included for historical reference, SHA-1 vulnerabilities discovered in 2005 make it unsuitable for modern security applications.
+**SHA-1 Hash Algorithm:** This port of SHA-1, available in Classic ASP and JavaScript, gained unexpected popularity. While included for historical reference, SHA-1 vulnerabilities discovered in 2005 make it unsuitable for modern security applications.
 
 - Classic ASP: [SHA-1 Hash Algorithm](./ASP/SHA-1HashAlgorithm/)
 - JavaScript: [Secure Hash Algorithm SHA-1](./JavaScript/SecureHashAlgorithm(SHA-1)/SHA-1)
