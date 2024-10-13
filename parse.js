@@ -3,7 +3,7 @@ const xml2js = require('xml2js');
 
 const showImage = (image, subFolder, title) => {
   if (image === undefined) return '';
-  return `![Screenshot of ${title}](${subFolder}/screenshot.${image})\r\n`;
+  return `\n![Screenshot of ${title}](${subFolder}/screenshot.${image})\n\n`;
 }
 const stats = {};
 

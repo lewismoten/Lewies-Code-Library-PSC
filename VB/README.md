@@ -9,7 +9,9 @@ Open source projects that I had published to Planet Source Code.
 *7/23/2000 5:25:39 PM*
 
 This utility is used to find a color and determin its hex, long, and rgb values. it will also give you the name of the color if it matches one of the pre-defined colors recognized by browsers and determine if the color is "safe". An additional utility is included to load a picture and determine the color of any pixel used to create the picture.
+
 ![Screenshot of Color Utility](ColorUtility/screenshot.gif)
+
 
 
 ## [Binary Convert](./BinaryConvert)
@@ -59,7 +61,9 @@ I was working with some files from a game and the colors were in 16 bit. I had t
 *2/18/2001 7:25:05 PM*
 
 I was searching on the 'net for a whois COM object and everyone is charging $20 - $250 for a very simple object. I was a little low on cash and had the day off. This COM object includes ASP code and a list of over 250 whois databases on the net.
+
 ![Screenshot of ASP Whois Component with sample code](WhoisComponent/screenshot.gif)
+
 
 
 ## [DoEvents Demonstration](./DoEventsDemo)
@@ -102,7 +106,9 @@ Determines if a file is old. I use this when I loop through the files in a "temp
 *7/16/2001 3:39:22 PM*
 
 So why is my version of hang man so cool? well - I don't know. I havn't looked at the others. This one lets you build your own list and "click" your way through the came. Click on each letter and it will be filled in (or a new piece of the hang man will be drawn.) Each game gets 6 wrong answers. You may also guess the phrase.
+
 ![Screenshot of Lewie's Hangman](LewiesHangman/screenshot.gif)
+
 
 
 ## [XOR Encryption Class](./XOREncryptionClass)
@@ -110,7 +116,9 @@ So why is my version of hang man so cool? well - I don't know. I havn't looked a
 *3/2/2002 10:48:35 AM*
 
 Encrypts and Decrypts messages using the XOR algorithm with support of unicode & method of getting pas the NULL barrier by converting messages to hex strings.
+
 ![Screenshot of XOR Encryption Class](XOREncryptionClass/screenshot.gif)
+
 
 
 ## [Get Logon User Name](./GetLogonUserName)
@@ -139,7 +147,9 @@ Parses a number from a string. Handles parans for negative numbers.
 *3/15/2002 1:28:24 PM*
 
 Prompt your users if they wish to remove an item.
+
 ![Screenshot of Remove Item Confirmation](RemoveItemConfirmation/screenshot.jpg)
+
 
 
 ## [Raw Clipboard Viewer](./RawClipboardViewer)
@@ -147,7 +157,9 @@ Prompt your users if they wish to remove an item.
 *3/19/2002 4:21:13 PM*
 
 Working on a clip-board spy to understand how data is saved within the clipboard. Still cleaning up a few things - but it works for the most part.
+
 ![Screenshot of Raw Clipboard Viewer](RawClipboardViewer/screenshot.jpg)
+
 
 
 ## [HTML2Word dll](./HTML2Word)
@@ -176,7 +188,9 @@ Embed binary files within your programs to be written out to the file system onc
 *5/22/2002 3:19:53 PM*
 
 Definately been done before. Just couldn't find specifially what I wanted. Converts text to strings in VBScript, Javascript, and T-SQL script. Simple interface, Simple code, Simple to use ...
+
 ![Screenshot of Text to String Conversion](TextToStringConversion/screenshot.jpg)
+
 
 
 ## [Image 2 Ascii](./Image2Ascii)
@@ -184,7 +198,9 @@ Definately been done before. Just couldn't find specifially what I wanted. Conve
 *5/25/2002 11:22:55 AM*
 
 The Image 2 Ascii converter allows you to load a photograph, and then generate an ascii image that looks simular to it. You can use this ascii version to post a picture of your self on news groups, message boards, email signatures, and more. No longer is text-only formatting a constraint for displaying photographs!
+
 ![Screenshot of Image 2 Ascii](Image2Ascii/screenshot.gif)
+
 
 
 ## [Hyperlink with Hand Icon](./HyperlinkWithHandIcon)
@@ -192,7 +208,9 @@ The Image 2 Ascii converter allows you to load a photograph, and then generate a
 *6/4/2002 9:01:22 PM*
 
 Includes demonstration of how to make labels appear as hyperlinks, open the users default web browser, and uses a hand cursor when hovering over the icon. The hand.cur file is loaded seperately so that you may incorporate it into your other applications.
+
 ![Screenshot of Hyperlink with Hand Icon](HyperlinkWithHandIcon/screenshot.gif)
+
 
 
 ## [Key Snooper](./KeySnooper)
@@ -200,7 +218,9 @@ Includes demonstration of how to make labels appear as hyperlinks, open the user
 *8/5/2002 10:13:11 PM*
 
 Monitor any key typed on the keyboard. Use the GUI to test, or supply a file name and run in the background. Uses GetAsyncKeyState API and GetKeyState. Great for finding out what children or spouses are doing on the internet. Instructions included to start the program when the Operating system starts.
+
 ![Screenshot of Key Snooper](KeySnooper/screenshot.gif)
+
 
 
 ## [URL Thumbnail Generator](./URLThumbnailGenerator)
@@ -208,7 +228,9 @@ Monitor any key typed on the keyboard. Use the GUI to test, or supply a file nam
 *8/23/2002 12:40:55 AM*
 
 Creates thumbnail versions of web pages and saves to an image. Personal project in development to later store within a database containing links to other sites to offer a link preview. Have not been able to create images when hiding the web browser object. Now supports frames and pages with onLoad javascript events.
+
 ![Screenshot of URL Thumbnail Generator](URLThumbnailGenerator/screenshot.jpg)
+
 
 
 ## [Alpha Blend Utility](./AlphaBlendUtility)
@@ -216,7 +238,9 @@ Creates thumbnail versions of web pages and saves to an image. Personal project 
 *8/27/2002 9:18:01 PM*
 
 Blends one image into another image with the opacity based on an alpha channel image provided. Useful for developing tile chipsets for RPG games. Coastal tile chipset provided with 9 sample base tiles for demonstration purpose only - nothing fancy.
+
 ![Screenshot of Alpha Blend Utility](AlphaBlendUtility/screenshot.gif)
+
 
 
 ## [Average Color In Image](./AverageColorInImage)

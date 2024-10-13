@@ -9,7 +9,9 @@ Open source projects that I had published to Planet Source Code.
 *7/18/2000 10:42:49 AM*
 
 This small snippet will generate 3 drop down boxes that will allow your users to choose a date.
+
 ![Screenshot of Input Date](InputDate/screenshot.gif)
+
 
 
 ## [Convert Bytes](./ConvertBytes)
@@ -45,7 +47,9 @@ Based on ANSI X4.13, the LUHN formula (also known as the modulus 10 -- or mod 10
 *7/18/2000 11:25:01 AM*
 
 Base 64 encodeing is used to convert binary files to a "safe" format for transporting files through smtp (email) and other protocols. It is also used for basic authentication. With this code, you can decode the current UserName/Password who is visiting a protected page on your site by requesting one of the serverVariables.
+
 ![Screenshot of Base 64 Encode / Decode](Base64EncodeDecode/screenshot.gif)
+
 
 
 ## [Strip HTML](./StripHTML)
@@ -67,7 +71,9 @@ To assist in interfacing with databases. This script can format variables and re
 *7/19/2000 12:09:01 PM*
 
 This script allows you to browse the file system on a remote computer through your web browser.
+
 ![Screenshot of Remote File Explorer](RemoteFileExplorer/screenshot.gif)
+
 
 
 ## [Total Email Validation](./TotalEmailValidation)
@@ -75,7 +81,9 @@ This script allows you to browse the file system on a remote computer through yo
 *7/21/2000 10:35:08 AM*
 
 Validates email addresses. Makes sure the email addresses with IP addresses are not private network addresses. Allows multiple sub-domain levels. verifies characters within domain names. only allows standard length 26 characters for each domain name level, except the top (3 max)
+
 ![Screenshot of Total Email Validation](TotalEmailValidation/screenshot.gif)
+
 
 
 ## [File/Path/Extension Stripping](./FilePathExtensionStripping)
@@ -104,7 +112,9 @@ Converts vbScript to HTML to show your code on web pages. Also provides features
 *7/28/2000 11:11:07 AM*
 
 This login code validates users against a novell server and gives the look and feel of a Novell Client login screen.
+
 ![Screenshot of Novell ASP Login](NovellASPLogin/screenshot.gif)
+
 
 
 ## [Sorted Record Listing with Search](./SortedRecordListingWithSearch)
@@ -112,7 +122,9 @@ This login code validates users against a novell server and gives the look and f
 *8/1/2000 2:56:15 PM*
 
 This script displays records retrieved from the database. You can sort each field and jump to any page in the database. You can customize the records per page and all the colors. You may also attatch a style sheet to change the colors of each class type. this script is very close to being XML compatable. (still in the works).
+
 ![Screenshot of Sorted Record Listing with Search](SortedRecordListingWithSearch/screenshot.gif)
+
 
 
 ## [Advanced SQL Query Builder](./AdvancedSQLQueryBuilder)
@@ -120,7 +132,9 @@ This script displays records retrieved from the database. You can sort each fiel
 *8/3/2000 10:57:26 PM*
 
 This code lets visitors to your site perform complex queries. Users may choose if specific words (or phrases) must or must not match - or if they are optional (default).
+
 ![Screenshot of Advanced SQL Query Builder](AdvancedSQLQueryBuilder/screenshot.gif)
+
 
 
 ## [Link URLs](./LinkURLs)
@@ -156,7 +170,9 @@ Attempts to log a user into the web site through either cookies or posted form d
 *1/13/2001 4:56:05 PM*
 
 Allows you to upload multiple files and fields without purchasing or registering COM objects. Great for shared hosts that frown upon 3rd Party com objects or charge an arm and a leg for them. This version uses Classes rather then the dictionary object that I have seem most other people use. Dictionary Objects seem to be flakey with more problems. I have added examples of how to upload a file to a database and the file system. A file is also included that retreives the file from the database.
+
 ![Screenshot of Upload Files Without COM](UploadFilesWithoutCOM/screenshot.gif)
+
 
 
 ## [Sorted Record Listing with Search v2.0](./SortedRecordListingWithSearchV2.0)
@@ -164,7 +180,9 @@ Allows you to upload multiple files and fields without purchasing or registering
 *1/21/2001 1:44:57 PM*
 
 After getting great reviews on the previous version, I finally got time to do the rewrite that I promised everyone. This code allows you to easily create lists of your data with pagination, sorting, and filtering. The end result is a very nice layout of your data. You choose which fields come back (an the captions for each one in the header). Choose which fields are searched. Setup the default field that is sorted when visitor first views page. Now supports databases with list ordering. This time I have included a database so it should work as soon as you add the files to your website.
+
 ![Screenshot of Sorted Record Listing with Search v2.0](SortedRecordListingWithSearchV2.0/screenshot.gif)
+
 
 
 ## [Phone Number Conversion](./PhoneNumberConversion)
@@ -207,7 +225,9 @@ Measures the bandwidth in kbps (kilobits per second) that the client is viewing 
 *4/28/2001 12:12:53 PM*
 
 This script interacts with COM objects that communicate with the MetaBase for Internet Information Server. You will be able to define the custom error pages for your website.
+
 ![Screenshot of Add Custom Errors with MetaBase](CustomErrors/screenshot.gif)
+
 
 
 ## [Color Palette Scriptlet](./ColorPaletteScriptlet)
@@ -215,7 +235,9 @@ This script interacts with COM objects that communicate with the MetaBase for In
 *4/28/2001 5:27:03 PM*
 
 Allows users to choose a color from a palette simular to Adobe's color palette.
+
 ![Screenshot of Color Palette Scriptlet](ColorPaletteScriptlet/screenshot.gif)
+
 
 
 ## [Dynamic Pixel Image](./DynamicPixelImage)
@@ -223,7 +245,9 @@ Allows users to choose a color from a palette simular to Adobe's color palette.
 *4/29/2001 11:23:59 AM*
 
 Allows you to create 1x1 images of any color including transparent images. (Images can be streatched by defining height and width in image tag)
+
 ![Screenshot of Dynamic Pixel Image](DynamicPixelImage/screenshot.gif)
+
 
 
 ## [Color Picker 2](./ColorPicker2)
@@ -231,7 +255,9 @@ Allows you to create 1x1 images of any color including transparent images. (Imag
 *4/29/2001 1:00:17 PM*
 
 This version of the Color Picker supports just about any browser that uses javascript - Including Netscape 3. The downfall is that you "must" run it with a server that allows ASP. A script is included to create "dynamic" images of various colors. Thus - more bandwidth is used to allow visitors to choose colors. It is still a great asset to anyone who wishes to allow users to pick colors dynamically to affect the sites layout and design instantly.
+
 ![Screenshot of Color Picker 2](ColorPicker2/screenshot.gif)
+
 
 
 ## [Dynamic Curve Images](./DynamicCurveImages)
@@ -239,7 +265,9 @@ This version of the Color Picker supports just about any browser that uses javas
 *4/29/2001 2:33:00 PM*
 
 The script is able to dynamically create GIF images. The 4 positions of a curve - Top Right/Left and Bottom Right/Left. It also creates a transparent image if the position isn't defined. The images returned are 16x16 pixels - except for the transparent image that is 1x1. The curves are made by two colors (Background and Foreground) that you specify. The script calculates all colors in between and returns an image that appears Anti-Aliased (no jagged edges). This script was made to help users customize there own colors, yet still be able to use images throughout the site that do not lock specific colors into the scheme. This demonstration shows the dynamic image generation in action. 4 rounded corners are created with aliasing to prevent that "blocky" edge on the corners. Simply enter an HTML color (in hex format) in the form below. If an invalid color is specified, then that color will default to either white (Color1) or Black (Color2).
+
 ![Screenshot of Dynamic Curve Images](DynamicCurveImages/screenshot.gif)
+
 
 
 ## [Read GIF Dimensions](./ReadGIFDimensions)
@@ -247,7 +275,9 @@ The script is able to dynamically create GIF images. The 4 positions of a curve 
 *4/29/2001 4:37:45 PM*
 
 Reads the Width and the Height of a GIF image. Really nice to have if you need to limit your users with specific image dimensions for profile images, banners, buttons, etc.
+
 ![Screenshot of Read GIF Dimensions](ReadGIFDimensions/screenshot.gif)
+
 
 
 ## [How to make Dynamic GIF Color Palettes](./HowToMakeDynamicGIFColorPalettes)
@@ -255,7 +285,9 @@ Reads the Width and the Height of a GIF image. Really nice to have if you need t
 *4/30/2001 12:13:34 PM*
 
 In this article, I will walk you through the entire process on how to property create the GIF images, and then transfer them to my custom template file format. From there, an ASP page can read these templates, generate a color palette, and return a GIF image to the browser.
+
 ![Screenshot of How to make Dynamic GIF Color Palettes](HowToMakeDynamicGIFColorPalettes/screenshot.gif)
+
 
 
 ## [Hex Viewer](./HexViewer)
@@ -263,7 +295,9 @@ In this article, I will walk you through the entire process on how to property c
 *4/30/2001 10:07:08 PM*
 
 Allows you to view the binary data of any file (GIF, JPG, ZIP, TXT, HTM, ASP) as if you were looking at a common hex viewer. Bytes are displayed as Hex characters and character data is displayed on the right. Starting positions of each row are displayed on the left.
+
 ![Screenshot of Hex Viewer](HexViewer/screenshot.gif)
+
 
 
 ## [Read Image Dimensions](./ReadImageDimensions)
@@ -271,7 +305,9 @@ Allows you to view the binary data of any file (GIF, JPG, ZIP, TXT, HTM, ASP) as
 *5/2/2001 2:16:32 PM*
 
 Allows you to read the width and height for GIF, JPEG (JPG/JFIF), Bitmap(BMP), and PNG files. You can upload a file or load a binary file from the server in the demonstration. This is great when you allow users to Upload files and need to ensure that they fit within a specific set of boundries (ie - uploading banners). Update - Now supports AVI, MOV, MPG/MPEG, and SWF with support from my brother Lucas Moten. JPEG files have also been fixed to read correctly.
+
 ![Screenshot of Read Image Dimensions](ReadImageDimensions/screenshot.gif)
+
 
 
 ## [How to destroy a Shopping Cart](./HowToDestroyAShoppingCart)
@@ -286,7 +322,9 @@ I often get questions on how to deal with shopping cart data stored within the d
 *5/4/2001 2:09:54 PM*
 
 This class demonstrates how you can request the HTML of a URL from another website using the XMLHTTP object to spider the web page. (Simular to the methods of the ASPHttp object). The data is parsed and made available through a class object. This code is great if you are thinking about creating a Search Engine - or you just want to verify that URLs exist that users may place in there profiles. Also handy for finding broken links. If your server has IE5, or XML objects from Microsoft installed on it, then you should be able to use this demonstration without any problems.
+
 ![Screenshot of Parse Metadata from URLs](ParseMetadataFromURLs/screenshot.gif)
+
 
 
 ## [Advanced HTML Encoder](./AdvancedHTMLEncoder)
@@ -294,7 +332,9 @@ This class demonstrates how you can request the HTML of a URL from another websi
 *5/5/2001 8:36:32 AM*
 
 This code demonstrates how you can convert a string to HTML text format. It goes beyond the power of the Server.HTMLEncode method in that it parses out all HTML tags, changes new-line characters to "BR" tags, and also formats double-spacing and tabs.
+
 ![Screenshot of Advanced HTML Encoder](AdvancedHTMLEncoder/screenshot.gif)
+
 
 
 ## [Helpful Checkbox Functions](./HelpfulCheckboxFunctions)
@@ -302,7 +342,9 @@ This code demonstrates how you can convert a string to HTML text format. It goes
 *5/5/2001 2:27:46 PM*
 
 Ok, I'm uploading something that is very simple this time - but this is one of the most used things that I have. These little functions help me make code smaller and change the wording to users viewing the text next to a check box. I find that if you change the words based on what the user has chosen, it feels a little more comfortable to them.
+
 ![Screenshot of Helpful Checkbox Functions](HelpfulCheckboxFunctions/screenshot.gif)
+
 
 
 ## [Small Pagination Navigation](./SmallPaginationNavigation)
@@ -310,7 +352,9 @@ Ok, I'm uploading something that is very simple this time - but this is one of t
 *5/6/2001 4:02:44 PM*
 
 I've coded many dynamic pages that needed the support of displaying data accross multiple pages. Whith this script, it will build a small navigation that you can display at the top and/or bottom of your results to navigate to the next page. It also supports the ability to only display pages within a specified range. (ie - if you have 1000 pages, it will only write links to 5 of the pages closest to the current page being viewed.)
+
 ![Screenshot of Small Pagination Navigation](SmallPaginationNavigation/screenshot.gif)
+
 
 
 ## [RC4 Encryption/Decryption](./RC4EncryptionDecryption)
@@ -318,7 +362,9 @@ I've coded many dynamic pages that needed the support of displaying data accross
 *5/8/2001 2:01:12 AM*
 
 Encrypts and Decrypts data using the RC4 algorithm and a Key/Password. Many thanks goes to many, many people on PSC and the internet for helping me through this. Sebastions code over at the Visual Basic section was a good start. This code runs quick in one function and is slightly commented. note - RSA patent expired in September 2000.
+
 ![Screenshot of RC4 Encryption/Decryption](RC4EncryptionDecryption/screenshot.gif)
+
 
 
 ## [RC4 Class](./RC4Class)
@@ -326,7 +372,9 @@ Encrypts and Decrypts data using the RC4 algorithm and a Key/Password. Many than
 *5/8/2001 9:52:48 AM*
 
 Applys Encryption/Decryption to strings. I think just about everyone who has seen my code knows how I love classes. This version is more "cleaned up" and thrown into a nice little class for an object oriented feeling. (If only ASP was object oriented, I would be a happy camper). It is also a little more optimized to run quicker if you change the Key/Password often.
+
 ![Screenshot of RC4 Class](RC4Class/screenshot.gif)
+
 
 
 ## [vbScript ColorCoder v2.0](./vbScriptColorCoderV2.0)
@@ -334,7 +382,9 @@ Applys Encryption/Decryption to strings. I think just about everyone who has see
 *5/8/2001 12:24:56 PM*
 
 This script colorizes your vbScript for display on web pages. All colors can be managed through a style sheet. It seems that those who knew about the results of this version (from browsing my website) always kept asking me for the code and my old version that I refered them to was out-dated and didn't come close enough to there expectations. So peeps - I give to you my most proud and recent version of the color coder.
+
 ![Screenshot of vbScript ColorCoder v2.0](vbScriptColorCoderV2.0/screenshot.gif)
+
 
 
 ## [IsPrime](./IsPrime)
@@ -349,7 +399,9 @@ Checks to see if a number is a primary number. Prime numbers are commonly found 
 *5/9/2001 5:33:51 PM*
 
 RCA is used for most standard public key/private key encryption techniques. Due to its burden on resources, RCA is generally used to encrypt random session keys wich are then used to encode messages with RC4. RCA also brings digital certificates into the picture. This, and many other "public" algorithms using RC4 do not truly make the message secure. Encryption is performed in 8 bit blocks - or 1 byte. Typing "AAAAAA", you will see a pattern begin for form with the encrypted data. If someone were to look at the results from encrypting each letter of the alphabet, your data would be compromized. Also, the public/private keys are limited between a range of 1 and about 65000. This is primarily a starting point if you want to enable a more secure encryption scheme, or you just want to learn more about it.
+
 ![Screenshot of RCA Encryption Class](RCAEncryptionClass/screenshot.gif)
+
 
 
 ## [Whois Lookup with XMLHTTP](./WhoisLookupWithXMLHTTP)
@@ -357,7 +409,9 @@ RCA is used for most standard public key/private key encryption techniques. Due 
 *5/9/2001 7:18:18 PM*
 
 Queries a WhoIs server for for domain information. Useful for people who want to sell domain names. This version uses the XMLHTTP component that is installed on most servers, so there is no additional need to install any extra COM objects.
+
 ![Screenshot of Whois Lookup with XMLHTTP](WhoisLookupWithXMLHTTP/screenshot.gif)
+
 
 
 ## [Allow users to post "Safe" HTML](./AllowUsersToPostSafeHTML)
@@ -421,7 +475,9 @@ Just used for debugging querystring data. Creates an orderd list of field names 
 *6/22/2001 2:44:41 AM*
 
 Upload, Manage, and Display images within your own personal art gallery. This Image Bank was made for my girl friend so that she could easily add the images and change them on her own. It also offers categories. To administrate, goto admin.asp and type Administrator/Password to login. User accounts can be added and changed in the administration section. You can delete user accounts as long as 1 account will still remain. Images upload without COM.
+
 ![Screenshot of Lewie's Image Gallery](LewiesImageGallery/screenshot.gif)
+
 
 
 ## [Lewies URLDecode](./LewiesURLDecode)
@@ -450,7 +506,9 @@ These two functions allow you to convert between Unicode and Ascii strings. This
 *7/13/2001 9:54:32 AM*
 
 Demonstrates how to have alternating colors. Most people usually need just two alternating colors, but this method supports a larger list. Both a fixed loop and a conditional loop are provided as examples.
+
 ![Screenshot of Unlimited Alternating Colors](UnlimitedAlternatingColors/screenshot.jpg)
+
 
 
 ## [Catching Bogus Addresses](./CatchingBogusAddresses)
@@ -507,7 +565,9 @@ Converts from ANSI to Unicode very fast. Inspired by code found in UltraFastAspU
 *2/27/2002 11:38:27 PM*
 
 I was working on a scriptlet to allow users to choose a color. A color wheel is displayed with an assortment of colors - most of witch are web-safe. Clicking on a color causes it to be outlined and raise an event that a color was chosen. This object mimics one of the color-picker forms found in Microsoft Office 2000. This scriplet does not yet raise events or expose properties. The basics, however are available for you to be amazed.
+
 ![Screenshot of Color Wheel Picker](ColorWheelPicker/screenshot.gif)
+
 
 
 ## [Color Picker (Fallout)](./ColorPicker(Fallout))
@@ -515,7 +575,9 @@ I was working on a scriptlet to allow users to choose a color. A color wheel is 
 *2/28/2002 10:35:56 PM*
 
 Allow users to choose colors from familiar interfaces that are standard to the windows operating system. This one displays a wide range of hues in a color spectrum and fades the saturation. An additional scriptlet appears to change the luminance of each color chosen.
+
 ![Screenshot of Color Picker (Fallout)](ColorPicker(Fallout)/screenshot.jpg)
+
 
 
 ## [Bottom Tabs](./BottomTabs)
@@ -523,7 +585,9 @@ Allow users to choose colors from familiar interfaces that are standard to the w
 *3/1/2002 7:44:12 PM*
 
 Simulate the tab control found at the bottom of popular programs such as visual Interdev and Front Page.
+
 ![Screenshot of Bottom Tabs](BottomTabs/screenshot.gif)
+
 
 
 ## [Spinner Scriptlet](./SpinnerScriptlet)
@@ -531,7 +595,9 @@ Simulate the tab control found at the bottom of popular programs such as visual 
 *3/2/2002 11:21:58 PM*
 
 Simulates the spinner control found in visual basic on a web page. Author comments included.
+
 ![Screenshot of Spinner Scriptlet](SpinnerScriptlet/screenshot.gif)
+
 
 
 ## [Expose Your Content](./ExposeYourContent)
@@ -539,7 +605,9 @@ Simulates the spinner control found in visual basic on a web page. Author commen
 *3/4/2002 1:39:30 PM*
 
 Expose your content through external javascript source files.
+
 ![Screenshot of Expose Your Content](ExposeYourContent/screenshot.gif)
+
 
 
 ## [Gibberish Encoding](./GibberishEncoding)
@@ -547,7 +615,9 @@ Expose your content through external javascript source files.
 *3/13/2002 9:37:00 PM*
 
 Quick way to learn how to speak gibberish. It is sometimes known as "girl-speak".
+
 ![Screenshot of Gibberish Encoding](GibberishEncoding/screenshot.gif)
+
 
 
 ## [Folder Interface](./FolderInterface)
@@ -555,7 +625,9 @@ Quick way to learn how to speak gibberish. It is sometimes known as "girl-speak"
 *3/16/2002 2:27:14 PM*
 
 Give your users a nice clean interface to navigate, choose, and create new folders.
+
 ![Screenshot of Folder Interface](FolderInterface/screenshot.gif)
+
 
 
 ## [Forced Download](./ForcedDownload)
@@ -577,7 +649,9 @@ Grab the opposite 6 character HEX color. This sums up David Weirs Color invert s
 *3/20/2002 11:50:28 AM*
 
 No need to purchase expensive components. You can do it all with what you already got. This version is an update for faster speed and reliability. Bugs have been fixed, and the entire code has been commented to walk you through the process.
+
 ![Screenshot of Upload Files Without COM v2](UploadFilesWithoutCOMv2/screenshot.gif)
+
 
 
 ## [Universal Email Interface](./UniversalEmailInterface)
@@ -606,7 +680,9 @@ Quickly find out the type of variables returned from your adodb recordset. TypeN
 *5/4/2002 11:02:45 PM*
 
 Display accurate time to your visitors! This script requests the UTC time from a server that is syncronized with an atomic clock. It then adjusts the time according to timezone and if daylight savings time is in effect.
+
 ![Screenshot of Display Accurate Time from NIST](DisplayAccurateTimeFromNIST/screenshot.gif)
+
 
 
 ## [Image Directory Listing](./ImageDirectoryListing)
@@ -621,7 +697,9 @@ Lists thumbnail images within the current directory. Very simple beginner stuff 
 *5/14/2002 10:39:56 PM*
 
 Create a random password that is pronouncable. This helps users remember the password easier and can come up with some silly words.
+
 ![Screenshot of Random Pronouncable Password](RandomPronouncablePassword/screenshot.gif)
+
 
 
 ## [Contrasting Colors](./ContrastingColors)
@@ -629,7 +707,9 @@ Create a random password that is pronouncable. This helps users remember the pas
 *6/17/2002 11:15:48 PM*
 
 Returns a color that is guarenteed to have contrast against the suggested color. Contrast to white is gray, contrast to light blue is dark blue, etc. Demo included.
+
 ![Screenshot of Contrasting Colors](ContrastingColors/screenshot.gif)
+
 
 
 ## [Calculate Color Fading](./CalculateColorFading)
@@ -644,7 +724,9 @@ Shows an example of how to fade from one color to another. This is a bare-bones 
 *7/5/2002 11:40:32 PM*
 
 Display a list of files within a zip files archive along with the compressed/uncompressed size, ratio, path, etc. Always wanted to do this, but usually found code refering to winzip or some api calls. This is strait ASP. Performance is not at its best - this is a working concept. You can see the results in action on my website (www.lewismoten.com)
+
 ![Screenshot of Zip File Viewer](ZipFileViewer/screenshot.gif)
+
 
 
 ## [DOS Date/Time Functions](./DOSDateTimeFunctions)
@@ -659,7 +741,9 @@ DOS stores date and time with 4 bytes. 2 for date, 2 for time. These functions c
 *7/6/2002 11:28:59 AM*
 
 This script allows you to specify an image to fall down the entire height of the web browser. Images drop at random speeds. The number of images dropping may be specified as well. This particular script demonstrates how to drop an image related to the current month. This gives off an interesting effect.
+
 ![Screenshot of Image Drop](ImageDrop/screenshot.gif)
+
 
 
 ## [Switchbox Scriptlet](./SwitchboxScriptlet)
@@ -667,7 +751,9 @@ This script allows you to specify an image to fall down the entire height of the
 *7/6/2002 11:45:57 AM*
 
 Add / Remove / Manage position of items on a list. This scriplet demonstrates how you can allow your users to pick up to 5 flavors of there best ice cream.
+
 ![Screenshot of Switchbox Scriptlet](SwitchboxScriptlet/screenshot.gif)
+
 
 
 ## [Web Navigation Scriptlet](./WebNavigationScriptlet)
@@ -675,7 +761,9 @@ Add / Remove / Manage position of items on a list. This scriplet demonstrates ho
 *7/6/2002 12:05:19 PM*
 
 Navigate through a website within a small area of the screen.
+
 ![Screenshot of Web Navigation Scriptlet](WebNavigationScriptlet/screenshot.gif)
+
 
 
 ## [BreadCrumbs Navigation](./BreadCrumbsNavigation)
@@ -683,7 +771,9 @@ Navigate through a website within a small area of the screen.
 *7/8/2002 7:40:28 PM*
 
 Displays a path to navigate through each subdirectory in the path to your web page. This is called bread crumb navigation. Many sites use this with the words You Are Here. It is suggested that you do not use this type of navigation alone.
+
 ![Screenshot of BreadCrumbs Navigation](BreadCrumbsNavigation/screenshot.gif)
+
 
 
 ## [Deny Website Copiers](./DenyWebsiteCopiers)
@@ -698,7 +788,9 @@ Prevents web caching programs from accessing your website. Helps increase perfor
 *7/9/2002 1:59:31 AM*
 
 Gives you an interface to navigate reports by year, quarter, month, week, or day. This is just the navigation alone that I append to the top of different reports.
+
 ![Screenshot of Report Navigation](ReportNavigation/screenshot.gif)
+
 
 
 ## [encrypt4.asp](./encrypt4)
@@ -713,7 +805,9 @@ Encrypts text using the enigma algotithm used in World War II. This security is 
 *8/9/2002 9:28:33 PM*
 
 Upgraded by popular demand for its third generation. Converts vbScript to HTML and colorizes it just like Visual Basic and InterDev. This version has more keywords, runs amazingly faster, and has been packaged into a class. This light weight component was made possible through the use of regular expressions. It returns HTML that is friendly to older browsers with limited use of style. Also offers ability to load a vbScript from the file system into memory. Enjoy!
+
 ![Screenshot of vbScript ColorCoder v3.0](vbScriptColorCoderV3.0/screenshot.gif)
+
 
 
 ## [Parse Hex value of visitors System Colors](./ParseHexValueOfVisitorsSystemColors)
@@ -721,7 +815,9 @@ Upgraded by popular demand for its third generation. Converts vbScript to HTML a
 *8/13/2002 11:19:40 AM*
 
 Parses the hex value of users system colors. Great for creating dynamic images on the fly to blend with the users operating system.
+
 ![Screenshot of Parse Hex value of visitors System Colors](ParseHexValueOfVisitorsSystemColors/screenshot.jpg)
+
 
 
 ## [Dynamic Stylesheet Interaction](./DynamicStylesheetInteraction)
@@ -729,7 +825,9 @@ Parses the hex value of users system colors. Great for creating dynamic images o
 *9/2/2002 12:46:59 PM*
 
 Interact with stylesheets to dynamically change properties.
+
 ![Screenshot of Dynamic Stylesheet Interaction](DynamicStylesheetInteraction/screenshot.gif)
+
 
 
 ## [Upload Files Without COM v3](./UploadFilesWithoutCOMv3)
@@ -737,7 +835,9 @@ Interact with stylesheets to dynamically change properties.
 *9/1/2003 11:19:59 PM*
 
 Allows you to upload multiple files and fields without purchasing or registering COM objects. Great for shared hosts that frown upon 3rd Party com objects or charge an arm and a leg for them. This script provides an object oriented interface using classes for easier development. The power that this script has over others is that it does not use dictionary objects to store the uploaded files. It also harnesses the power of ADODB to prepare and save binary data to the file system with quick speeds. This is the script that you have been looking for. You can get a really good feel for how the script is used just by reading through the FAQ and examples provided. This script has been tailored to meet the requests of developers who have used previouse versions. The code is comented very well and comes along with examples of how to do common operations, as well as a FAQ. Bugs from version 2 have been fixed, or otherwise throw exceptions to the user giving them details of how to correct the problem (such as giving permission to the internet user account). Memory is managed more efficiently in version 3 that allows for more scaleablity and larger files. By the request of a few developers, progress bars are now supported to notify the user how much information has been received by the server. A website for support has also been created where you can get help from the author, other users of the script, and get any recent revisions or additional examples as they become available.
+
 ![Screenshot of Upload Files Without COM v3](UploadFilesWithoutCOMv3/screenshot.gif)
+
 
 
 ## [Forced Download 2](./ForcedDownload2)
@@ -766,7 +866,9 @@ Converts between unicode and ANSI using ADODB Streams and recordsets. I was pres
 *7/28/2004 10:12:34 PM*
 
 Retrieves the structure of your data and displays it into a nice report that you can copy & paste into word documents. Works with SQL Server 2000. Also lists any comments within the database for tables & columns.
+
 ![Screenshot of Data Dictionary Report Generator](DataDictionary/screenshot.gif)
+
 
 
 ## [Lewies Seti Stats](./LewiesSetiStats)
@@ -774,6 +876,8 @@ Retrieves the structure of your data and displays it into a nice report that you
 *7/29/2004 12:14:57 AM*
 
 Reads an Xml file from the Seti@Home projects web servers and allows you to display the information on your own website. Cache xml files for up to 8 hours and loads via. javascript. Compatible with Netscape, Mozilla, FireFox, and MSIE.
+
 ![Screenshot of Lewies Seti Stats](LewiesSetiStats/screenshot.gif)
+
 
 

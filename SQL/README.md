@@ -30,7 +30,9 @@ This procedure demonstrates how to instantiate an OLE object. I have used an Act
 *7/7/2001 12:14:46 PM*
 
 Procedure created in order to determine if a duplicate user name exists during a sign up process. If a user name does not exist, an empty recordset is returned. Otherwise, any digits found at the end of the username are trimmed, and new usernames that do not yet exist are suggested with a suffix of numbers appended to the end.
+
 ![Screenshot of Suggest Available Usernames](SuggestAvailableUsernames/screenshot.gif)
+
 
 
 ## [Random Pronouncable Password](./RandomPronouncablePassword)
@@ -38,7 +40,9 @@ Procedure created in order to determine if a duplicate user name exists during a
 *7/7/2001 1:49:34 PM*
 
 Procedure made in order to create a random password that is somewhat pronouncable and easy to remember.
+
 ![Screenshot of Random Pronouncable Password](RandomPronouncablePassword/screenshot.gif)
+
 
 
 ## [Trim](./Trim)
@@ -130,7 +134,9 @@ Make a copy of records within a table each time it is updated or a new record is
 *5/22/2002 4:35:10 PM*
 
 Dynamically convert a date to a user-defined format.
+
 ![Screenshot of FormatDate](FormatDate/screenshot.gif)
+
 
 
 ## [Int2GUID](./Int2GUID)
@@ -138,7 +144,9 @@ Dynamically convert a date to a user-defined format.
 *5/24/2002 6:08:45 PM*
 
 Datatype conversion to change integers to unique identifier datatypes. This method is most useful when upgrading database schemas from using integers to using guids. You will still be able to "read" values by eye to match old Integers with the new GUIDs.
+
 ![Screenshot of Int2GUID](Int2GUID/screenshot.gif)
+
 
 
 ## [Num2Guid Conversion Function](./Num2GuidConversionFunction)
@@ -146,7 +154,9 @@ Datatype conversion to change integers to unique identifier datatypes. This meth
 *5/24/2002 7:23:12 PM*
 
 Article describing how to convert a decimal to a guid format. Also goes into detail explaining how to convert to other base-N numbers such as a bitmask/binary, octet, trinary, hex, and more. Introduces the benefit of functions with a real-case scenario.
+
 ![Screenshot of Num2Guid Conversion Function](Num2GuidConversionFunction/screenshot.gif)
+
 
 
 ## [Toggle Table Relations](./ToggleTableRelations)
@@ -168,7 +178,9 @@ Toggle bit fields with a small line of code.
 *6/15/2002 10:25:39 AM*
 
 Explains how to create grids and walks through the process of optimizing the query for speed. Grid table is populated with rows containing columns of X and Y.
+
 ![Screenshot of Creating Grids](CreatingGrids/screenshot.gif)
+
 
 
 ## [ValidFilename](./ValidFilename)
@@ -232,6 +244,8 @@ Parse file extensions with SQL
 *7/28/2004 10:26:26 PM*
 
 Goes through information schemas and extended properties to get each table, column, data type, comments, foreign keys, primary keys, constraints, and indexes. This information can then be used to create a data dictionary report in real time. Shows how to get MS_Description property through ::fn_listextendedproperty for columns and tables.
+
 ![Screenshot of sprDataDictionary](sprDataDictionary/screenshot.gif)
+
 
 

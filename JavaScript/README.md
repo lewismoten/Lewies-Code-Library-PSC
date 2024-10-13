@@ -51,7 +51,9 @@ Allows browser to read querystring variables through javascript.
 *4/28/2002 5:50:02 PM*
 
 Allows client browser to randomly create a pronouncable password. This can be used to suggest a password to the user that is easy to remember.
+
 ![Screenshot of Random Pronouncable Password](RandomPronouncablePassword/screenshot.gif)
+
 
 
 ## [Request_Cookies](./Request_Cookies)
@@ -66,7 +68,9 @@ Gives ASP programmers a familliar interface to request cookies. document.write(R
 *6/29/2002 5:00:50 PM*
 
 Parses the password field and comes back with a percentage of how secure your password is against a hack attempt.
+
 ![Screenshot of Password Security](PasswordSecurity/screenshot.gif)
+
 
 
 ## [inverse color](./InverseColor)
@@ -81,7 +85,9 @@ returns inverse color of hex string passed to it. If you pass white, it will pas
 *2/14/2004 9:23:55 PM*
 
 Display content in columns like a news paper. Also allows you to choose what page you want to see.
+
 ![Screenshot of Columnizer](Columnizer/screenshot.jpg)
+
 
 
 ## [RandomInt](./RandomInt)
@@ -96,7 +102,9 @@ JavaScript 101: Pass two numbers and the method will return a random number betw
 *5/16/2004 12:04:43 PM*
 
 Let your users choose a color through a rich user interface. This color picker looks simular to Adobe Photoshop.
+
 ![Screenshot of Lewies Color Picker](LewiesColorPicker/screenshot.jpg)
+
 
 
 ## [Mouse Looker](./MouseLooker)
@@ -104,7 +112,9 @@ Let your users choose a color through a rich user interface. This color picker l
 *6/5/2004 2:19:13 AM*
 
 Take 9 pictures of yourself looking in 9 directions and assemble them to look at the users mouse depending on its location relative to your image. My wife thinks it's funny because she asks for money and drags the mouse above and below the image a few times so that I nod "yes".
+
 ![Screenshot of Mouse Looker](MouseLooker/screenshot.gif)
+
 
 
 ## [Cross Browser XmlHelper](./CrossBrowserXmlHelper)
@@ -112,7 +122,9 @@ Take 9 pictures of yourself looking in 9 directions and assemble them to look at
 *6/15/2004 11:54:54 PM*
 
 Allows you to easily load xml files in MSIE, Netscape, and Mozilla. Read nodes with xpath, select attribute values and text - all with the same interfaces.
+
 ![Screenshot of Cross Browser XmlHelper](CrossBrowserXmlHelper/screenshot.jpg)
+
 
 
 ## [GetSetCookie](./GetSetCookie)
@@ -127,6 +139,8 @@ Quick example allowing you to get and save cookies.
 *8/1/2004 10:59:12 PM*
 
 This chatbot is written in JavaScript and loads its data from Xml files. The xml file should be easy enough to understand and minipulate to make your own variation of the ELIZA chatbot.
+
 ![Screenshot of Lewies Eliza Chatbot](ElizaChatbot/screenshot.jpg)
+
 
 
