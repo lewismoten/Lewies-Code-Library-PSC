@@ -1,0 +1,23 @@
+BODY
+{
+	background-color: buttonface;
+}
+.Cell
+{
+	font-size: 1pt;
+	width: 14px;
+	height: 3px;
+	left: 0px;
+	background-color:buttonface;
+	position:absolute;
+}
+#Arrow
+{
+	background-image: url('Arrow.png');
+	position:absolute;
+	top: 134px;
+	left: 17px;
+	width: 9px;
+	height: 9px;
+	overflow:hidden;
+}

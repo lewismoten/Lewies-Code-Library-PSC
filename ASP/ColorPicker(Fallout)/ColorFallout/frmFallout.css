@@ -1,0 +1,18 @@
+BODY
+{
+	background-image:	url('Fallout.png');
+	background-color:	buttonface;
+	cursor:				default;
+	width:				180px;
+	height:				141px;
+}
+#Cursor
+{
+	position:			absolute;
+	top:				-9px;
+	left:				-9px;
+	background-image:	url('cursor.png');
+	width:				19px;
+	height:				19px;
+}
+ 

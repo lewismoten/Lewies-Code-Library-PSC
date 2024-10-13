@@ -1,0 +1,33 @@
+<STYLE>
+BODY
+{
+background-color: buttonface;
+}
+</STYLE>
+<TITLE>Color Fallout</TITLE>
+<object id="frmFallout" type="text/x-scriptlet" style="width:180px;height:141px;top:23px;left:8px;position:absolute;">
+    <param name=url value="frmFallout.htm">
+</object>
+
+<object id="frmLuminance" type="text/x-scriptlet" style="width:26px;height:143px;top:23px;left:194px;position:absolute;">
+    <param name=url value="frmLuminance.htm">
+</object>
+
+<SPAN id="Color" style="width:64px;height:32px;border:1px solid black;left:8px;top:172px;position:absolute;"></SPAN>
+
+<SCRIPT language="vbScript">
+Sub frmFallout_onScriptletEvent(ByRef pstrEventName, ByRef pstrEventData)
+	Select Case pstrEventName
+		Case "Fallout_onClick()"
+			frmLuminance.SetHue frmFallout.Red, frmFallout.Green, frmFallout.Blue
+	End Select
+End Sub
+Sub frmLuminance_onScriptletEvent(ByRef pstrEventName, ByRef pstrEventData)
+	Select Case pstrEventName
+		Case "Cell_onChange()"
+			Color.style.backgroundColor = pstrEventData
+		Case "Cell_onClick()"
+			Color.style.backgroundColor = pstrEventData
+	End Select
+End Sub
+</SCRIPT>
