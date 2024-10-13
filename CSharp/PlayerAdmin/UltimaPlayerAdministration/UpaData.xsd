@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="UpaData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns=""
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+	<xs:element name="UpaData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Players">
+					<xs:complexType>
+						<xs:sequence></xs:sequence>
+						<xs:attribute name="PlayerID" type="xs:string" msdata:DataType="System.Guid, mscorlib, Version=&#xD;&#xA;1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+						<xs:attribute name="Player" type="xs:string" />
+						<xs:attribute name="Account" type="xs:string" />
+						<xs:attribute name="IP" type="xs:string" />
+						<xs:attribute name="Created" type="xs:dateTime" />
+						<xs:attribute name="Modified" type="xs:dateTime" />
+						<xs:attribute name="Flag" type="xs:int" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="PlayersPK" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//Players" />
+			<xs:field xpath="@PlayerID" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

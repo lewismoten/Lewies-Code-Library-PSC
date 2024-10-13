@@ -1,0 +1,30 @@
+    <P>
+    The spinner control was something I found on one of the color pickers that Microsoft includes with Office 2000. My friends could tell you that I like to play with color interfaces ...
+    </P>
+    <P>
+    The spinner control allows you to incriment, and deincriment a number by just clicking on a button. For the demonstration, I have also included a input field to demonstrate what the current value is.
+    </P>
+    <P>
+    The placement of the buttons gave me a little bit of trouble due to the borders around them, until I came up with the idea of using clientHeight and clientWidth properties exposed by the document.body object "After" the window has loaded.
+    </P>
+    <P>
+    The one thing I wish I could get into the programming was the ability to hold the mouse down and incriment the value. I created an interval timer to incriment every 500 miliseconds. No events would seem to fire until I let up on the mouse. My hypotheses is that the scriptlet can not raise an event because the external window is frozen while the user directly interacts with the scriptlet.
+    </P>
+    <p>
+    If someone knows of a way to get around this, comments would be greatly appreciated. You may find the original code to handle the timer within the source, but it is commented out.
+    </P>
+    <P>
+    The following properties are exposed
+    </P>
+    <UL>
+    <LI><B>Step</B> - number to add/subtract from the current value when a button is clicked.
+    <LI><B>Value</B> - current value of the spinner
+    <LI><B>Max</B> - maximum value that spinner can hold.
+    <LI><B>Min</B> - minimum value that spinner can hold.
+    </UL>
+    <P>
+    The following evetns are exposed
+    </P>
+    <UL>
+    <LI><B>OnChange(), Value</B> - lets parent container know that the value of the spinner has changed. Event data passed is the new Value.
+    </P>

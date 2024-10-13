@@ -1,0 +1,31 @@
+BODY
+{
+    FONT-FAMILY: 'MS Sans Serif', Arial;
+    FONT-SIZE: 8px;
+    MARGIN: 0px
+}
+TD
+{
+    FONT-FAMILY: 'MS Sans Serif', Arial;
+    FONT-SIZE: 8px;
+}
+.Address
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(images\_folder.gif);
+    BACKGROUND-POSITION: 1px center;
+    BACKGROUND-REPEAT: no-repeat;
+    Padding-LEFT: 20px
+}
+.Go
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(images\_go.gif);
+    BACKGROUND-POSITION: left center;
+    BACKGROUND-REPEAT: no-repeat;
+    Padding-LEFT: 14px
+}
+.Attributes
+{
+	Padding-RIGHT: 14px
+}

@@ -1,0 +1,116 @@
+<HTML>
+	<HEAD>
+		<Title>Color Picker</Title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="ColorPicker.css">
+		<script language="javascript" src="ColorPicker.js"></script>
+	</HEAD>
+	<BODY>
+<!--
+-----------------------------------------------------
+Author: Lewis E. Moten III
+Date: May, 16, 2004
+Homepage: http://www.lewismoten.com
+Email: lewis@moten.com
+-----------------------------------------------------
+-->	
+			<div id="pnlGradient_Top"></div>
+			<div id="pnlGradient_Background1"></div>
+			<div id="pnlGradient_Background2"></div>
+			<div id="pnlVertical_Background2"></div>
+			<div id="pnlVertical_Background1"></div>
+			<div id="pnlVertical_Top"></div>
+			<DIV id="pnlGradient_Hue"></DIV>
+			<DIV id="pnlGradient_Black"></DIV>
+			<DIV id="pnlGradient_White"></DIV>
+			<DIV id="pnlSpectrum_Background"></DIV>
+			<DIV id="pnlSpectrum_RedMagenta"></DIV>
+			<DIV id="pnlSpectrum_MagentaBlue"></DIV>
+			<DIV id="pnlSpectrum_Blue"></DIV>
+			<DIV id="pnlSpectrum_BlueCyan"></DIV>
+			<DIV id="pnlSpectrum_CyanGreen"></DIV>
+			<DIV id="pnlSpectrum_Green"></DIV>
+			<DIV id="pnlSpectrum_GreenYellow"></DIV>
+			<DIV id="pnlSpectrum_YellowRed"></DIV>
+			<div id="pnlOldColor"></div>
+			<div id="pnlOldColorBorder"></div>
+			<div id="pnlNewColor"></div>
+			<div id="pnlNewColorBorder"></div>
+			<!--
+			<div id="pnlPrintSafeColor" title="Click to select in gamut color"></div>
+			<div id="pnlPrintSafeColorBorder"></div>
+			-->
+			<div id="pnlWebSafeColor" title="Click to select web safe color"></div>
+			<div id="pnlWebSafeColorBorder"></div>
+			<div id="pnlVerticalPosition"></div>
+			<div id="pnlGradientPosition"></div>
+			
+			<DIV id="lblSelectColorMessage">Select foreground color:</DIV>
+			<div id="lblHSB_Hue">H:</div>
+			<div id="lblUnitHSB_Hue">°</div>
+			<div id="lblHSB_Saturation">S:</div>
+			<div id="lblUnitHSB_Saturation">%</div>
+			<div id="lblHSB_Brightness">B:</div>
+			<div id="lblUnitHSB_Brightness">%</div>
+			<div id="lblRGB_Red">R:</div>
+			<div id="lblRGB_Green">G:</div>
+			<div id="lblRGB_Blue">B:</div>
+			<div id="lblLab_Luminancy">L:</div>
+			<div id="lblLab_A">a:</div>
+			<div id="lblLab_B">b:</div>
+			<div id="lblCMYK_Cyan">C:</div>
+			<div id="lblUnitCMYK_Cyan">%</div>
+			<div id="lblCMYK_Magenta">M:</div>
+			<div id="lblUnitCMYK_Magenta">%</div>
+			<div id="lblCMYK_Yellow">Y:</div>
+			<div id="lblUnitCMYK_Yellow">%</div>
+			<div id="lblCMYK_Black">K:</div>
+			<div id="lblUnitCMYK_Black">%</div>
+			<div id="lblHex">#</div>
+			<!--
+			<div id="lblOnlyWebColors">Only Web Colors</div>
+			-->
+			
+		<form id="frmColorPicker">
+
+			<!--
+			<INPUT type="radio" id="rdoHSB_Hue" name="ColorType" checked>
+			<INPUT type="radio" id="rdoHSB_Saturation" name="ColorType">
+			<INPUT type="radio" id="rdoHSB_Brightness" name="ColorType">
+			<INPUT type="radio" id="rdoRGB_Red" name="ColorType">
+			<INPUT type="radio" id="rdoRGB_Green" name="ColorType">
+			<INPUT type="radio" id="rdoRGB_Blue" name="ColorType">
+			<INPUT type="radio" id="rdoLab_Luminancy" name="ColorType">
+			<INPUT type="radio" id="rdoLab_A" name="ColorType">
+			<INPUT type="radio" id="rdoLab_B" name="ColorType">
+			-->
+
+			<INPUT type="text" id="txtHSB_Hue">
+			<INPUT type="text" id="txtHSB_Saturation">
+			<INPUT type="text" id="txtHSB_Brightness">
+			<INPUT type="text" id="txtRGB_Red"> 
+			<INPUT type="text" id="txtRGB_Green"> 
+			<INPUT type="text" id="txtRGB_Blue"> 
+			<INPUT type="text" id="txtLab_Luminancy" readonly> 
+			<INPUT type="text" id="txtLab_A" readonly> 
+			<INPUT type="text" id="txtLab_B" readonly>
+			<INPUT type="text" id="txtCMYK_Cyan" readonly>
+			<INPUT type="text" id="txtCMYK_Magenta" readonly>
+			<INPUT type="text" id="txtCMYK_Yellow" readonly>
+			<INPUT type="text" id="txtCMYK_Black" readonly>
+			<INPUT type="text" id="txtHex" maxlength="6">
+			
+			<!--
+			<INPUT type="checkbox" id="chkOnlyWebColors">
+			
+			<BUTTON id="btnPrintSafeColor" type="button" title="Warning: out of gamut for printing"></BUTTON>
+			-->
+			<BUTTON id="btnWebSafeColor" type="button" title="Warning: not a web safe color"></BUTTON>
+			<BUTTON id="btnOK" type="button">OK</BUTTON> 
+			<BUTTON id="btnCancel" type="button">Cancel</BUTTON>
+			<!--
+			<BUTTON id="btnCustom" type="button"><u>C</u>ustom</U></BUTTON>
+			-->
+		</form>
+	</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+1. Build the solution.
+
+2. Open the project that you wish to add this control to.
+
+3. Make sure your tool box containing controls is visible.
+
+4. Click on "My User Controls" section.
+
+5. Right-mouse-click on the area
+
+6. Choose "Add/Remove Items..."
+
+7. Verify .Net Framework Components is chosen
+
+8. Click "Browse..."
+
+9. Navigate to the DLL file that you just created when you 
+   built the project.  
+
+   [project location]\obj\Release\LewisMoten.WebControls.dll
+   
+10. Choose "Open" after selecting the DLL
+
+11. Click "Ok"
+
+12. A control named "PageNavigation" along with an icon of
+	"1 2 3" should appear in the "My User Controls" section of
+	your toolbox.
+	
+13. Drag and drop the control onto a web form.
+
+The following code may be generated for you:
+
+<%@ Register TagPrefix="lem3" Namespace="LewisMoten.WebControls" Assembly="LewisMoten.WebControls" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="WebForm1.aspx.vb" Inherits="WebProject1.WebForm1"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>WebForm1</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	</HEAD>
+	<body>
+		<form id="Form1" method="post" runat="server">
+			<LEM3:PageNavigation id="PageNavigation1" runat="server"></LEM3:PageNavigation></form>
+	</body>
+</HTML>

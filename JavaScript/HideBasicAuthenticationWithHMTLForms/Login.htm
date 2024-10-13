@@ -1,0 +1,55 @@
+<SCRIPT src="MakeAbs.js"></SCRIPT>
+<SCRIPT>
+function frmLogin_onSubmit(pObjForm, pStrURL)
+{
+	// grab the absolute value of the url
+	var lStrHREF = new String(MakeAbs(pStrURL))
+	
+	// grab the protocal
+	var lStrProtocal = lStrHREF.substring(0, lStrHREF.indexOf('//') + 2)
+	
+	// parse out the URL from the href
+	var lStrURL = lStrHREF.substring(lStrHREF.indexOf('//') + 2)
+
+	var lStrUserName = new String(pObjForm.UserName.value);
+	var lStrPassword = new String(pObjForm.Password.value);
+
+	
+	lStrHREF = lStrProtocal
+	
+	lStrHREF += lStrUserName + ':' + lStrPassword
+	
+	lStrHREF += '@' + lStrURL
+	
+	// Change the location where the form will post data to.
+	pObjForm.action = lStrHREF;
+	
+	return(false)
+	
+}
+</SCRIPT>
+
+<FORM onSubmit="frmLogin_onSubmit(this, 'protected.htm')" method="post">
+	User Name: <INPUT name="UserName"><BR>
+	Password: <INPUT name="Password"><BR>
+	<INPUT type="submit" value="Login">
+</FORM>
+<P>
+	This is a brief demonstration showing you how you may log your users into your
+	web site using basic authentication combined with your own HTML forms.
+</P>
+<P>
+	The script compiles a URL to a protected page in the following
+	format:
+</P>
+<CODE>
+	http://<B>username</B>:<B>password</B>@www.domain.com/directory/protected.asp
+</CODE>
+<P>
+	The protected page has a script attatched so that the page will reload without
+	the username and password showing in the browser.
+</P>
+<P>
+	Notice - if your user enters an incorrect username/password, they will still
+	receive the common login form built into the browser for basic authentication.
+</P>

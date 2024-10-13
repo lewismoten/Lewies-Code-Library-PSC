@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniHexEdit", "MiniHexEdit\MiniHexEdit.csproj", "{FC70DF2A-E7C0-49A1-AD10-9083595FDD6F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{C1FC336F-8FDD-40CA-BC30-9C8BB44AA9B8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FC70DF2A-E7C0-49A1-AD10-9083595FDD6F}.Debug.ActiveCfg = Debug|.NET
+		{FC70DF2A-E7C0-49A1-AD10-9083595FDD6F}.Debug.Build.0 = Debug|.NET
+		{FC70DF2A-E7C0-49A1-AD10-9083595FDD6F}.Release.ActiveCfg = Release|.NET
+		{FC70DF2A-E7C0-49A1-AD10-9083595FDD6F}.Release.Build.0 = Release|.NET
+		{C1FC336F-8FDD-40CA-BC30-9C8BB44AA9B8}.Debug.ActiveCfg = Debug
+		{C1FC336F-8FDD-40CA-BC30-9C8BB44AA9B8}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

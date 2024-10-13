@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<TITLE>Lewis Motens Crazy Cool ASP Data Dictionary Generator</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=unicode"><LINK href="Style.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR>
+<SCRIPT language="javascript" src="default.js"></SCRIPT>
+</HEAD>
+<BODY onload="body_onload()">
+<!--
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+'Program: Lewies Data Dictionary Report Generator
+'Purpose: Return schema information about database tables.
+'Author: Lewis Moten
+'URL: http://www.lewismoten.com
+'Email: lewis@moten.com
+
+' See Readme.txt if you are having problems
+
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-->
+<CENTER>
+		<B>Data Dictionary Report</B><P>&nbsp;</P></CENTER>
+<FORM method="post" action="Report.asp" id=form1 name=form1>
+	<TABLE align="center">
+		<TR><TD>Database Server Name</TD><TD><INPUT name="Server"></TD></TR>
+		<TR><TD>Database Catalog Name</TD><TD><INPUT name="Catalog"></TD></TR>
+		<TR><TD>User Name</TD><TD><INPUT name="UserName"></TD></TR>
+		<TR><TD>Password</TD><TD><INPUT type="password" name="Password"></TD></TR>
+		<TR><TD>Or</TD><TD><INPUT type="checkbox" name="Trusted" value="True">Login with trusted Connection</TD></TR>
+		<TR><TD colspan="2" align="middle"><INPUT type="submit" value="Generate Report"></TD></TR>
+	</TABLE>
+	</FORM>
+	<BR><BR>
+	<TABLE width="400" align="center"><TR><TD>
+	<FONT size="1">
+	<P><STRONG>data dictionary</STRONG> 
+	</P><P>
+A data structure that stores meta-data, i.e. data
+about data. The term "data dictionary" has several uses.
+</P><P>
+Most generally it is a set of data descriptions that
+can be shared by several applications.
+</P><P>
+Usually it means a table in a database that stores the
+names, field types, length, and other characteristics of
+the fields in the database tables.
+</P><P>
+An active data dictionary is automatically updated as changes
+occur in the database. A passive data dictionary must be
+manually updated.
+</P><P>
+In a DBMS, this functionality is performed by the system
+catalog. The data dictionary is a more general software
+utility used by designers, users, and administrators for
+information resource management.
+</P><P>
+The data dictionary may maintain information on system
+hardware, software, documentation, users, and other aspects.
+</P><P>
+Data dictionaries are also used to document the database
+design process itself and can accumulate meta-data
+ready to feed into the system catalog.
+</P>
+</FONT>
+	</TD></TR></TABLE>
+<P align=center>Created by Lewis Moten - <A 
+href="http://www.lewismoten.com">http://www.lewismoten.com</A></P></BODY></HTML>

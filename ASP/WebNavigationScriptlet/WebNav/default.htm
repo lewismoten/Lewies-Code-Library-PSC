@@ -1,0 +1,48 @@
+<script language=vbscript>
+private sub window_onload()
+
+	Call WebNav1.addBar("File")
+	Call WebNav1.addLink("New Project...", "gothere.html", "Top")
+	Call WebNav1.addLink("Open Project...", "gothere.html", "Top")
+	Call WebNav1.addLink("Close All", "gothere.html", "Top")
+	Call WebNav1.addLink("Add Project", "gothere.html", "Top")
+	Call WebNav1.addLink("Remove Project", "gothere.html", "Top")
+	Call WebNav1.addLink("New File...", "gothere.html", "Top")
+	Call WebNav1.addLink("Open File...", "gothere.html", "Top")
+	Call WebNav1.addLink("Close", "gothere.html", "Top")
+
+	Call WebNav1.addBar("Edit")
+	Call WebNav1.addLink("Undo", "gothere.html", "Top")
+	Call WebNav1.addLink("Redo", "gothere.html", "Top")
+	Call WebNav1.addLink("Cut", "gothere.html", "Top")
+	Call WebNav1.addLink("Copy", "gothere.html", "Top")
+	Call WebNav1.addLink("Paste", "gothere.html", "Top")
+	Call WebNav1.addLink("Paste As HTML", "gothere.html", "Top")
+	Call WebNav1.addLink("Delete", "gothere.html", "Top")
+	Call WebNav1.addLink("Select All", "gothere.html", "Top")
+	Call WebNav1.addLink("Find and Replace...", "gothere.html", "Top")
+	Call WebNav1.addLink("Go To...", "gothere.html", "Top")
+	Call WebNav1.addLink("List Members", "gothere.html", "Top")
+	Call WebNav1.addLink("Parameter Info", "gothere.html", "Top")
+	Call WebNav1.addLink("Complete Word", "gothere.html", "Top")
+
+	Call WebNav1.addBar("View")
+	Call WebNav1.addLink("Open", "gothere.html", "Top")
+	Call WebNav1.addLink("Open With...", "gothere.html", "Top")
+	Call WebNav1.addLink("View in Browser", "gothere.html", "Top")
+	Call WebNav1.addLink("Browse With...", "gothere.html", "Top")
+	Call WebNav1.addLink("View Links", "gothere.html", "Top")
+	Call WebNav1.addLink("Broken Links Report", "gothere.html", "Top")
+	Call WebNav1.addLink("Sync Script Outline", "gothere.html", "Top")
+	Call WebNav1.addLink("View Controls As Text", "gothere.html", "Top")
+End Sub
+</script>
+
+<A href="Menu.htm">Menu.htm</A>
+
+<br><br>
+
+<OBJECT id=WebNav1 style="HEIGHT: 300px; LEFT: 0px; TOP: 0px; WIDTH: 150px" type=text/x-scriptlet VIEWASTEXT>
+	<PARAM NAME="URL" VALUE="Menu.htm">
+	<PARAM NAME="Scrollbar" VALUE="1">
+</OBJECT>

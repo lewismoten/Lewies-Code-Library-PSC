@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3EditID3v1", "Mp3EditID3v1\Mp3EditID3v1.csproj", "{44E3BF37-9080-471C-A425-92DB2E50F570}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{45012B77-D20B-4F97-A911-BAF93D28F7A0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{44E3BF37-9080-471C-A425-92DB2E50F570}.Debug.ActiveCfg = Debug|.NET
+		{44E3BF37-9080-471C-A425-92DB2E50F570}.Debug.Build.0 = Debug|.NET
+		{44E3BF37-9080-471C-A425-92DB2E50F570}.Release.ActiveCfg = Release|.NET
+		{44E3BF37-9080-471C-A425-92DB2E50F570}.Release.Build.0 = Release|.NET
+		{45012B77-D20B-4F97-A911-BAF93D28F7A0}.Debug.ActiveCfg = Debug
+		{45012B77-D20B-4F97-A911-BAF93D28F7A0}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

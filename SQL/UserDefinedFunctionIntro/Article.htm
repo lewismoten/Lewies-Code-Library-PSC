@@ -1,0 +1,98 @@
+<CENTER><FONT size="+1">Brief introduction to User Defined Functions</FONT></CENTER>
+<HR>
+<B>What is a user defined function?</B>
+<P>
+	User defined functions are very simular to stored procedures.
+	Rather then returning recordsets, they can only return variables.
+	They are also limited to the types of variables you may return.
+	For example - text, ntext, and image datatypes can not be returned.
+</P>
+<B>Ok, so how would it benefit me?</B>
+<P>
+	The magic of user defined functions is that you can use them in
+	SELECT, UPDATE, DELETE, & SET statments. You can use them in triggers
+	and other places. Somehow I get the idea that you are scratching your
+	head still asking "What is it?". Let me show you a small example.
+</P>
+<P>
+	<FONT Face="Courier New">
+	SELECT UserID, <B>dbo.FullName(</B>UserID<B>)</B> FROM Users
+	</FONT>
+</P>
+<P>
+	In this example, the function is called <B>FullName</B>.
+	As you may have guessed, the function returns the full name
+	of the user within the record.
+</P>
+<B>How would I make a function?</B>
+<P>
+	Glad you asked. When you open your database in the SQL Server
+	Enterprise Manager, one of the nodes available will state "User
+	Defined Functions". I usually do a right-mouse-click and click on
+</P>
+	<BUTTON>New User Defined Function ...</BUTTON>
+<P>
+	A default template may appear ...
+</P>
+	<FONT Face="Courier New">
+		<FONT color="blue">CREATE FUNCTION</FONT> [OWNER].[FUNCTION NAME] (PARAMETER LIST) <BR>
+		<FONT color="blue">RETURNS</FONT> (return_type_spec) <FONT color="blue">AS</FONT><BR>
+		<FONT color="blue">BEGIN </FONT><BR>
+		(<FONT color="blue">FUNCTION</FONT> BODY) <BR>
+		<FONT color="blue">END</FONT>
+	</FONT>
+<P>
+	This function is not valid nor helpful. It doesn't even pass when you click on
+	the button "Check Syntax". 
+	It took me a good amount of
+	research along with trial & error before I got the gist of what was going
+	on.
+</P>
+<B>So how about a demonstration?</B>
+<P>
+	Right O! Lets go with creating the "FullName" function.
+	Here is my code:
+</P>
+<PRE><FONT Face="Courier New">
+<FONT color="blue">CREATE FUNCTION</FONT> [dbo].[FullName] <FONT color="gray">(</FONT>@UserID <FONT color="blue">int</FONT><FONT color="gray">)</FONT>
+<FONT color="blue">RETURNS varchar</FONT><FONT color="gray">(</FONT>255<FONT color="gray">)</FONT>
+<FONT color="blue">AS 
+
+
+    BEGIN 
+    	Select</FONT>
+    		@FullName <FONT color="gray">=</FONT> @FirstName <FONT color="gray">+ <FONT color="red">' '</FONT> +</FONT> @LastName
+    	<FONT color="blue">FROM</FONT>
+    		[Users]
+    	<FONT color="blue">WHERE</FONT>
+    		[UserID] <FONT color="gray">=</FONT> @UserID
+    	<FONT color="blue">Return</FONT><FONT color="gray">(</FONT>@FullName<FONT color="gray">)</FONT>
+    <FONT color="blue">END</FONT>
+    </FONT></PRE>
+    <P>
+    	So first, you can see that the parameter list has been changed to pass
+    	a Integer variable called UserID. You can add more parameters as long as
+    	you seperate them with a comma.
+    </P>
+    <P>
+    	Next we see that the return type, and the parethesies around it has been
+    	replaced with a datatype "varchar(255)". You are not limited to varchars alone.
+    	Just about any type of datatype is available except cursors, records, and
+    	datatypes with pointers (text, ntext, image, etc.).
+    </P>
+    <P>
+    	If you look at the very bottom, you will see "Return(@FullName)". This
+    	is where we return the results to the query that called the function.
+    </P>
+    <P>
+    	And within the BEGIN and END statements, we have the body of the function.
+    </P>
+    <B>Closing Comments</B>
+    <P>
+    	The demonstration here is very inefficient. It is here only as a reference
+    	to get you started. Defining your own functions allows more complex business
+    	logic & formatting to be possible. Consider the ability to pass in a piece of
+    	text of 4000 characters long and inserting HTML links on specific keywords.
+    	Another idea would be to perform lookups on multiple tables and return a value
+    	that best suites your query.
+    </P>

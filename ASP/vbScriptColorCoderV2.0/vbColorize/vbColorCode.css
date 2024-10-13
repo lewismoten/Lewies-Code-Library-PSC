@@ -1,0 +1,62 @@
+.vbScript {
+	background-color:#ffffff;
+	color:black;
+	font-family:'Courier New', 'Courier', 'Serif';
+	font-size:10pt;
+}
+.vbScript .String {
+	color:#ff0000;
+	text-decoration:none;
+}
+.vbScript .Comment {
+	color:#008800;
+}
+.vbScript .Reserved {
+	color:#0000ff;
+	font-weight:bold;
+	text-decoration:none;
+}
+.vbScript .Constant {
+	color:#444444;
+	font-weight:bold;
+	text-decoration:none;
+}
+.vbScript .Function {
+	color:#444444;
+	font-weight:bold;
+	text-decoration:none;
+}
+.vbScript .Method {
+	color:purple;
+	font-weight:bold;
+	text-decoration:none;
+}
+.vbScript .Operator {
+	color:brown;
+	text-decoration:none;
+}
+.vbScript .Property {
+	color:purple;
+	font-weight:bold;
+	text-decoration:none;
+}
+.vbScript .Statement {
+	color:#444444;
+	font-weight:bold;
+	text-decoration:none;
+}
+:hover {
+	text-decoration:underline;
+}
+/*
+-------------------------------------------------------------------------------
+*/
+.HTML {
+	background-color:#ffffff;
+	color:black;
+	font-family:'Courier New', 'Courier', 'Serif';
+	font-size:10pt;
+}
+.HTML-Tag {
+	color:blue;
+}

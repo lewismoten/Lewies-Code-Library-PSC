@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimaPlayerAdministration", "UltimaPlayerAdministration\UltimaPlayerAdministration.csproj", "{E8466B4B-A7F5-411E-B53C-503AD35542C9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupUltimaPlayerAdministration", "SetupUltimaPlayerAdministration\SetupUltimaPlayerAdministration.vdproj", "{2FEB5CF3-5ABA-4700-BC67-99201C5D42D9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E8466B4B-A7F5-411E-B53C-503AD35542C9}.Debug.ActiveCfg = Debug|.NET
+		{E8466B4B-A7F5-411E-B53C-503AD35542C9}.Debug.Build.0 = Debug|.NET
+		{E8466B4B-A7F5-411E-B53C-503AD35542C9}.Release.ActiveCfg = Release|.NET
+		{E8466B4B-A7F5-411E-B53C-503AD35542C9}.Release.Build.0 = Release|.NET
+		{2FEB5CF3-5ABA-4700-BC67-99201C5D42D9}.Debug.ActiveCfg = Debug
+		{2FEB5CF3-5ABA-4700-BC67-99201C5D42D9}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

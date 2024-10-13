@@ -1,0 +1,41 @@
+<P>
+It appears that a lot of people have posted the XOR encryption - and why not? It is a very common standard. A few features help set my code apart from others.
+</P>
+<P>
+The first is support for double byte characters. VB strings are now in unicode. A short explination is that each character is made of more then one byte to support languages with larger character sets. I support this by encoding each individual byte rather then each characters.
+</P>
+<P>
+The next item of support is the NULL character. I have found that many of the algorithms on planet source code give errors when you run into NULL characters returned from the XOR function. I work around this by converting the message to be translated into a hex string. After the conversion is finnished, I decode the hex string and pass it back.
+</P>
+<P>
+An important thing to remember is that VB may still truncate the returned string when populating a text box, or any of its other controls. A NULL character tells VB that the string ends. It is best to keep encrypted messages in variables and binary files.
+</P>
+<P>
+To work around this problem, I also allow you to send and retrieve messages in HEX format. It will be twice as long in length, but a lot safer to decrypt/encrypt.
+</P>
+<P>
+The class exposes the following:
+</P>
+<UL>
+<LI><B>HexEncrypt</B> -
+Expects that you will pass a normal message to it and expect a hex string in return.
+<LI><B>HexDecrypt</B> -
+Expects that you pass a hex string to the procedure and expect a normal message in return.
+<LI><B>Encrypt</B> -
+Pass procedure a normal string and get the encrypted string back
+<LI><B>Decrypt</B> -
+Pass procedure an encrypted string and get decrypted string back
+<LI><B>Key</B> -
+password to encrypt/decrypt with.
+</UL>
+<P>
+My last comment is this. <FONT color=Red><B>XOR IS NOT SECURE</B></FONT>. XOR is an advanced algorithm based off of the Enigma machine used back in World War II. There are many programs to decrypt XOR without the need for the password. There are methods where you can increase your security.
+</P>
+<OL>
+<LI>Use VERY LONG passwords/keys.
+<LI>Do not use standard characters and numbers alone. You have 256 characters to choose from.
+<LI>Use more then 1 encryption algorithm
+<LI>Use a PROVEN encryption algorithms.
+<LI>When possible - use a grain of salt.
+</OL>
+

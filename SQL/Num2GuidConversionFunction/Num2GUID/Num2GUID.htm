@@ -1,0 +1,184 @@
+<pre style='text-align:center'><b><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></pre><pre
+style='text-align:center'><b><span style='font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></pre><pre
+style='text-align:center'><b><span style='font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Num2GUID Conversion Function<o:p></o:p></span></b></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='font-family:Arial'>Why is a User Defined Function (UDF) powerful?<span style="mso-spacerun: yes">  </span>Take this statement into consideration:<o:p></o:p></span></pre><pre><span
+style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='color:blue'>UPDATE</span> Users <span style='color:blue'>SET</span> GUID <span
+style='color:gray'>= </span>dbo.Num2GUID<span style='color:gray'>(</span>ID<span
+style='color:gray'>)</span></pre><pre><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial'>Here is a classic example of someone who may be changing there database schema to use GUIDs in order to support scaling it to hold a much larger number of users.<span style="mso-spacerun: yes">  </span>Had they been using a stored procedure, they would probably end up using a cursor to iterate through each individual record with the output of the stored procedure.<span style="mso-spacerun: yes">  </span>On top of that, they would have to perform the same process or foreign keys within other tables as well.<span style="mso-spacerun: yes">  </span>This is the primary reason that this function has come into existence.<o:p></o:p></span></pre><pre><span
+style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial'>I revamped my original <b><a
+href="http://www.pscode.com/vb/scripts/ShowCode.asp?txtCodeId=475&amp;lngWId=5">Int2GUID</a></b> function to handle hex conversions of base-10 integers.<span style="mso-spacerun: yes">  </span>Below is an example of the differences between the two results when passing a value of 10. <o:p></o:p></span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><b>Int2GUID:</b> 00000000-0000-0000-0000-0000000000<span
+style='color:blue'>10</span></pre><pre><b>Num2GUID:</b> 00000000-0000-0000-0000-00000000000<span
+style='color:blue'>A<o:p></o:p></span></pre><pre><span style='color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'>As you can see from the results, hex conversion will take less space as the numbers increase in value because you have 16 characters within each position rather then 10.<span style="mso-spacerun: yes">  </span>I have also changed the data type being passed to a BIGINT rather then an INT alone.<span style="mso-spacerun: yes">  </span>As SQL Server improves and functionality permits, this data type can be increased to handle larger numbers by simply changing the definition.<o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'>The algorithm contained within the function is very generic for handling many types of base conversion from decimal numbers (base 10) with the exception of hooks placed within the code for GUID formatting.<span style="mso-spacerun: yes">  </span>You can define your base characters in the proper order at the top of the function.<span style="mso-spacerun: yes">  </span>Most of the common base conversions I have used are as follows:<o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>Type<o:p></o:p></span></pre></td>
+  <td width=167 valign=top style='width:125.4pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>Base<o:p></o:p></span></pre></td>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>SET @BaseChars = <o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>Binary/Bits<o:p></o:p></span></pre></td>
+  <td width=167 valign=top style='width:125.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>2<o:p></o:p></span></pre></td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>01<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>Octet<o:p></o:p></span></pre></td>
+  <td width=167 valign=top style='width:125.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>8<o:p></o:p></span></pre></td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>01234567<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>Decimal<o:p></o:p></span></pre></td>
+  <td width=167 valign=top style='width:125.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>10<o:p></o:p></span></pre></td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>0123456789<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:96.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre><span
+  style='font-family:Arial;color:windowtext'>Hex<o:p></o:p></span></pre></td>
+  <td width=167 valign=top style='width:125.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>16<o:p></o:p></span></pre></td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span style='font-family:Arial;color:windowtext'>0123456789ABCDEF<o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<pre><span style='font-family:Arial;color:windowtext'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'>If you wish to use other base conversions, then make sure that you change the data type being returned to either a varchar.<span style="mso-spacerun: yes">  </span>If you wish to return an int, big int, or other numeric data type, you will also need to cast the @Result as the proper data type when returning the final result.<o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'>The other piece of code you will need to modify is where the hooks are for formatting the @Result as a GUID.<span style="mso-spacerun: yes">  </span>The initial GUID conversion code is defined in this article.<span style="mso-spacerun: yes">  </span>The original file and supporting files for the other conversion functions may be found within the supporting files that come with this article.<o:p></o:p></span></pre><pre><span
+style='font-family:Arial;color:windowtext'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:blue'>CREATE FUNCTION</span> [dbo].[Num2GUID] <span
+style='color:gray'>(</span>@Number <span style='color:blue'>BIGINT</span><span
+style='color:gray'>)</span></pre><pre><span style='color:blue'>RETURNS UNIQUEIDENTIFIER AS<o:p></o:p></span></pre><pre><span
+style='color:blue'>BEGIN<o:p></o:p></span></pre><pre><span style='color:teal'><span
+style='mso-tab-count:1'>        </span>/*<o:p></o:p></span></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>Converts a base-10 number to a base-16 hexadecimal number.<o:p></o:p></span></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>The number is returned in GUID format used with unique identifier<o:p></o:p></span></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>Data types.<o:p></o:p></span></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>*/<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:blue'>DECLARE </span><span
+style='color:windowtext'>@Result</span><span style='color:blue'> VARCHAR</span><span
+style='color:gray'>(</span><span style='color:windowtext'>36</span><span
+style='color:gray'>)</span><span style='color:windowtext'><o:p></o:p></span></pre><pre><span
+style='color:blue'><span style='mso-tab-count:1'>        </span>DECLARE </span><span
+style='color:windowtext'>@BaseChars</span><span style='color:blue'> VARCHAR</span><span
+style='color:gray'>(</span><span style='color:windowtext'>16</span><span
+style='color:gray'>)</span><span style='color:windowtext'><o:p></o:p></span></pre><pre><span
+style='color:blue'><span style='mso-tab-count:1'>        </span>DECLARE </span><span
+style='color:windowtext'>@Base</span><span style='color:blue'> TINYINT<o:p></o:p></span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>-- Setup base characters in appropriate positions<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:blue'>SET</span> @BaseChars <span
+style='color:gray'>=</span> <span style='color:red'>'0123456789ABCDEF'<o:p></o:p></span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+style='margin-left:.5in'><span style='color:teal'><span style='mso-tab-count:
+1'>  </span>-- Determine base conversion based on length of characters defined<o:p></o:p></span></pre><pre><span
+style='color:blue'><span style='mso-tab-count:1'>        </span>SET</span> @Base <span
+style='color:gray'>=</span> <span style='color:fuchsia'>LEN</span><span
+style='color:gray'>(</span>@BaseChars<span style='color:gray'>)</span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:teal'>-- Initialize guid<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:blue'>SET </span>@Result<span
+style='color:gray'> =</span> <span style='color:red'>''</span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:blue'><span style='mso-tab-count:1'>        </span>WHILE</span><span
+style='color:#999999'> </span><span style='color:gray'>NOT </span>@Number <span
+style='color:gray'>=</span> 0</pre><pre><span style='color:blue'><span
+style='mso-tab-count:1'>        </span>BEGIN<o:p></o:p></span></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span><span
+style='mso-tab-count:1'>        </span>-- Insert next hex character<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>SET </span>@Result<span style='color:gray'> =</span> <span
+style='color:fuchsia'>SUBSTRING</span><span style='color:gray'>(</span>@BaseChars<span
+style='color:gray'>, (</span>@Number<span style='color:gray'> - ((</span>@Number <span
+style='color:gray'>/</span> @Base<span style='color:gray'>) *</span> @Base<span
+style='color:gray'>)) + 1,</span></pre><pre><span style='color:gray'>1) + </span>@Result</pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span><span
+style='mso-tab-count:1'>        </span>-- Reduce number<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>SET</span> @Number <span style='color:gray'>=</span> @Number<span
+style='color:gray'> /</span> @Base</pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span><span
+style='mso-tab-count:1'>        </span>-- HOOK to insert separator depending on length of Results<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>SET</span> @Result <span style='color:gray'>=</span><span
+style='color:blue'> </span><span style='color:fuchsia'>CASE LEN</span><span
+style='color:gray'>(</span>@Result<span style='color:gray'>)</span></pre><pre><span
+style='mso-tab-count:2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>WHEN</span> 12 <span style='color:blue'>THEN</span> <span
+style='color:red'>'-'</span><span style='color:gray'> +</span> @Result</pre><pre><span
+style='mso-tab-count:2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>WHEN</span> 17 <span style='color:blue'>THEN</span> <span
+style='color:red'>'-'</span> <span style='color:gray'>+</span> @Result</pre><pre><span
+style='mso-tab-count:2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>WHEN</span> 22 <span style='color:blue'>THEN</span> <span
+style='color:red'>'-'</span> <span style='color:gray'>+</span> @Result</pre><pre><span
+style='mso-tab-count:2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>WHEN</span> 27 <span style='color:blue'>THEN</span> <span
+style='color:red'>'-'</span> <span style='color:gray'>+</span> @Result</pre><pre><span
+style='mso-tab-count:2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>ELSE</span> @Result</pre><pre><span style='mso-tab-count:
+2'>            </span><span style='mso-tab-count:1'>        </span><span
+style='color:blue'>END<o:p></o:p></span></pre><pre><span style='mso-tab-count:
+1'>        </span><span style='color:blue'>END<o:p></o:p></span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:teal'><span style='mso-tab-count:1'>        </span>-- Insert formatted padding<o:p></o:p></span></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:blue'>SET</span> @Result <span
+style='color:gray'>=</span> <span style='color:fuchsia'>LEFT</span><span
+style='color:gray'>(</span><span style='color:red'>'00000000-0000-0000-0000-000000000000'</span><span
+style='color:gray'>,</span> 36 <span style='color:gray'>-</span> <span
+style='color:fuchsia'>LEN</span><span style='color:gray'>(</span>@Result<span
+style='color:gray'>)) + </span>@Result</pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='mso-tab-count:1'>        </span><span style='color:blue'>Return</span><span
+style='color:gray'>(</span>@Result<span style='color:gray'>)</span></pre><pre><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre><span
+style='color:blue'>END<o:p></o:p></span></pre>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:Arial'>Should you wish to learn more about the author of this
+document, Lewis Moten, Then you may visit <a href="http://www.lewismoten.com/">http://www.lewismoten.com</a>
+to find programming scripts in a variety of languages, artwork, stories,
+poetry, and more.<o:p></o:p></span></p>
+

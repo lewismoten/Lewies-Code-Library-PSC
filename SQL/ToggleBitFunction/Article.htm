@@ -1,0 +1,40 @@
+<P>
+This small piece of code shows how you can toggle a bit field in your update statements. Usually I would use a "CASE" statment, but to make things more condense - I like to use functions. Take a look at the following.
+</P>
+<PRE>
+UPDATE
+	Users
+SET
+	Active = CASE Active WHEN 1 THEN 0 ELSE 1 END
+</PRE>
+<P>
+Not too bad in this scenario, but we can shorten the number of characters to clean it up a bit. Start by making a function:
+</P>
+</PRE>
+<PRE>
+CREATE FUNCTION dbo.funToggleBit(@Bit BIT = 0)
+RETURNS BIT AS
+
+
+    BEGIN
+    RETURN(CASE @Bit WHEN 1 THEN 0 ELSE 1 END)
+END
+<br></PRE>
+<P>
+A very small piece of code indeed. The way to use it would appear like this:
+</P>
+<PRE>
+PRINT dbo.funToggleBit(0)
+</PRE>
+<P>
+This would return the number "1". If you enter the number 1, it returns the number zero. Now lets use it in an update statement...
+</P>
+<PRE>
+UPDATE 
+	Users 
+SET
+	Active = dbo.funToggleBit(Active)
+</PRE>
+<P>
+Ok .. This isn't a really big space saver. I have not tested performance. The main thing here is to start looking at the benefit of functions. If the same code is repetively used througout SQL server, then you may want to think about using functions. This way, if a bug if found later on, you fix it in one place rather then multiple places. This concludes the article.
+</P>

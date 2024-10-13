@@ -1,0 +1,660 @@
+<?xml version="1.0" ?>
+<scripts>
+	<script title="Add Custom Errors with MetaBase" description="This script interacts with COM objects that communicate with the MetaBase for Internet Information Server. You will be able to define the custom error pages for your website."
+		date="4/28/2001 12:12:53 PM" folder="ASP/CustomErrors" image="gif" code="zip"
+		psccode="6611" language="ASP / VBScript" pscworld="4" />
+	<script title="Add E-Mail Job to SQL Server" description="This script helps start you off to learning how to automate some of your processes with SQL . For this example, I have chosen to send Email through SQL Server using vbScript. Messages are pulled from a table and deleted once they are sent. You need to create a table in the master database called &quot;Email&quot; and assign the fields &quot;To&quot;, &quot;From&quot;, &quot;Subject&quot; and &quot;Body&quot;. The script will do the rest. If you &quot;SA&quot; account has a password, you will need to modify the script to relflect those changes."
+		date="6/4/2001 5:19:22 PM" folder="ASP/EmailJobForSQL" code="zip" psccode="6695"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="ADODBTypeName" description="Quickly find out the type of variables returned from your adodb recordset. TypeName() function doesn't do the trick. Databases offer additional data types. This script helps solve type problems without having to lookup the name of the numbers returned."
+		date="4/21/2002 8:52:45 PM" folder="ASP/ADODBTypeName" code="zip" psccode="7470"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Advanced HTML Encoder" description="This code demonstrates how you can convert a string to HTML text format. It goes beyond the power of the Server.HTMLEncode method in that it parses out all HTML tags, changes new-line characters to &quot;BR&quot; tags, and also formats double-spacing and tabs."
+		date="5/5/2001 8:36:32 AM" image="gif" folder="ASP/AdvancedHTMLEncoder" code="zip"
+		psccode="6637" language="ASP / VBScript" pscworld="4" />
+	<script title="Advanced SQL Query Builder" description="This code lets visitors to your site perform complex queries. Users may choose if specific words (or phrases) must or must not match - or if they are optional (default)."
+		date="8/3/2000 10:57:26 PM" image="gif" folder="ASP/AdvancedSQLQueryBuilder"
+		code="zip" psccode="6297" language="ASP / VBScript" pscworld="4" />
+	<script title="Allow users to post &quot;Safe&quot; HTML" description="This code pulls out all the nasty tags that a user sholdn't use when posting content. It also pulls out any javascript events assigned to any tags. A must have if you allow people to post HTML on your site."
+		date="5/10/2001 9:11:02 AM" folder="ASP/AllowUsersToPostSafeHTML" code="zip"
+		psccode="6656" language="ASP / VBScript" pscworld="4" />
+	<script title="ANSI to Unicode" description="Converts from ANSI to Unicode very fast. Inspired by code found in UltraFastAspUpload by Cakkie (on PSC). This should work slightly faster then Cakkies due to how some of the code has been arranged."
+		date="2/25/2002 12:08:12 PM" folder="ASP/AnsiToUnicode" code="zip" psccode="7266"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="AuthenticateUser" description="Authenticates a user to make sure if they have previously logged into the site. Requires Session(&quot;UserID&quot;) to be populated. This usually represents the Users ID within a data base. (Users.UserID) If a user is not loged in, they are redirected to a page to attempt a login. This is useful when the ability to &quot;Auto-Login&quot; has been enabled to use previously saved login information in the users cookies. When a user is redirected to the login page, The URL they were attempting to view is passed along in the Query String along with the reason why they need to login. If the user was posting data to the protected page (perhaps a session timed out), then the previous page they were posting from is sent as the URL that the user is redirected to after they have successfully logged in. This is done to help reduce errors when visiting a page that expected posted form data."
+		date="1/12/2001 2:42:27 PM" folder="ASP/AuthenticateUser" code="zip" psccode="6445"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Base 64 Encode / Decode" description="Base 64 encodeing is used to convert binary files to a &quot;safe&quot; format for transporting files through smtp (email) and other protocols. It is also used for basic authentication. With this code, you can decode the current UserName/Password who is visiting a protected page on your site by requesting one of the serverVariables."
+		date="7/18/2000 11:25:01 AM" image="gif" folder="ASP/Base64EncodeDecode"
+		code="zip" psccode="6268" language="ASP / VBScript" pscworld="4" />
+	<script title="Binary Data Manipulation" description="These two functions allow you to convert between Unicode and Ascii strings. This is great if you are working with the Request.BinaryRead/BinaryWrite methods or binary data within a database."
+		date="7/3/2001 1:54:31 PM" folder="ASP/BinaryDataManipulation" code="zip" psccode="6750"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Bottom Tabs" description="Simulate the tab control found at the bottom of popular programs such as visual Interdev and Front Page."
+		date="3/1/2002 7:44:12 PM" image="gif" folder="ASP/BottomTabs" code="zip"
+		psccode="7288" language="ASP / VBScript" pscworld="4" />
+	<script title="BreadCrumbs Navigation" description="Displays a path to navigate through each subdirectory in the path to your web page. This is called bread crumb navigation. Many sites use this with the words You Are Here. It is suggested that you do not use this type of navigation alone."
+		date="7/8/2002 7:40:28 PM" image="gif" folder="ASP/BreadCrumbsNavigation"
+		code="zip" psccode="7680" language="ASP / VBScript" pscworld="4" />
+	<script title="Calculate Color Fading" description="Shows an example of how to fade from one color to another. This is a bare-bones example to help you get started with calculating a fade across 16 colors."
+		date="7/1/2002 10:59:56 PM" folder="ASP/CalculateColorFading" code="zip" psccode="7653"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Catching Bogus Addresses" description="This article teaches how you can catch bogus email addresses before you register your members on your site. It also demonstrates how you can continue to verify the addresses over a period of time."
+		date="7/25/2001 10:48:04 AM" folder="ASP/CatchingBogusAddresses" code="zip"
+		psccode="6803" language="ASP / VBScript" pscworld="4" />
+	<script title="Client Bandwidth Recorder" description="Measures the bandwidth in kbps (kilobits per second) that the client is viewing your website at. Works with modems, dsl, cable modems, network cards and any other means of connecting to the internet."
+		date="4/12/2001 11:10:52 PM" folder="ASP/ClientBandwidthRecorder" code="zip"
+		psccode="6590" language="ASP / VBScript" pscworld="4" />
+	<script title="Color Palette Scriptlet" description="Allows users to choose a color from a palette simular to Adobe's color palette."
+		date="4/28/2001 5:27:03 PM" image="gif" folder="ASP/ColorPaletteScriptlet"
+		code="zip" psccode="6612" language="ASP / VBScript" pscworld="4" />
+	<script title="Color Picker (Fallout)" description="Allow users to choose colors from familiar interfaces that are standard to the windows operating system. This one displays a wide range of hues in a color spectrum and fades the saturation. An additional scriptlet appears to change the luminance of each color chosen."
+		date="2/28/2002 10:35:56 PM" image="jpg" folder="ASP/ColorPicker(Fallout)"
+		code="zip" psccode="7280" language="ASP / VBScript" pscworld="4" />
+	<script title="Color Picker 2" description="This version of the Color Picker supports just about any browser that uses javascript - Including Netscape 3. The downfall is that you &quot;must&quot; run it with a server that allows ASP. A script is included to create &quot;dynamic&quot; images of various colors. Thus - more bandwidth is used to allow visitors to choose colors. It is still a great asset to anyone who wishes to allow users to pick colors dynamically to affect the sites layout and design instantly."
+		date="4/29/2001 1:00:17 PM" image="gif" folder="ASP/ColorPicker2" code="zip"
+		psccode="6617" language="ASP / VBScript" pscworld="4" />
+	<script title="Color Wheel Picker" description="I was working on a scriptlet to allow users to choose a color. A color wheel is displayed with an assortment of colors - most of witch are web-safe. Clicking on a color causes it to be outlined and raise an event that a color was chosen. This object mimics one of the color-picker forms found in Microsoft Office 2000. This scriplet does not yet raise events or expose properties. The basics, however are available for you to be amazed."
+		date="2/27/2002 11:38:27 PM" image="gif" folder="ASP/ColorWheelPicker" code="zip"
+		psccode="7273" language="ASP / VBScript" pscworld="4" />
+	<script title="Common Database Routines" description="To assist in interfacing with databases. This script can format variables and return SQL formats. Such as double quoting apposterphies and surrounding strings with quotes, Returning NULL for invalid data types, trimming strings so they do not exceed maximum lengths. This also has some functions so that you can open and close databases more conveiently with just one line of code. You can query a database and get an Array as well with some code."
+		date="7/18/2000 1:06:29 PM" folder="ASP/CommonDatabaseRoutines" code="zip"
+		psccode="6270" language="ASP / VBScript" pscworld="4" />
+	<script title="Contrasting Colors" description="Returns a color that is guarenteed to have contrast against the suggested color. Contrast to white is gray, contrast to light blue is dark blue, etc. Demo included."
+		date="6/17/2002 11:15:48 PM" image="gif" folder="ASP/ContrastingColors" code="zip"
+		psccode="7620" language="ASP / VBScript" pscworld="4" />
+	<script title="Convert Bytes" description="This code convert bytes into larger units such as kilobytes, megabytes, gigabytes, and terabytes. I use this with the FileSytemObject so that my users do not see a very large number that doesn't make any sense."
+		date="7/18/2000 10:48:45 AM" folder="ASP/ConvertBytes" code="zip" psccode="6264"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Convert LongIP to StringIP" description="This function converts a Long Number(3232235521) into an IP Address (&quot;192.168.0.1&quot;)."
+		date="7/18/2000 11:01:22 AM" folder="ASP/ConvertLongIPToStringIP" code="zip"
+		psccode="6266" language="ASP / VBScript" pscworld="4" />
+	<script title="Convert StringIP to NumericIP" description="Converts a string ip address (&quot;192.168.0.1&quot;) to a Long number (3232235521). One of the resons to do this would be to store IP addresses in databases. Numbers greatly reduce the size required to store this information."
+		date="7/18/2000 10:55:26 AM" folder="ASP/ConvertStringIPToNumericIP" code="zip"
+		psccode="6265" language="ASP / VBScript" pscworld="4" />
+	<script title="Cookie Debugger" description="Creates a list of all cookies and there crumbs along with the values assigned to each one."
+		date="6/21/2001 2:31:30 PM" folder="ASP/CookieDebugger" code="zip" psccode="6724"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Credit Card Mod 10 Validation" description="Based on ANSI X4.13, the LUHN formula (also known as the modulus 10 -- or mod 10 -- algorithm ) is used to generate and/or validate and verify the accuracy of credit-card numbers."
+		date="7/18/2000 11:14:28 AM" folder="ASP/CreditCardMod10Validation" code="zip"
+		psccode="6267" language="ASP / VBScript" pscworld="4" />
+	<script title="Debug QueryString" description="Just used for debugging querystring data. Creates an orderd list of field names and the values assigned to each one."
+		date="6/21/2001 2:55:50 PM" folder="ASP/DebugQueryString" code="zip" psccode="6726"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Deny Website Copiers" description="Prevents web caching programs from accessing your website. Helps increase performance of your website against these programs that may cause DOS attacks on websites with slow internet connections - such as the upstream of a cable modem."
+		date="7/9/2002 1:29:41 AM" folder="ASP/DenyWebsiteCopiers" code="zip" psccode="7681"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Display Accurate Time from NIST" description="Display accurate time to your visitors! This script requests the UTC time from a server that is syncronized with an atomic clock. It then adjusts the time according to timezone and if daylight savings time is in effect."
+		date="5/4/2002 11:02:45 PM" image="gif" folder="ASP/DisplayAccurateTimeFromNIST"
+		code="zip" psccode="7518" language="ASP / VBScript" pscworld="4" />
+	<script title="DOS Date/Time Functions" description="DOS stores date and time with 4 bytes. 2 for date, 2 for time. These functions convert those bytes to appropriate vbScript date and time values. I used these within my WinZip file viewer scripts because winzip stored dates in this format."
+		date="7/5/2002 11:54:59 PM" folder="ASP/DOSDateTimeFunctions" code="zip" psccode="7671"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Dynamic Curve Images" description="The script is able to dynamically create GIF images. The 4 positions of a curve - Top Right/Left and Bottom Right/Left. It also creates a transparent image if the position isn't defined. The images returned are 16x16 pixels - except for the transparent image that is 1x1. The curves are made by two colors (Background and Foreground) that you specify. The script calculates all colors in between and returns an image that appears Anti-Aliased (no jagged edges). This script was made to help users customize there own colors, yet still be able to use images throughout the site that do not lock specific colors into the scheme. This demonstration shows the dynamic image generation in action. 4 rounded corners are created with aliasing to prevent that &quot;blocky&quot; edge on the corners. Simply enter an HTML color (in hex format) in the form below. If an invalid color is specified, then that color will default to either white (Color1) or Black (Color2)."
+		date="4/29/2001 2:33:00 PM" image="gif" folder="ASP/DynamicCurveImages" code="zip"
+		psccode="6619" language="ASP / VBScript" pscworld="4" />
+	<script title="Dynamic DNS Update IP Parser" description="Has ability to go out on the internet and determine what your current IP address is. Also allows you ability to update namecheap.com with your current IP address. Can be modified to use with other dynamic dns services. Thanks goes to Kenny for letting me know about this cheap DNS host!"
+		date="9/4/2003 1:52:03 PM" folder="ASP/DynamicDNSUpdateIPParser" code="zip"
+		psccode="8529" language="ASP / VBScript" pscworld="4" />
+	<script title="Dynamic Pixel Image" description="Allows you to create 1x1 images of any color including transparent images. (Images can be streatched by defining height and width in image tag)"
+		date="4/29/2001 11:23:59 AM" image="gif" folder="ASP/DynamicPixelImage" code="zip"
+		psccode="6616" language="ASP / VBScript" pscworld="4" />
+	<script title="Dynamic Stylesheet Interaction" description="Interact with stylesheets to dynamically change properties."
+		date="9/2/2002 12:46:59 PM" image="gif" folder="ASP/DynamicStylesheetInteraction"
+		code="zip" psccode="7798" language="ASP / VBScript" pscworld="4" />
+	<script title="encrypt4.asp" description="Encrypts text using the enigma algotithm used in World War II. This security is easily breakable, but people seem to be using this. The next step is XOR encryption - which is also easily breakable. Use this only to get an idea behind how security algorithms have evolved over time and identify its weakenesses. This code is an improvement in clarity and support of characters such as NULLs to encrypt2.asp by Barry Beatti - http://www.planet-source-code.com/vb/scripts/ShowCode.asp?lngWId=4&amp;txtCodeId=7211"
+		date="8/2/2002 10:39:53 AM" folder="ASP/encrypt4" code="zip" psccode="7729"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Expose Your Content" description="Expose your content through external javascript source files."
+		date="3/4/2002 1:39:30 PM" image="gif" folder="ASP/ExposeYourContent" code="zip"
+		psccode="7296" language="ASP / VBScript" pscworld="4" />
+	<script title="File/Path/Extension Stripping" description="These routines can strip a file name from a path, a directory from a path, and an extension from a path. They can also determine the parent directory path. They are fairly simple routines that I use in misc. places."
+		date="7/21/2000 12:23:39 PM" folder="ASP/FilePathExtensionStripping" code="zip"
+		psccode="6286" language="ASP / VBScript" pscworld="4" />
+	<script title="Find Available File Name" description="When a user uploads a file, this function looks for duplicate file names. It incriments the file until an available name is provided and returns that name."
+		date="8/6/2001 12:42:36 AM" folder="ASP/FindAvailableFileName" code="zip" psccode="6828"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Folder Interface" description="Give your users a nice clean interface to navigate, choose, and create new folders."
+		date="3/16/2002 2:27:14 PM" image="gif" folder="ASP/FolderInterface" code="zip"
+		psccode="7343" language="ASP / VBScript" pscworld="4" />
+	<script title="Forced Download" description="Forces users to have choice of downloading a binary file. This was becomming a problem with Word documents - as they would either open within the browser or open externally. You may need to change the FileName variable."
+		date="3/18/2002 10:14:53 PM" folder="ASP/ForcedDownload" code="zip" psccode="7351"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Forced Download 2" description="Allows you to force a file to be downloaded rather then displayed within the users browser. This can be used with Word documents, Excel Spreadsheets, Adobe PDF's, and other files. Script has been optimized to support large downloads and be dynamically called to download any file (except ASP, ASPX, ASA, ASAX, MDB files). Also clears up some problems with currupt files users had been having by clearing all previouse content and headers."
+		date="9/4/2003 11:07:34 AM" folder="ASP/ForcedDownload2" code="zip" psccode="8528"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Form Data Debugger" description="Reads posted form data and returns an HTML formatted display of field names and the values assigned to them."
+		date="6/21/2001 2:45:43 PM" folder="ASP/FormDataDebugger" code="zip" psccode="6725"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Format string for Java" description="formats a regular string to javascript. i.e. - changes ticks (') to proceed with a back slash (\')."
+		date="7/3/2001 10:51:35 AM" folder="ASP/FormatStringForJava" code="zip" psccode="6749"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Get In Frames" description="Search engines point users to individual web pages. If the page is supposed to be displayed within a set of frames, this code will redirect the users to a specific page using javascript. From there, the new page parses which page it should display and loads up the frames accordingly."
+		date="7/21/2000 1:59:41 PM" folder="ASP/GetInFrames" code="zip" psccode="6287"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="Gibberish Encoding" description="Quick way to learn how to speak gibberish. It is sometimes known as &quot;girl-speak&quot;."
+		date="3/13/2002 9:37:00 PM" image="gif" folder="ASP/GibberishEncoding" code="zip"
+		psccode="7337" language="ASP / VBScript" pscworld="4" />
+	<script title="Helpful Checkbox Functions" description="Ok, I'm uploading something that is very simple this time - but this is one of the most used things that I have. These little functions help me make code smaller and change the wording to users viewing the text next to a check box. I find that if you change the words based on what the user has chosen, it feels a little more comfortable to them."
+		date="5/5/2001 2:27:46 PM" image="gif" folder="ASP/HelpfulCheckboxFunctions"
+		code="zip" psccode="6638" language="ASP / VBScript" pscworld="4" />
+	<script title="Hex Viewer" description="Allows you to view the binary data of any file (GIF, JPG, ZIP, TXT, HTM, ASP) as if you were looking at a common hex viewer. Bytes are displayed as Hex characters and character data is displayed on the right. Starting positions of each row are displayed on the left."
+		date="4/30/2001 10:07:08 PM" image="gif" folder="ASP/HexViewer" code="zip"
+		psccode="6622" language="ASP / VBScript" pscworld="4" />
+	<script title="Hex/String Conversion" description="These functions allow you to easily convert a string to its hex value and back again."
+		date="7/25/2001 10:50:32 AM" folder="ASP/HexStringConversion" code="zip" psccode="6804"
+		language="ASP / VBScript" pscworld="4" />
+	<script title="How to destroy a Shopping Cart" description="I often get questions on how to deal with shopping cart data stored within the database that is no longer needed after the user has logged off. The answer is simple and deals with some database calls in the Global.ASA."
+		date="5/4/2001 10:31:03 AM" folder="ASP/HowToDestroyAShoppingCart" code="zip"
+		psccode="6632" language="ASP / VBScript" pscworld="4" />
+	<script title="How to make Dynamic GIF Color Palettes" description="In this article, I will walk you through the entire process on how to property create the GIF images, and then transfer them to my custom template file format. From there, an ASP page can read these templates, generate a color palette, and return a GIF image to the browser."
+		date="4/30/2001 12:13:34 PM" image="gif" folder="ASP/HowToMakeDynamicGIFColorPalettes"
+		code="zip" psccode="6621" language="ASP / VBScript" pscworld="4" />
+	<script title="HTML2Word" description="Convert HTML web pages into Word documents. This is great for creating word documents on the fly. Can be used to email documents after finnished converting. This code is in various places on the web. I'm supprised I didn't find it on PSC. This is my own version for you to modify as you wish. Larger files take longer to process. My waiting period is not good! System resources will be pegged. Seems to have problems with Website URLs, but files on the same server don't give me as many problems."
+		date="1/30/2002 4:44:40 PM" folder="ASP/HTML2Word" code="zip" psccode="7179"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="HTMLDecode" description="This function decodes HTML Encoded strings. I found that when some browsers post data, it converts double-byte characters to html encoded characters. This script searches for all numerical entities as well as a few popular named entities. You will need to tell the server and the web browser that you are working with Unicode characters. The code has been included for working with the UTF-7 character set. Enjoy!"
+		date="8/6/2001 11:31:07 AM" folder="ASP/HTMLDecode" code="zip" psccode="6829"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="IIS Authentication" description="Requests users to login to website with NT Account."
+		date="3/21/2002 11:46:28 AM" folder="ASP/IISAuthentication" code="zip" psccode="7365"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Image Directory Listing" description="Lists thumbnail images within the current directory. Very simple beginner stuff dealing with file scripting object. Handy for viewing your images quickly. Just copy the code and paste it a file called default.asp. Then view the directory on your website."
+		date="5/6/2002 1:49:37 PM" folder="ASP/ImageDirectoryListing" code="zip" psccode="7522"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Image Drop" description="This script allows you to specify an image to fall down the entire height of the web browser. Images drop at random speeds. The number of images dropping may be specified as well. This particular script demonstrates how to drop an image related to the current month. This gives off an interesting effect."
+		date="7/6/2002 11:28:59 AM" image="gif" folder="ASP/ImageDrop" code="zip"
+		psccode="7673" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Input Date" description="This small snippet will generate 3 drop down boxes that will allow your users to choose a date."
+		date="7/18/2000 10:42:49 AM" image="gif" folder="ASP/InputDate" code="zip"
+		psccode="6263" language="ASP / VBScript" pscworld="4"></script>
+	<script title="IsPrime" description="Checks to see if a number is a primary number. Prime numbers are commonly found in encryption schemes that use Public/Private keys."
+		date="5/9/2001 10:23:41 AM" folder="ASP/IsPrime" code="zip" psccode="6653"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Lewie's Image Gallery" description="Upload, Manage, and Display images within your own personal art gallery. This Image Bank was made for my girl friend so that she could easily add the images and change them on her own. It also offers categories. To administrate, goto admin.asp and type Administrator/Password to login. User accounts can be added and changed in the administration section. You can delete user accounts as long as 1 account will still remain. Images upload without COM."
+		date="6/22/2001 2:44:41 AM" image="gif" folder="ASP/LewiesImageGallery" code="zip"
+		psccode="6727" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Lewies Coding Standards" description="Peer into the brains of a professional programmer to learn how to become a better coder and more easily maintain your code for management and easily allow others to understand."
+		date="6/7/2001 12:17:50 PM" folder="ASP/LewiesCodingStandards" code="zip" psccode="6706"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Lewies URLDecode" description="Xao Xiong originally posted his version of DecodeURL and asked for a reply for a better way. I replied, but it didn't turn out too well, so i'm posting it here for him to see. The approach i took is that when you look at an encoded URL string, 2 hex characters follow a percent sign. XAO listed a few to translate into actual characters, but he didn't account for all 256 of them. Check it out! See http://www.planetsourcecode.com/xq/ASP/ txtCodeId.6728/lngWId.4/qx/vb/scripts/ ShowCode.htm"
+		date="6/22/2001 5:33:47 PM" folder="ASP/LewiesURLDecode" code="zip" psccode="6729"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Link URLs" description="Finds any URL found within specified text and creates a hyper link for http, https, ftp, and email addresses."
+		date="8/4/2000 12:06:32 PM" folder="ASP/LinkURLs" code="zip" psccode="6298"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="LoginNow" description="Attempts to log a user into the web site through either cookies or posted form data by validating UserName and password against a database. Redirects users to originally requested pages. Saves/Refreshes/Deletes login data into cookies if requested by user."
+		date="1/12/2001 4:32:52 PM" folder="ASP/LoginNow" code="zip" psccode="6446"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Membership Server v1.0" description="Allows remote login validation of members against a centralized membership service via. ASP. (Simular to MS Passport)"
+		date="6/20/2001 11:02:43 AM" folder="ASP/MembershipServerv1.0" code="zip" psccode="6723"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Novell ASP Login" description="This login code validates users against a novell server and gives the look and feel of a Novell Client login screen."
+		date="7/28/2000 11:11:07 AM" image="gif" folder="ASP/NovellASPLogin" code="zip"
+		psccode="6290" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Oppisite Colour2 (HEX)" description="Grab the opposite 6 character HEX color. This sums up David Weirs Color invert script with just one line of code. See his original code at http://www.pscode.com/vb/scripts/showcode.asp?txtCodeId=7176 Be careful when comming close to middle gray scale (808080). opposites are same."
+		date="3/19/2002 12:15:50 PM" folder="ASP/OppisiteColour2(HEX)" code="zip" psccode="7356"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Parse Hex value of visitors System Colors" description="Parses the hex value of users system colors. Great for creating dynamic images on the fly to blend with the users operating system."
+		date="8/13/2002 11:19:40 AM" image="jpg" folder="ASP/ParseHexValueOfVisitorsSystemColors"
+		code="zip" psccode="7756" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Parse Metadata from URLs" description="This class demonstrates how you can request the HTML of a URL from another website using the XMLHTTP object to spider the web page. (Simular to the methods of the ASPHttp object). The data is parsed and made available through a class object. This code is great if you are thinking about creating a Search Engine - or you just want to verify that URLs exist that users may place in there profiles. Also handy for finding broken links. If your server has IE5, or XML objects from Microsoft installed on it, then you should be able to use this demonstration without any problems."
+		date="5/4/2001 2:09:54 PM" image="gif" folder="ASP/ParseMetadataFromURLs"
+		code="zip" psccode="6635" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Phone Number Conversion" description="This class is used to interpret phone numbers to and from a database in a specific format. The format is 25 characters long and is explaied withing the script."
+		date="2/9/2001 12:53:26 PM" folder="ASP/PhoneNumberConversion" code="zip" psccode="6490"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Random Pronouncable Password" description="Create a random password that is pronouncable. This helps users remember the password easier and can come up with some silly words."
+		date="5/14/2002 10:39:56 PM" image="gif" folder="ASP/RandomPronouncablePassword"
+		code="zip" psccode="7544" language="ASP / VBScript" pscworld="4"></script>
+	<script title="RC4 Class" description="Applys Encryption/Decryption to strings. I think just about everyone who has seen my code knows how I love classes. This version is more &quot;cleaned up&quot; and thrown into a nice little class for an object oriented feeling. (If only ASP was object oriented, I would be a happy camper). It is also a little more optimized to run quicker if you change the Key/Password often."
+		date="5/8/2001 9:52:48 AM" image="gif" folder="ASP/RC4Class" code="zip"
+		psccode="6649" language="ASP / VBScript" pscworld="4"></script>
+	<script title="RC4 Encryption/Decryption" description="Encrypts and Decrypts data using the RC4 algorithm and a Key/Password. Many thanks goes to many, many people on PSC and the internet for helping me through this. Sebastions code over at the Visual Basic section was a good start. This code runs quick in one function and is slightly commented. note - RSA patent expired in September 2000."
+		date="5/8/2001 2:01:12 AM" image="gif" folder="ASP/RC4EncryptionDecryption"
+		code="zip" psccode="6646" language="ASP / VBScript" pscworld="4"></script>
+	<script title="RCA Encryption Class" description="RCA is used for most standard public key/private key encryption techniques. Due to its burden on resources, RCA is generally used to encrypt random session keys wich are then used to encode messages with RC4. RCA also brings digital certificates into the picture. This, and many other &quot;public&quot; algorithms using RC4 do not truly make the message secure. Encryption is performed in 8 bit blocks - or 1 byte. Typing &quot;AAAAAA&quot;, you will see a pattern begin for form with the encrypted data. If someone were to look at the results from encrypting each letter of the alphabet, your data would be compromized. Also, the public/private keys are limited between a range of 1 and about 65000. This is primarily a starting point if you want to enable a more secure encryption scheme, or you just want to learn more about it."
+		date="5/9/2001 5:33:51 PM" image="gif" folder="ASP/RCAEncryptionClass" code="zip"
+		psccode="6654" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Read GIF Dimensions" description="Reads the Width and the Height of a GIF image. Really nice to have if you need to limit your users with specific image dimensions for profile images, banners, buttons, etc."
+		date="4/29/2001 4:37:45 PM" image="gif" folder="ASP/ReadGIFDimensions" code="zip"
+		psccode="6620" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Read Image Dimensions" description="Allows you to read the width and height for GIF, JPEG (JPG/JFIF), Bitmap(BMP), and PNG files. You can upload a file or load a binary file from the server in the demonstration. This is great when you allow users to Upload files and need to ensure that they fit within a specific set of boundries (ie - uploading banners). Update - Now supports AVI, MOV, MPG/MPEG, and SWF with support from my brother Lucas Moten. JPEG files have also been fixed to read correctly."
+		date="5/2/2001 2:16:32 PM" image="gif" folder="ASP/ReadImageDimensions" code="zip"
+		psccode="6629" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Remote File Explorer" description="This script allows you to browse the file system on a remote computer through your web browser."
+		date="7/19/2000 12:09:01 PM" image="gif" folder="ASP/RemoteFileExplorer"
+		code="zip" psccode="6273" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Report Navigation" description="Gives you an interface to navigate reports by year, quarter, month, week, or day. This is just the navigation alone that I append to the top of different reports."
+		date="7/9/2002 1:59:31 AM" image="gif" folder="ASP/ReportNavigation" code="zip"
+		psccode="7682" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Scripting.Decoder for Microsoft Encoding" description="This code lets you decode your scripts. It comes in handy if you deleted the original file or wrote over it with the encoded version. Microsoft included a program to encode, but choose not to let us decode with a scrdec program. More details can be found on my site about this script including a live demonstration. Please leave comments here if you wish to inquire about it."
+		date="3/11/2001 5:15:43 PM" folder="ASP/Scripting.DecoderForMicrosoftEncoding" code="zip"
+		psccode="6532" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Server Timezone Offset" description="Returns the hour difference of the servers time from GMT."
+		date="8/26/2000 3:25:17 PM" folder="ASP/ServerTimezoneOffset" code="zip" psccode="6314"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="SHA-1 Hash Algorithm" description="for computing a condensed representation of a message or a data file."
+		date="3/22/2001 12:20:44 PM" folder="ASP/SHA-1HashAlgorithm" code="zip" psccode="6545"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Site Post Check" description="Checks the HTTP Referer header to ensure people are not posting from other websites. You can include this file if you use templates on your website, or just include it on the pages that receive form data posts. Warning - someone who knows there stuff can get around this by modifying there HOST file. this isn't 100% fool proof, but it may deter most from posting data from other websites."
+		date="2/14/2002 10:58:19 PM" folder="ASP/SitePostCheck" code="zip" psccode="7222"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Small Pagination Navigation" description="I've coded many dynamic pages that needed the support of displaying data accross multiple pages. Whith this script, it will build a small navigation that you can display at the top and/or bottom of your results to navigate to the next page. It also supports the ability to only display pages within a specified range. (ie - if you have 1000 pages, it will only write links to 5 of the pages closest to the current page being viewed.)"
+		date="5/6/2001 4:02:44 PM" image="gif" folder="ASP/SmallPaginationNavigation"
+		code="zip" psccode="6641" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Sorted Record Listing with Search" description="This script displays records retrieved from the database. You can sort each field and jump to any page in the database. You can customize the records per page and all the colors. You may also attatch a style sheet to change the colors of each class type. this script is very close to being XML compatable. (still in the works)."
+		date="8/1/2000 2:56:15 PM" image="gif" folder="ASP/SortedRecordListingWithSearch"
+		code="zip" psccode="6294" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Sorted Record Listing with Search v2.0" description="After getting great reviews on the previous version, I finally got time to do the rewrite that I promised everyone. This code allows you to easily create lists of your data with pagination, sorting, and filtering. The end result is a very nice layout of your data. You choose which fields come back (an the captions for each one in the header). Choose which fields are searched. Setup the default field that is sorted when visitor first views page. Now supports databases with list ordering. This time I have included a database so it should work as soon as you add the files to your website."
+		date="1/21/2001 1:44:57 PM" image="gif" folder="ASP/SortedRecordListingWithSearchV2.0"
+		code="zip" psccode="6457" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Spinner Scriptlet" description="Simulates the spinner control found in visual basic on a web page. Author comments included."
+		date="3/2/2002 11:21:58 PM" image="gif" folder="ASP/SpinnerScriptlet" code="zip"
+		psccode="7292" language="ASP / VBScript" pscworld="4"></script>
+	<script title="StrConv Unicode/Ascii" description="Converts between unicode and ANSI using ADODB Streams and recordsets. I was pressing myself to the limit to find a faster way to convert strings back and forth between unicode and ANSI during file uploads. This version goes the distance and has great speed."
+		date="9/4/2003 11:26:21 PM" folder="ASP/StrConvUnicodeAscii" code="zip" psccode="8531"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Strip HTML" description="Strips any HTML tags from a string and returns the results. I use this for data that users submit through forms to prevent them from using HTML."
+		date="7/18/2000 11:30:58 AM" folder="ASP/StripHTML" code="zip" psccode="6269"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Switchbox Scriptlet" description="Add / Remove / Manage position of items on a list. This scriplet demonstrates how you can allow your users to pick up to 5 flavors of there best ice cream."
+		date="7/6/2002 11:45:57 AM" image="gif" folder="ASP/SwitchboxScriptlet" code="zip"
+		psccode="7674" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Table Data Export" description="Exports data from a database int Transact-SQL Batch files. Used primarily for exporting data from an access database to an SQL Server."
+		date="6/6/2001 3:39:36 PM" folder="ASP/TableDataExport" code="zip" psccode="6705"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Total Email Validation" description="Validates email addresses. Makes sure the email addresses with IP addresses are not private network addresses. Allows multiple sub-domain levels. verifies characters within domain names. only allows standard length 26 characters for each domain name level, except the top (3 max)"
+		date="7/21/2000 10:35:08 AM" image="gif" folder="ASP/TotalEmailValidation"
+		code="zip" psccode="6280" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Universal Email Interface" description="Lays down a universal interface to sending email. Easier to port to other servers that use different COM objects to send email. Even exposes a list of ProgID's that are installed on the server. (This is the beginnig. But I am sure you can see where the benefit of this code is going)"
+		date="3/20/2002 7:54:42 PM" folder="ASP/UniversalEmailInterface" code="zip"
+		psccode="7363" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Unlimited Alternating Colors" description="Demonstrates how to have alternating colors. Most people usually need just two alternating colors, but this method supports a larger list. Both a fixed loop and a conditional loop are provided as examples."
+		date="7/13/2001 9:54:32 AM" image="jpg" folder="ASP/UnlimitedAlternatingColors"
+		code="zip" psccode="6770" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Upload Files Without COM" description="Allows you to upload multiple files and fields without purchasing or registering COM objects. Great for shared hosts that frown upon 3rd Party com objects or charge an arm and a leg for them. This version uses Classes rather then the dictionary object that I have seem most other people use. Dictionary Objects seem to be flakey with more problems. I have added examples of how to upload a file to a database and the file system. A file is also included that retreives the file from the database."
+		date="1/13/2001 4:56:05 PM" image="gif" folder="ASP/UploadFilesWithoutCOM"
+		code="zip" psccode="6447" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Upload Files Without COM v2" description="No need to purchase expensive components. You can do it all with what you already got. This version is an update for faster speed and reliability. Bugs have been fixed, and the entire code has been commented to walk you through the process."
+		date="3/20/2002 11:50:28 AM" image="gif" folder="ASP/UploadFilesWithoutCOMv2"
+		code="zip" psccode="7361" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Upload Files Without COM v3" description="Allows you to upload multiple files and fields without purchasing or registering COM objects. Great for shared hosts that frown upon 3rd Party com objects or charge an arm and a leg for them. This script provides an object oriented interface using classes for easier development. The power that this script has over others is that it does not use dictionary objects to store the uploaded files. It also harnesses the power of ADODB to prepare and save binary data to the file system with quick speeds. This is the script that you have been looking for. You can get a really good feel for how the script is used just by reading through the FAQ and examples provided. This script has been tailored to meet the requests of developers who have used previouse versions. The code is comented very well and comes along with examples of how to do common operations, as well as a FAQ. Bugs from version 2 have been fixed, or otherwise throw exceptions to the user giving them details of how to correct the problem (such as giving permission to the internet user account). Memory is managed more efficiently in version 3 that allows for more scaleablity and larger files. By the request of a few developers, progress bars are now supported to notify the user how much information has been received by the server. A website for support has also been created where you can get help from the author, other users of the script, and get any recent revisions or additional examples as they become available."
+		date="9/1/2003 11:19:59 PM" image="gif" folder="ASP/UploadFilesWithoutCOMv3"
+		code="zip" psccode="8525" language="ASP / VBScript" pscworld="4"></script>
+	<script title="vbScript ColorCoder v2.0" description="This script colorizes your vbScript for display on web pages. All colors can be managed through a style sheet. It seems that those who knew about the results of this version (from browsing my website) always kept asking me for the code and my old version that I refered them to was out-dated and didn't come close enough to there expectations. So peeps - I give to you my most proud and recent version of the color coder."
+		date="5/8/2001 12:24:56 PM" image="gif" folder="ASP/vbScriptColorCoderV2.0"
+		code="zip" psccode="6650" language="ASP / VBScript" pscworld="4"></script>
+	<script title="vbScript ColorCoder v3.0" description="Upgraded by popular demand for its third generation. Converts vbScript to HTML and colorizes it just like Visual Basic and InterDev. This version has more keywords, runs amazingly faster, and has been packaged into a class. This light weight component was made possible through the use of regular expressions. It returns HTML that is friendly to older browsers with limited use of style. Also offers ability to load a vbScript from the file system into memory. Enjoy!"
+		date="8/9/2002 9:28:33 PM" image="gif" folder="ASP/vbScriptColorCoderV3.0"
+		code="zip" psccode="7751" language="ASP / VBScript" pscworld="4"></script>
+	<script title="vbScript to HTML Color Coder" description="Converts vbScript to HTML to show your code on web pages. Also provides features so that clicking on keywords will create a small pop-up window explaining some details about that keyword and provide a link with more details."
+		date="7/23/2000 12:27:13 PM" folder="ASP/vbScriptToHTMLColorCoder" code="zip"
+		psccode="6288" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Web Navigation Scriptlet" description="Navigate through a website within a small area of the screen."
+		date="7/6/2002 12:05:19 PM" image="gif" folder="ASP/WebNavigationScriptlet"
+		code="zip" psccode="7675" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Whois Lookup" description="Shows how you can do a WhoIs lookup using a COM object capable of using winsock."
+		date="2/18/2001 1:40:49 PM" folder="ASP/WhoisLookup" code="zip" psccode="6499"
+		language="ASP / VBScript" pscworld="4"></script>
+	<script title="Whois Lookup with XMLHTTP" description="Queries a WhoIs server for for domain information. Useful for people who want to sell domain names. This version uses the XMLHTTP component that is installed on most servers, so there is no additional need to install any extra COM objects."
+		date="5/9/2001 7:18:18 PM" image="gif" folder="ASP/WhoisLookupWithXMLHTTP"
+		code="zip" psccode="6655" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Zip File Viewer" description="Display a list of files within a zip files archive along with the compressed/uncompressed size, ratio, path, etc. Always wanted to do this, but usually found code refering to winzip or some api calls. This is strait ASP. Performance is not at its best - this is a working concept. You can see the results in action on my website (www.lewismoten.com)"
+		date="7/5/2002 11:40:32 PM" image="gif" folder="ASP/ZipFileViewer" code="zip"
+		psccode="7670" language="ASP / VBScript" pscworld="4"></script>
+	<script title="Convert 16Bit to 32Bit Color" description="Converts a 16 bit color to a 32 bit color - but actually just takes up 3 bytes (24Bit)"
+		date="1/13/2001 5:01:11 PM" folder="C/Convert16Bitto32BitColor" code="zip"
+		psccode="1094" language="C / C++" pscworld="3"></script>
+	<script title="Center Popup Windows" description="Center popup windows in the middle of your browser."
+		date="2/6/2002 10:50:09 AM" folder="JavaScript/CenterPopupWindows" code="zip"
+		psccode="2634" language="JavaScript" pscworld="2"></script>
+	<script title="Cross Browser XmlHelper" description="Allows you to easily load xml files in MSIE, Netscape, and Mozilla. Read nodes with xpath, select attribute values and text - all with the same interfaces."
+		date="6/15/2004 11:54:54 PM" image="jpg" folder="JavaScript/CrossBrowserXmlHelper"
+		code="zip" psccode="4263" language="JavaScript" pscworld="2"></script>
+	<script title="Decimal to Hex" description="Converts a decimal number to a Hex String (i.e. 255 = 'FF')"
+		date="4/29/2001 7:29:50 AM" folder="JavaScript/DecimalToHex" code="zip" psccode="2163"
+		language="JavaScript" pscworld="2"></script>
+	<script title="Hide Basic Authentication with HMTL Forms" description="I figured out how to let my users login with a form rather then using the built in dialog for basic authentication. Only problem is, if they get the username/password wrong, then they will still get that built in dialog. Code has been attatched for anyone who could use it. Very much a barebones demonstration. Works with any form of Basic Authentication (IIS / AuthentiX). Doesn't depend on any specific form of Scripting language on the server. works with cold fusion, perl, asp, etc. Tested with Netscape 3.04, 5, and Internet Explorer 5.5"
+		date="2/17/2001 12:09:30 AM" folder="JavaScript/HideBasicAuthenticationWithHMTLForms"
+		code="zip" psccode="2109" language="JavaScript" pscworld="2"></script>
+	<script title="inverse color" description="returns inverse color of hex string passed to it. If you pass white, it will pass black back to you. If you pass red, it passes cyan back."
+		date="8/31/2003 12:19:28 AM" folder="JavaScript/InverseColor" code="zip" psccode="3866"
+		language="JavaScript" pscworld="2"></script>
+	<script title="Lewies Color Picker" description="Let your users choose a color through a rich user interface. This color picker looks simular to Adobe Photoshop."
+		date="5/16/2004 12:04:43 PM" image="jpg" folder="JavaScript/LewiesColorPicker"
+		code="zip" psccode="4220" language="JavaScript" pscworld="2"></script>
+	<script title="Make Absolute URL" description="Converts a relevent url to an absolute URL. login.asp would become http://www.yourdomain.com/your/directory/structure/login.asp"
+		date="2/17/2001 2:48:32 PM" folder="JavaScript/MakeAbsoluteURL" code="zip"
+		psccode="2110" language="JavaScript" pscworld="2"></script>
+	<script title="Mouse Looker" description="Take 9 pictures of yourself looking in 9 directions and assemble them to look at the users mouse depending on its location relative to your image. My wife thinks it's funny because she asks for money and drags the mouse above and below the image a few times so that I nod &quot;yes&quot;."
+		date="6/5/2004 2:19:13 AM" image="gif" folder="JavaScript/MouseLooker" code="zip"
+		psccode="4248" language="JavaScript" pscworld="2"></script>
+	<script title="Password Security" description="Parses the password field and comes back with a percentage of how secure your password is against a hack attempt."
+		date="6/29/2002 5:00:50 PM" image="gif" folder="JavaScript/PasswordSecurity"
+		code="zip" psccode="3008" language="JavaScript" pscworld="2"></script>
+	<script title="Random Pronouncable Password" description="Allows client browser to randomly create a pronouncable password. This can be used to suggest a password to the user that is easy to remember."
+		date="4/28/2002 5:50:02 PM" image="gif" folder="JavaScript/RandomPronouncablePassword"
+		code="zip" psccode="2845" language="JavaScript" pscworld="2"></script>
+	<script title="Request_Cookies" description="Gives ASP programmers a familliar interface to request cookies. document.write(Request.Cookies(&quot;UserName&quot;))"
+		date="5/4/2002 3:54:54 PM" folder="JavaScript/Request_Cookies" code="zip" psccode="2859"
+		language="JavaScript" pscworld="2"></script>
+	<script title="Request_QueryString" description="Allows browser to read querystring variables through javascript."
+		date="4/21/2002 1:16:40 PM" folder="JavaScript/Request_QueryString" code="zip"
+		psccode="2822" language="JavaScript" pscworld="2"></script>
+	<script title="Secure Hash Algorithm (SHA-1)" description="The function generates a 160-bit (40-hex-digits representing 20 bytes) message digest for a given message (String) of any length. The digest is unique to the message. It is not possible to recover the message from the digest. The only way to find the source message for a digest is by the brute force hashing of all possible messages and comparison of their digests."
+		date="4/13/2001 8:32:40 PM" folder="JavaScript/SecureHashAlgorithm(SHA-1)" code="zip"
+		psccode="2156" language="JavaScript" pscworld="2"></script>
+	<script title="Batch Change Object Owner" description="demonstrates how to use a cursor to change all db objects to DBO as the owner."
+		date="2/14/2002 10:50:47 PM" folder="SQL/BatchChangeObjectOwner" code="zip"
+		psccode="406" language="SQL" pscworld="5"></script>
+	<script title="Count Matches" description="Allows you to count how many times a string appears within another string. example - count carriage returns within text. Handles up to 8K characters. Tricks can get around 8K limit for large text fields."
+		date="2/22/2002 1:31:50 PM" folder="SQL/CountMatches" code="zip" psccode="415"
+		language="SQL" pscworld="5"></script>
+	<script title="Creating Grids" description="Explains how to create grids and walks through the process of optimizing the query for speed. Grid table is populated with rows containing columns of X and Y."
+		date="6/15/2002 10:25:39 AM" image="gif" folder="SQL/CreatingGrids" code="zip"
+		psccode="487" language="SQL" pscworld="5"></script>
+	<script title="Find and remove Dupes" description="Find and remove duplicate values within a table."
+		date="2/8/2002 11:39:32 AM" folder="SQL/FindAndRemoveDupes" code="zip" psccode="404"
+		language="SQL" pscworld="5"></script>
+	<script title="First day of month" description="Pass a date to the function and it will return the first day of the month. Example - print dbo.firstday('9/2/2002 3:57:31 PM') will print 'Sep 1 2002 12:00 AM'"
+		date="3/14/2002 3:43:33 PM" folder="SQL/FirstDayOfMonth" code="zip" psccode="431"
+		language="SQL" pscworld="5"></script>
+	<script title="FormatDate" description="Dynamically convert a date to a user-defined format."
+		date="5/22/2002 4:35:10 PM" image="gif" folder="SQL/FormatDate" code="zip"
+		psccode="474" language="SQL" pscworld="5"></script>
+	<script title="Grant Public Execute Rites" description="Grants execute rites on all stored procedures to the public. can be modified to grant to other users."
+		date="2/14/2002 10:52:16 PM" folder="SQL/GrantPublicExecuteRites" code="zip"
+		psccode="407" language="SQL" pscworld="5"></script>
+	<script title="GrantUserExecuteAll" description="Allows you to specify a username and grant access to execute all SQL stored procedures within the current database. Very useful for developers that create databases with one account, but have programs accessing them through a seperate user account. This is an update to an old piece of code I had on PSC that limited to the public account."
+		date="11/8/2002 1:10:38 " folder="SQL/GrantUserExecuteAll" code="zip" psccode="588"
+		language="SQL" pscworld="5"></script>
+	<script title="Int2GUID" description="Datatype conversion to change integers to unique identifier datatypes. This method is most useful when upgrading database schemas from using integers to using guids. You will still be able to &quot;read&quot; values by eye to match old Integers with the new GUIDs."
+		date="5/24/2002 6:08:45 PM" image="gif" folder="SQL/Int2GUID" code="zip"
+		psccode="475" language="SQL" pscworld="5"></script>
+	<script title="IsAlphaNumeric" description="Validates if the string provided contains only letters and numbers."
+		date="6/22/2002 11:33:02 AM" folder="SQL/IsAlphaNumeric" code="zip" psccode="494"
+		language="SQL" pscworld="5"></script>
+	<script title="Last Day of month" description="Returns last day, hour, minute, second of date passed to it. Example - print dbo.lastday('9/2/2002 3:57:31 PM') would return 'Sep 30 2002 11:59PM'. This function depends on dbo.FirstDay() located on PSC under First day of month"
+		date="3/14/2002 3:48:45 PM" folder="SQL/LastDayOfMonth" code="zip" psccode="432"
+		language="SQL" pscworld="5"></script>
+	<script title="Log Record Changes" description="Make a copy of records within a table each time it is updated or a new record is created. This is very basic stuff. I'll be working on an update to handle primary keys and such."
+		date="5/14/2002 4:28:15 PM" folder="SQL/LogRecordChanges" code="zip" psccode="470"
+		language="SQL" pscworld="5"></script>
+	<script title="Month Range Table" description="Build a table and populate it with dates between a specified range. I often use this method to create a set of months available, then use a left outer join to add any existing data within an actual table."
+		date="3/14/2002 3:55:00 PM" folder="SQL/MonthRangeTable" code="zip" psccode="433"
+		language="SQL" pscworld="5"></script>
+	<script title="Month/Year function" description="Returns a date formated as &quot;Mmm YYYY&quot; (Ex. Oct 2002). Not anything ground breaking ..."
+		date="3/14/2002 3:32:02 PM" folder="SQL/MonthYearFunction" code="zip" psccode="430"
+		language="SQL" pscworld="5"></script>
+	<script title="Newbie Line Seperators" description="Simple way to insert a carriage return + line feed into a string. Really beginner stuff ... I keep forgetting sometimes. Rather spend time looking it up in the docs or old code, I'm putting it here to access it quicker. Hopefully someone else may also find it helpful."
+		date="4/1/2002 2:52:30 PM" folder="SQL/NewbieLineSeperators" code="zip" psccode="436"
+		language="SQL" pscworld="5"></script>
+	<script title="Num2Guid Conversion Function" description="Article describing how to convert a decimal to a guid format. Also goes into detail explaining how to convert to other base-N numbers such as a bitmask/binary, octet, trinary, hex, and more. Introduces the benefit of functions with a real-case scenario."
+		date="5/24/2002 7:23:12 PM" image="gif" folder="SQL/Num2GuidConversionFunction"
+		code="zip" psccode="476" language="SQL" pscworld="5"></script>
+	<script title="OutlineSort '3.2.10.2'" description="This function pads each number found within each decimal to allow sorting on outline numbers. Fixes problems where 2 comes after 10 in string sorts. An example of how this function is used would appear like this: SELECT OutlineNumber FROM Outline ORDER BY dbo.OutlineSort(OutlineNumber)"
+		date="12/3/2002 4:03:40 PM" folder="SQL/OutlineSort" code="zip" psccode="605"
+		language="SQL" pscworld="5"></script>
+	<script title="Random Pronouncable Password" description="Procedure made in order to create a random password that is somewhat pronouncable and easy to remember."
+		date="7/7/2001 1:49:34 PM" image="gif" folder="SQL/RandomPronouncablePassword"
+		code="zip" psccode="320" language="SQL" pscworld="5"></script>
+	<script title="sp_Base64EncodeStr" description="This procedure demonstrates how to instantiate an OLE object. I have used an ActiveX dll called AspConv™ (provided in AspLib™) to encode text with Base64 encoding in this example. The object must be registered on THE DATABASE SERVER (not to be confused with the web server/client/ or application server)"
+		date="12/2/2000 6:32:41 PM" folder="SQL/sp_Base64EncodeStr" code="zip" psccode="251"
+		language="SQL" pscworld="5"></script>
+	<script title="sp_ZipCode_Distance" description="This code looks up 2 zip codes latitude and longitude and determines the distance between the two in miles."
+		date="12/2/2000 6:07:15 PM" folder="SQL/sp_ZipCode_Distance" code="zip" psccode="249"
+		language="SQL" pscworld="5"></script>
+	<script title="sp_ZipCode_Range" description="Returns all zip codes within a specified range of a specific zip code."
+		date="12/2/2000 6:24:10 PM" folder="SQL/sp_ZipCode_Range" code="zip" psccode="250"
+		language="SQL" pscworld="5"></script>
+	<script title="sprSearchTable" description="This procedure searches all columns within the table specified. All columns are casted as varchar(1000). If any of the columns contain the query, then all columns are returned. (SQL2K)"
+		date="7/11/2002 9:54:43 PM" folder="SQL/sprSearchTable" code="zip" psccode="508"
+		language="SQL" pscworld="5"></script>
+	<script title="Suggest Available Usernames" description="Procedure created in order to determine if a duplicate user name exists during a sign up process. If a user name does not exist, an empty recordset is returned. Otherwise, any digits found at the end of the username are trimmed, and new usernames that do not yet exist are suggested with a suffix of numbers appended to the end."
+		date="7/7/2001 12:14:46 PM" image="gif" folder="SQL/SuggestAvailableUsernames"
+		code="zip" psccode="319" language="SQL" pscworld="5"></script>
+	<script title="Toggle Bit Function" description="Toggle bit fields with a small line of code."
+		date="6/3/2002 2:22:45 PM" folder="SQL/ToggleBitFunction" code="zip" psccode="484"
+		language="SQL" pscworld="5"></script>
+	<script title="Toggle Table Relations" description="Useful for disabling constraints during database replication. When copying data to another database, use this procedure on the target database first. When finnished, run it again to enable the constraints. I used this because I was working on a database with tables referencing themselves. I couldn't add records when previouse records did not exist. This solved the problem."
+		date="5/29/2002 9:43:53 AM" folder="SQL/ToggleTableRelations" code="zip" psccode="481"
+		language="SQL" pscworld="5"></script>
+	<script title="Trim" description="Allows you to Trim your strings when querying tables. I'm tired of using the Trim function in my ASP pages and Visual Basic. I created this little feature to trim away within SQL Server itself. This is a User Defined function rather then a stored procedure, so you can use it rite inside your select statements. &quot;SELECT Trim([FirstName]) FROM [Users]&quot;. Sometimes you may find that you need to prefix the function with the owner - &quot;SELECT dbo.Trim([FirstName]) FROM [Users]&quot;. Within the SQL Server Enterprise manager you will need to expand the &quot;Databases&quot; node. Locate your database and expand the node. Next, find the User Defined Functions node. Right-Mouse-Click and choose &quot;New User Defined Function ...&quot;. Paste my code into it."
+		date="10/15/2001 5:51:45 PM" folder="SQL/Trim" code="zip" psccode="348" language="SQL"
+		pscworld="5"></script>
+	<script title="US Government Holidays" description="Provide a date to this function and it will move it to the next US Government Business day - taking holidays into effect. US Government holidays are New Years Day, Birthday of Martin Luther King, Jr., Washington's Birthday, Memorial Day, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, and Christmas. Functions provided may be used for other special days as well."
+		date="7/10/2003 3:56:17 PM" folder="SQL/USGovernmentHolidays" code="zip" psccode="720"
+		language="SQL" pscworld="5"></script>
+	<script title="User Defined Function Intro" description="Brief introduction to user defined functions with examples and benefits explained."
+		date="3/3/2002 12:17:36 AM" folder="SQL/UserDefinedFunctionIntro" code="zip"
+		psccode="422" language="SQL" pscworld="5"></script>
+	<script title="Validate Email" description="Validates an email address. Does not verify email address exists."
+		date="6/22/2002 11:52:09 AM" folder="SQL/ValidateEmail" code="zip" psccode="495"
+		language="SQL" pscworld="5"></script>
+	<script title="ValidFilename" description="Validates if the text proveded is a valid file name for windows. Useful in T-SQL statements validation before adding records."
+		date="6/22/2002 11:20:36 AM" folder="SQL/ValidFilename" code="zip" psccode="493"
+		language="SQL" pscworld="5"></script>
+	<script title="AssemblyReader" description="The assembly reader reads embedded resources as streams from any assembly you may pass to it. By default, it will read from the executing assembly. You can also read the assemblies title, description, configuration, company, product, copyright, trademark, and culture attributes."
+		date="6/19/2004 1:26:38 AM" image="jpg" folder="CSharp/AssemblyReader" code="zip"
+		psccode="2494" language="C#" pscworld="10"></script>
+	<script title="Base Conversion Utility" description="Converts a value from one customized base set to another. No longer are you bound to strict rules. zero does not necesarily have to represent nothing ... even create numbers in DNA (base-4 gatc). Try it out and see what it is all about. Comes with binary, octet, decimal, hex, morse-code, dna, and base64. (base 64 doesn't specifically mean normal base64 encoding)"
+		date="3/17/2004 11:21:54 PM" image="jpg" folder="VBNet/BaseConversionUtility"
+		code="zip" psccode="2202" language="VB.Net" pscworld="10"></script>
+	<script title="Bitmap to Hue" description="Supply a bitmap and color and the bitmap is magically transformed to show colors from black to your color. Works with GIF images. Great for greyscale backgrounds that need to keep image but only change shades of color."
+		date="2/18/2003 9:35:59 PM" folder="VBNet/BitmapToHue" code="zip" psccode="981"
+		language="VB.Net" pscworld="10"></script>
+	<script title="BitmapTo/FromBase64" description="Allows you to convert bitmap images to base64 and back for storage and retrieval in XML files."
+		date="2/5/2003 12:18:16 AM" folder="VBNet/BitmapToFromBase64" code="zip" psccode="945"
+		language="VB.Net" pscworld="10"></script>
+	<script title="CalcBytes" description="converts number of bytes to a lower number, but changes measurement. (can changed kb's to gb's)"
+		date="11/27/2003 6:53:04 PM" folder="VBNet/CalcBytes" code="zip" psccode="1834"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Choose File User Control" description="Drag and drop this control onto your forms so you can allow users to pick the files on there computer they want to use with your program. Pretty simple stuff."
+		date="9/13/2003 1:27:17 PM" image="gif" folder="VBNet/ChooseFileUserControl"
+		code="zip" psccode="1559" language="VB.Net" pscworld="10"></script>
+	<script title="clsRandomString" description="Creates a variable length random string according to parameters you specify. MinLength, MaxLength, CharacterSet. Uses a Cryptography RandomNumberGenerator object to ensure an accurately random string."
+		date="11/7/2002 3:01:42 PM" folder="VBNet/clsRandomString" code="zip" psccode="701"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Crop Image" description="Crops an image passed to the function. Returns resized image as a new bitmap."
+		date="4/24/2003 11:07:59 PM" folder="VBNet/CropImage" code="zip" psccode="1153"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Dynamic Domain Hosting" description="Shows how you can host multiple domains under one IP address by mapping domain names to sites within a database."
+		date="3/28/2003 12:40:15 AM" image="gif" folder="ASPNet/DynamicDomainHosting"
+		code="zip" psccode="1089" language="ASP.Net" pscworld="10"></script>
+	<script title="Dynamic ScriptMapping with Metabase" description="Allows you to assign almost any extension to be processed by the ASPX script processor. You may add, update, and remove the extension progromatically without opening the IIS Manager. Great for those of you who do not have access to the machines desktop (such as hosted at other ISPs)."
+		date="9/20/2003 9:43:23 AM" folder="ASPNet/DynamicScriptMappingWithMetabase" code="zip"
+		psccode="1586" language="ASP.Net" pscworld="10"></script>
+	<script title="EnumerationList" description="List the string values of any enumerated item that is flagged in your enumeration."
+		date="4/12/2003 10:39:12 AM" folder="VBNet/EnumerationList" code="zip" psccode="1128"
+		language="VB.Net" pscworld="10"></script>
+	<script title="GetResource" description="Reads embeded files from your executable programs (such as xml, images, etc.) Allows you to distribute one program - the exe, but still access your data and images needed with the program."
+		date="2/7/2003 7:23:44 PM" folder="VBNet/GetResource" code="zip" psccode="954"
+		language="VB.Net" pscworld="10"></script>
+	<script title="HTTP Formatting" description="Formats HTML source code to prevent users from using scripts and unwanted formatting tags such as Cascading style sheets, ActiveX controls, java applets, etc."
+		date="12/3/2002 2:13:12 PM" folder="ASPNet/HTTPFormatting" code="zip" psccode="775"
+		language="ASP.Net" pscworld="10"></script>
+	<script title="ID3v1.1 Reader" description="Class reads ID3v1.1 tags - Artist, Sont Title, Track, Comment, Year, Album and year. Smaller code and reads more efficiently then other code I've seen on PSC as of today."
+		date="1/25/2004 12:14:40 PM" folder="VBNet/ID3v1.1Reader" code="zip" psccode="2009"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Image 2 HTML" description="Converts an image to HTML table cells. Probably done many times before. This one also creates javascript to invert the image 1 pixel at a time."
+		date="9/4/2003 12:44:35 PM" folder="VBNet/Image2HTML" code="zip" psccode="1531"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Image Details Dialog" description="Dialog box displays an image, its' file name, path, image dimensions, and file size. User may scroll to see full image, and browse to choose another image. If controls are too small, you can always resize them."
+		date="4/27/2003 2:21:09 AM" image="jpg" folder="VBNet/ImageDetailsDialog"
+		code="zip" psccode="1155" language="VB.Net" pscworld="10"></script>
+	<script title="ImageLink WebControl" description="Functions just like the image control except that you may also provide a navigation url. when the user clicks the image, they go off to the url you specify."
+		date="10/17/2003 1:04:35 AM" image="jpg" folder="ASPNet/ImageLinkWebControl"
+		code="zip" psccode="1669" language="ASP.Net" pscworld="10"></script>
+	<script title="Lewies Validation Code Image - Part 1" description="Prevent content and processes from being misused for spam or inappropriate use. An image is displayed to the end-user. An attempt is made to prevent OCR recognition by agents, spiders, or artificial intelligence to gain access to content or processes. The image will display a “code” to the user that they are required to enter into a field provided."
+		date="10/23/2003 1:55:30 AM" image="jpg" folder="ASPNet/ValidationCodeImage1"
+		code="zip" psccode="1687" language="ASP.Net" pscworld="10"></script>
+	<script title="Lewies Validation Code Image - Part 2" description="Prevent content and processes from being misused for spam or inappropriate use. An image is displayed to the end-user. An attempt is made to prevent OCR recognition by agents, spiders, or artificial intelligence to gain access to content or processes. The image will display a “code” to the user that they are required to enter into a field provided."
+		date="10/24/2003 1:13:58 AM" image="jpg" folder="ASPNet/ValidationCodeImage2"
+		code="zip" psccode="1691" language="ASP.Net" pscworld="10"></script>
+	<script title="Page Navigation WebControl" description="Allows users to navigate through each page (kinda like Google). They can click back, next, and page numbers as well. You can customize its output html through design-time. Great for beginners learning how to code web controls."
+		date="10/11/2003 1:12:51 AM" image="jpg" folder="ASPNet/PageNavigationWebControl"
+		code="zip" psccode="1637" language="ASP.Net" pscworld="10"></script>
+	<script title="Play WAV Files" description="Allows you to effortlessly play wave files in a seperate thread while your application continues to operate. Now supports playing embedded resource files and Streams."
+		date="2/15/2003 11:06:05 AM" folder="VBNet/PlayWAVFiles" code="zip" psccode="972"
+		language="VB.Net" pscworld="10"></script>
+	<script title="Small MSIM example" description="quick and dirty example to use instant messenger with windows (MSIM). Logon, Logoff, Display contact list, send a message. Great for people researching for another way other then email to authenticate users."
+		date="1/17/2004 10:54:07 AM" image="jpg" folder="VBNet/SmallMsimExample"
+		code="zip" psccode="1973" language="VB.Net" pscworld="10"></script>
+	<script title="Thumbnail" description="allows you to dynamically create thumbnails of your images on the fly. Image is resized to its aspect ration to fit within a defined region. You can specify quality of image to reduce bandwidth, and background color to fill in whitespace around image."
+		date="10/16/2003 12:55:56 AM" folder="ASPNet/Thumbnail" code="zip" psccode="1665"
+		language="ASP.Net" pscworld="10"></script>
+	<script title="Visual SourceSafe Journal Monitor Service" description="VMS is a windows service developed in .Net that monitors a Microsoft Visual SourceSafe (VSS) database. Customized alerts may be sent based on the defined filters."
+		date="1/23/2004 12:13:14 AM" image="jpg" folder="VBNet/VSSMonitorService"
+		code="zip" psccode="2002" language="VB.Net" pscworld="10"></script>
+	<script title="Wizard Navigation Control" description="Provides simple navigation through multiple steps that you may offer your users in an application. ie - a wizard setup program."
+		date="6/22/2003 12:31:47 PM" image="jpg" folder="VBNet/WizardNavigationControl"
+		code="zip" psccode="1308" language="VB.Net" pscworld="10"></script>
+	<script title="Alpha Blend Utility" description="Blends one image into another image with the opacity based on an alpha channel image provided. Useful for developing tile chipsets for RPG games. Coastal tile chipset provided with 9 sample base tiles for demonstration purpose only - nothing fancy."
+		date="8/27/2002 9:18:01 PM" image="gif" folder="VB/AlphaBlendUtility" code="zip"
+		psccode="38396" language="VB" pscworld="1"></script>
+	<script title="ASP Whois Component with sample code" description="I was searching on the 'net for a whois COM object and everyone is charging $20 - $250 for a very simple object. I was a little low on cash and had the day off. This COM object includes ASP code and a list of over 250 whois databases on the net."
+		date="2/18/2001 7:25:05 PM" image="gif" folder="VB/WhoisComponent" code="zip"
+		psccode="21133" language="VB" pscworld="1"></script>
+	<script title="Average Color In Image" description="Returns the average color within a picture box. I use this when creating small maps of tile-based rpg games. I get the avg color of each block, and place the color on the map."
+		date="9/1/2002 1:29:41 PM" folder="VB/AverageColorInImage" code="zip" psccode="38567"
+		language="VB" pscworld="1"></script>
+	<script title="Binary Convert" description="I always thought 0's and 1's were cool as a background to web pages or in the credits to the movie &quot;Ghost in the Shell&quot;. I found a way to actually make your binary numbers mean something instead of trying to make a lot of random binary numbers on your own. This program looks as the Ascii value (0 - 255) of a character and determines an 8 digit binary number that the number equals to in binary language. It also converts binary language back into strings so you can send binary messages to and from your friends if your really up for it. Take note - A binary text message will be 8 times larger then a regular message. Download: This zip file comes with the executable and the source code. Hopefully it is all self explanitory. This is only the executable itself and does not include the run time dll's. You may need to download a visual basic 6.0 virtual machine."
+		date="7/29/2000 4:24:14 PM" folder="VB/BinaryConvert" code="zip" psccode="10190"
+		language="VB" pscworld="1"></script>
+	<script title="BitsToNum/NumToBits" description="I was reading some binary files and needed some routines to convert numbers back and forth into binary numbers. In this case, I set the procedures to work with binary arrays."
+		date="1/12/2001 12:24:50 AM" folder="VB/BitsToNumNumToBits" code="zip" psccode="14363"
+		language="VB" pscworld="1"></script>
+	<script title="ByteString" description="Returns a string of the Bit Representation of your Bytes or numbers composed of more then 1 byte. I use this to &quot;peer inside&quot; my bytes. It helps me with debugging when reading binary files."
+		date="1/12/2001 11:18:02 PM" folder="VB/ByteString" code="zip" psccode="14382"
+		language="VB" pscworld="1"></script>
+	<script title="Color Utility" description="This utility is used to find a color and determin its hex, long, and rgb values. it will also give you the name of the color if it matches one of the pre-defined colors recognized by browsers and determine if the color is &quot;safe&quot;. An additional utility is included to load a picture and determine the color of any pixel used to create the picture."
+		date="7/23/2000 5:25:39 PM" image="gif" folder="VB/ColorUtility" code="zip"
+		psccode="10029" language="VB" pscworld="1"></script>
+	<script title="Convert 16 bit colors to 24 bit" description="I was working with some files from a game and the colors were in 16 bit. I had to convert them to 24 bit just so that I could view them. These functions do just that."
+		date="1/12/2001 11:30:38 PM" folder="VB/Color16To24" code="zip" psccode="14384"
+		language="VB" pscworld="1"></script>
+	<script title="Determine if File Is Old" description="Determines if a file is old. I use this when I loop through the files in a &quot;temp&quot; directory to determine if I should delete old files on a website. Take note - the function looks at the last modified date rather then the date created."
+		date="6/22/2001 10:08:01 AM" folder="VB/FileIsOld" code="zip" psccode="24318"
+		language="VB" pscworld="1"></script>
+	<script title="DoEvents Demonstration" description="The main point here is to show beginners how to allow your code to &quot;wait&quot; for other events to take place before continuing to execute any code that follows. It also includes a timeout feature in case the event never raises a flag that it is finnished."
+		date="2/19/2001 7:44:42 PM" folder="VB/DoEventsDemo" code="zip" psccode="21161"
+		language="VB" pscworld="1"></script>
+	<script title="Dynamic Intrinsic Controls" description="This demo shows you how to dynamically create a FileListBox control via vb Code rather then at design time. The reason I choose to create this was that I needed to get a list of files within a directory via. a DLL. The file system object causes too much overhead and this little trick makes the code run much faster. For testing purposes, just create a new EXE and throw this onto Form1. For more info, See the MS Knowledge Base: Q190670"
+		date="6/21/2001 6:28:09 PM" folder="VB/DynamicIntrinsicControls" code="zip"
+		psccode="24300" language="VB" pscworld="1"></script>
+	<script title="Embed Binary Files In Programs" description="Embed binary files within your programs to be written out to the file system once the program runs. This demonstration creates a Word document."
+		date="5/22/2002 1:23:44 PM" folder="VB/EmbededFiles" code="zip" psccode="35007"
+		language="VB" pscworld="1"></script>
+	<script title="Get Logon User Name" description="Reads the logon name of the current user. Tested with NT. Win95 appears to work as long as a user logs into the computer."
+		date="3/8/2002 9:57:46 AM" folder="VB/GetLogonUserName" code="zip" psccode="32457"
+		language="VB" pscworld="1"></script>
+	<script title="HTML2Word dll" description="Converts a web page to a word document." date="3/21/2002 3:13:44 PM"
+		folder="VB/HTML2Word" code="zip" psccode="32922" language="VB" pscworld="1"></script>
+	<script title="Hyperlink with Hand Icon" description="Includes demonstration of how to make labels appear as hyperlinks, open the users default web browser, and uses a hand cursor when hovering over the icon. The hand.cur file is loaded seperately so that you may incorporate it into your other applications."
+		date="6/4/2002 9:01:22 PM" image="gif" folder="VB/HyperlinkWithHandIcon"
+		code="zip" psccode="35482" language="VB" pscworld="1"></script>
+	<script title="Image 2 Ascii" description="The Image 2 Ascii converter allows you to load a photograph, and then generate an ascii image that looks simular to it. You can use this ascii version to post a picture of your self on news groups, message boards, email signatures, and more. No longer is text-only formatting a constraint for displaying photographs!"
+		date="5/25/2002 11:22:55 AM" image="gif" folder="VB/Image2Ascii" code="zip"
+		psccode="35086" language="VB" pscworld="1"></script>
+	<script title="Key Snooper" description="Monitor any key typed on the keyboard. Use the GUI to test, or supply a file name and run in the background. Uses GetAsyncKeyState API and GetKeyState. Great for finding out what children or spouses are doing on the internet. Instructions included to start the program when the Operating system starts."
+		date="8/5/2002 10:13:11 PM" image="gif" folder="VB/KeySnooper" code="zip"
+		psccode="37658" language="VB" pscworld="1"></script>
+	<script title="Left Shift and Right Shift" description="Allows you to &quot;Shift&quot; bits around. These functions mimic the bitwise opperators &lt;&lt; and &gt;&gt; in C."
+		date="1/12/2001 11:21:31 PM" folder="VB/LeftRightShift" code="zip" psccode="14383"
+		language="VB" pscworld="1"></script>
+	<script title="Lewie's Hangman" description="So why is my version of hang man so cool? well - I don't know. I havn't looked at the others. This one lets you build your own list and &quot;click&quot; your way through the came. Click on each letter and it will be filled in (or a new piece of the hang man will be drawn.) Each game gets 6 wrong answers. You may also guess the phrase."
+		date="7/16/2001 3:39:22 PM" image="gif" folder="VB/LewiesHangman" code="zip"
+		psccode="25079" language="VB" pscworld="1"></script>
+	<script title="Load a Text File" description="Very Simple (beginners code) - reads and returns the contents of a text file."
+		date="6/14/2001 10:21:32 AM" folder="VB/LoadATextFile" code="zip" psccode="24079"
+		language="VB" pscworld="1"></script>
+	<script title="MakePath" description="Creates folders and subfolders to the specified path."
+		date="4/30/2002 11:29:35 AM" folder="VB/MakePath" code="zip" psccode="34250"
+		language="VB" pscworld="1"></script>
+	<script title="PageRange" description="I had database searches that were returning way too many pages to display an option to view each page. What I did was set up this procedure to return a range of pages, and also options to jump ahead, back, first page, last page, previouse page, and/or the next page. This routine tells you what those links are."
+		date="12/2/2000 5:39:20 PM" folder="VB/PageRange" code="zip" psccode="13271"
+		language="VB" pscworld="1"></script>
+	<script title="ParseNumber" description="Parses a number from a string. Handles parans for negative numbers."
+		date="3/15/2002 1:17:49 PM" folder="VB/ParseNumber" code="zip" psccode="32717"
+		language="VB" pscworld="1"></script>
+	<script title="PicMatch" description="Compares each pixels colors in one picture box to another. Determines if pictures are an exact match. Looking for a quicker way to perform functionality if possible."
+		date="9/1/2002 1:36:45 PM" folder="VB/PicMatch" code="zip" psccode="38568"
+		language="VB" pscworld="1"></script>
+	<script title="PicMatch2" description="Compares each pixels colors in one picture box to another. Determines if pictures are an exact match. Now uses API to copy pictures to memory. Looking for a quicker way to compare arrays. Copy this code into a module and call PicMatch."
+		date="9/5/2002 10:07:16 AM" folder="VB/PicMatch2" code="zip" psccode="38677"
+		language="VB" pscworld="1"></script>
+	<script title="Raw Clipboard Viewer" description="Working on a clip-board spy to understand how data is saved within the clipboard. Still cleaning up a few things - but it works for the most part."
+		date="3/19/2002 4:21:13 PM" image="jpg" folder="VB/RawClipboardViewer" code="zip"
+		psccode="32841" language="VB" pscworld="1"></script>
+	<script title="Remove Item Confirmation" description="Prompt your users if they wish to remove an item."
+		date="3/15/2002 1:28:24 PM" image="jpg" folder="VB/RemoveItemConfirmation"
+		code="zip" psccode="32718" language="VB" pscworld="1"></script>
+	<script title="Simple Log Routine" description="Simple routine that logs a sting to a specified log file. also supports word-wrapping on long lines (more then 80 characters) and inserts an empty line before and after the information so it is easier to read. This code is mainly here for my own personal reference."
+		date="6/1/2001 12:11:47 PM" folder="VB/SimpleLogRoutine" code="zip" psccode="23680"
+		language="VB" pscworld="1"></script>
+	<script title="SQL Formatting" description="Format variables for SQL Syntax." date="3/15/2002 1:15:48 PM"
+		folder="VB/SQLFormatting" code="zip" psccode="32716" language="VB" pscworld="1"></script>
+	<script title="Text to String Conversion" description="Definately been done before. Just couldn't find specifially what I wanted. Converts text to strings in VBScript, Javascript, and T-SQL script. Simple interface, Simple code, Simple to use ..."
+		date="5/22/2002 3:19:53 PM" image="jpg" folder="VB/TextToStringConversion"
+		code="zip" psccode="35011" language="VB" pscworld="1"></script>
+	<script title="URL Thumbnail Generator" description="Creates thumbnail versions of web pages and saves to an image. Personal project in development to later store within a database containing links to other sites to offer a link preview. Have not been able to create images when hiding the web browser object. Now supports frames and pages with onLoad javascript events."
+		date="8/23/2002 12:40:55 AM" image="jpg" folder="VB/URLThumbnailGenerator"
+		code="zip" psccode="38203" language="VB" pscworld="1"></script>
+	<script title="vbScript Decoder - exe" description="Decodes script that was encoded by Microsofts Script Encoder. My earlier version was done in ASP and is posted on this site, however i'm porting this to VB to disregard worries about code pages and such for other languages."
+		date="11/10/2002 10:52:12 PM" folder="VB/vbScriptDecoder" code="zip" psccode="40597"
+		language="VB" pscworld="1"></script>
+	<script title="XOR Encryption Class" description="Encrypts and Decrypts messages using the XOR algorithm with support of unicode &amp; method of getting pas the NULL barrier by converting messages to hex strings."
+		date="3/2/2002 10:48:35 AM" image="gif" folder="VB/XOREncryptionClass" code="zip"
+		psccode="32266" language="VB" pscworld="1"></script>
+	<script title="Parse File Extensions" description="Parse file extensions with SQL" date="7/27/2004 8:07:24 PM"
+		folder="SQL/ParseFileExtensions" code="zip" psccode="862" language="SQL" pscworld="5"></script>
+	<script title="Columnizer" description="Display content in columns like a news paper. Also allows you to choose what page you want to see."
+		date="2/14/2004 9:23:55 PM" image="jpg" folder="JavaScript/Columnizer" code="zip"
+		psccode="4330" language="JavaScript" pscworld="2"></script>
+	<script title="RandomInt" description="JavaScript 101: Pass two numbers and the method will return a random number between the two of them. I use this when displaying random content on a site."
+		date="2/27/2004 8:12:43 PM" folder="JavaScript/RandomInt" code="zip" psccode="4331"
+		language="JavaScript" pscworld="2"></script>
+	<script title="sprDataDictionary" description="Goes through information schemas and extended properties to get each table, column, data type, comments, foreign keys, primary keys, constraints, and indexes. This information can then be used to create a data dictionary report in real time. Shows how to get MS_Description property through ::fn_listextendedproperty for columns and tables."
+		date="7/28/2004 10:26:26 PM" image="gif" folder="SQL/sprDataDictionary" code="zip"
+		psccode="863" language="SQL" pscworld="5"></script>
+	<script title="Lewies Seti Stats" description="Reads an Xml file from the Seti@Home projects web servers and allows you to display the information on your own website. Cache xml files for up to 8 hours and loads via. javascript. Compatible with Netscape, Mozilla, FireFox, and MSIE."
+		date="7/29/2004 12:14:57 AM" image="gif" folder="ASP/LewiesSetiStats" code="zip"
+		language="ASP / VBScript" pscworld="4" psccode="8933"></script>
+	<script title="Data Dictionary Report Generator" description="Retrieves the structure of your data and displays it into a nice report that you can copy &amp; paste into word documents. Works with SQL Server 2000. Also lists any comments within the database for tables &amp; columns."
+		date="7/28/2004 10:12:34 PM" image="gif" folder="ASP/DataDictionary" code="zip"
+		language="ASP / VBScript" pscworld="4" psccode="8932"></script>
+	<script title="Lewies Dice" description="Gives you the option to roll any sided dice as many times as you want. Predefined formats with sides of 4, 6, 8, 10, 12, &amp; 20. Fun utility for any AD&amp;D hobbiest."
+		date="7/30/2004 1:30:18 AM" image="gif" folder="VBNet/LewiesDice" code="zip"
+		psccode="2615" language="VB.Net" pscworld="10"></script>
+	<script title="GetSetCookie" description="Quick example allowing you to get and save cookies."
+		date="7/31/2004 12:10:01 AM" folder="JavaScript/GetSetCookie" code="zip" psccode="4332"
+		language="JavaScript" pscworld="2"></script>
+	<script title="Lewies Mini Hex Editor" description="This small utility aids programmers into viewing and editing the data within binary files. Works with large files very nicely. Enter either the hex, decimal, or text value of each byte. You can also edit bits. I use programs like these when learning how to read file structures such as MP3, GIF, and JPG files. Also comes with a handy setup project for easy installation."
+		date="8/1/2004 12:00:20 AM" image="jpg" folder="CSharp/MiniHexEdit" code="zip"
+		psccode="2621" language="C#" pscworld="10"></script>
+	<script title="Lewies ID3v1.1 Tag Editor" description="This program can edit MP3 files to include the Song Title, Album, Artist, Year, Genre, Track Number and comments about the music."
+		date="8/1/2004 11:15:00 AM" image="jpg" folder="CSharp/ID3v1TagEditor" code="zip"
+		language="C#" psccode="2622" pscworld="10"></script>
+	<script title="Lewies Eliza Chatbot" description="This chatbot is written in JavaScript and loads its data from Xml files. The xml file should be easy enough to understand and minipulate to make your own variation of the ELIZA chatbot."
+		date="8/1/2004 10:59:12 PM" folder="JavaScript/ElizaChatbot" image="jpg"
+		code="zip" psccode="4335" language="JavaScript" pscworld="2"></script>
+	<script title="Relay email through CDO " description="Send email through the CDO objects that .Net interfaces with. Now you can choose your ISP's mail server and log in with username/password to relay mail to the outside world."
+		date="8/2/2004 9:20:31 PM" folder="CSharp/CdoMailRelay" image="jpg" code="zip"
+		psccode="2627" language="C#" pscworld="10"></script>
+	<script title="Lewies Ansi/Ascii Painter" description="Read and Edit *.ANS files.  Old BBS systems used to have Ansi files to display text as graphics before the days of the internet were popular.  This program can read just about any ansi file in ascii format and display it accurately.  It does not support Music or Animations."
+		date="8/3/2004 12:58:28 AM" folder="VBNet/AsciiPainter" image="jpg" code="zip"
+		psccode="2628" language="VB.Net" pscworld="10"></script>
+	<script title="Lewies RSA Encryption Example" description="Create new key pairs for asymmetric encryption or copy/paste strings into text fields provided. Encrypts and decrypts text to encrypted base64 strings. Main benefit here is I got around a problem with where the key was stored and can now load keys on the fly. Asymmetric keys are usually used to encrypt Session Keys and Digital Signatures. Session Keys are used with Symmetric Encryption on the Message itself because it is much faster then Assymetric encryption. This is great for anyone beginning to learn about Security or how to Implement RSA Public Key / Private Key Infrastructure."
+		date="8/3/2004 10:35:10 PM" folder="CSharp/RsaExample" image="jpg" code="zip"
+		psccode="2636" language="C#" pscworld="10"></script>
+	<script title="Lewies Memory Game" description="This is a simple memory game. Start a new game. Wait for the squares to blink and repeat the pattern. An extra sequence is added after each round."
+		date="8/4/2004 12:30:19 AM" folder="VBNet/Memory" image="jpg" code="zip"
+		psccode="2637" language="VB.Net" pscworld="10"></script>
+	<script title="Get Embedded Text Files" description="Load an embedded text from from within your assembly and assign it to a variable. I primarily use this when storing sql, data, or some pieces of code that I need to have access to. Simply add text files to your solution and change the &quot;Build Action&quot; property to &quot;Embedded Resource&quot; on each one. No need to distribute extra files with your programs - they get compiled as resources inside executables and DLLs."
+		date="8/5/2004 11:55:55 PM" folder="CSharp/EmbeddedText" image="jpg" code="zip"
+		psccode="2643" language="C#" pscworld="10"></script>
+	<script title="Ultima Player Administration" description="Maintain a list of player names, accounts, IP addresses, and assign flags. Search, Edit, Delete, Export, Import. This little utility was made at the request of my wife who is an administrator on an Ultima emulator shard. Greate for beginners wanting to learn how to do some of the basics."
+		date="8/8/2004 12:43:11 AM" folder="CSharp/PlayerAdmin" image="jpg" code="zip" install="zip"
+		psccode="2647" language="C#" pscworld="10"></script>
+</scripts>

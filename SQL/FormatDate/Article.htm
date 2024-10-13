@@ -1,0 +1,394 @@
+<p class=MsoNormal>Background:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>MS SQL Server gives a limited range of formatting
+dates.<span style="mso-spacerun: yes">  </span>This range depends on converting
+data types by assigning a numbered style rather then a character
+representation.<span style="mso-spacerun: yes">  </span></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>CONVERT <b>( </b><i>data_type </i>[ <b>( </b><i>length </i><b>)
+</b>] <b>,</b> <i>expression</i> [ <b>,</b> <i>style </i>] <b>)<o:p></o:p></b></p>
+<p class=MsoNormal><b><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></b></p>
+<p class=MsoNormal><a
+href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\tsqlref.chm::/ts_ca-co_2f3o.htm">CAST
+and CONVERT</a> (msdn link)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Another option that SQL Server exposes is the SET DATEFORMAT
+property.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>SET DATEFORMAT { <i>format</i> | <b>@</b><i>format_var </i>}</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><a
+href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80/">SET
+DATEFORMAT</a> (msdn link)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>This format is friendlier; in that you can actually tell
+what format it is trying to set just by looking at it.<span
+style="mso-spacerun: yes">  </span>Valid parameters include mdy, dmy, ymd, ydm,
+myd, and dym. The U.S. English default is mdy.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Goal:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>My goal is to create a dynamic method of defining the format
+of a date that is common with other programs.<span style="mso-spacerun: yes"> 
+</span>The code must be available within a function for use within SELECT
+statements.<span style="mso-spacerun: yes">  </span>The code must be small and
+quick.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Defining the format:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>For this exercise, I looked at the date picker control that
+Microsoft offers.<span style="mso-spacerun: yes">  </span>Here are a few links
+to the MSDN library to help get you started:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><a
+href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80/">FORMAT_STRING
+Contents</a></p>
+<p class=MsoNormal><a
+href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80/">OutputFormat
+Property</a></p>
+<p class=MsoNormal><a
+href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80/">Date Time
+String Transformation</a></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>From these pages, and many others, I identified to most
+basic formats and compiled a list.<span style="mso-spacerun: yes">  </span></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>D</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border:solid windowtext .5pt;
+ border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-digit of the two-digit day.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>DD</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-digit day.<span style="mso-spacerun: yes"> 
+ </span>A zero precedes single-digit day values.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>DDD</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The three-character weekday abbreviation.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>DDDD</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The full weekday name.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>H</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-digit or the two-digit hour in 12-hour format.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>HH</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-digit hour in 12-hour format.<span
+ style="mso-spacerun: yes">  </span>A zero precedes single-digit values.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>HHH</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-digit or the two-digit hour in 24-hour format.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>HHHH</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-digit hour in 24-hour format.<span
+ style="mso-spacerun: yes">  </span>A zero precedes single-digit values.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>N</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-digit or the two-digit minute.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>NN</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-digit minute.<span style="mso-spacerun: yes"> 
+ </span>A zero precedes single-digit values.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>M</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-digit or the two-digit month number.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>MM</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-digit month number.<span style="mso-spacerun:
+ yes">  </span>A zero precedes single-digit values.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>MMM</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The three-character month abbreviation.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>MMMM</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The full month name.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>T</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The one-letter A.M. and P.M. Abbreviation (That is, “AM”
+ is displayed as “A”)</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>TT</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The two-letter A.M. and P.M. abbreviation (that is, “AM”
+ is displayed as “AM”)</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>Y</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The year is displayed as the last two digits, but with no
+ leading zero for any year that is less than 10.</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>YY</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The last two digits for the year.<span
+ style="mso-spacerun: yes">  </span>For example, 1998 would be displayed as
+ “98”</p>
+ </td>
+ </tr>
+ <tr>
+ <td width=79 valign=top style='width:59.4pt;border:solid windowtext .5pt;
+ border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>YYY</p>
+ </td>
+ <td width=511 valign=top style='width:383.4pt;border-top:none;border-left:
+ none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+ mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+ padding:0in 5.4pt 0in 5.4pt'>
+ <p class=MsoNormal>The full year.<span style="mso-spacerun: yes">  </span>For
+ example, 1998 would be displayed as “1998”.</p>
+ </td>
+ </tr>
+</table>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>I found it hard to work with some of the formats because
+most installations of SQL Server to not recognize case-sensitivity. In this
+case, I simply added more letters.<span style="mso-spacerun: yes">  </span>For
+example, a 12-hour format would be a lower-case “H”, where as a 24 hour format
+would be an upper case “H”.<span style="mso-spacerun: yes">  </span>For the
+24-hour representation, I added more “H” characters.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Retrieving Values:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>The next problem I tackled was populating the values with
+the date provided.<span style="mso-spacerun: yes">  </span>I would populate the
+day, the hour, the year, and so on.<span style="mso-spacerun: yes">  </span>I
+was ignoring what the format wanted to be passed back.<span
+style="mso-spacerun: yes">  </span>Most values were obtained by using the
+DATEPART function.<span style="mso-spacerun: yes">  </span>Rather then storing
+the values as numbers, I “Casted” them as VarChars.<span style="mso-spacerun:
+yes">  </span>This allowed me to continue playing with them as strings and to
+use them in string related functions.<span style="mso-spacerun: yes"> 
+</span>One of the tricks I used most was the RIGHT function to get two-digit
+numbers preceded with zeros. </p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @d =
+CAST(DATEPART(d, @Date) AS VARCHAR(2))</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @dd =
+RIGHT('0' + @d, 2)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Another function I used was the DATENAME to grab the name of
+the month.<span style="mso-spacerun: yes">  </span>For abbreviations of the
+month, I selected the LEFT 3 characters.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @MMMM =
+DATENAME(m, @Date) </p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @MMM =
+LEFT(@MMMM, 3)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Preparing the Format:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>The format string has the ability to contain other
+characters then the name of the month, hour, day, etc.<span
+style="mso-spacerun: yes">  </span>For example, you may want to format the time
+as “HH:NN” with a colon in between.<span style="mso-spacerun: yes">  </span>To
+support this, I replace each recognized format with a temporary place holder.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, 'dddd', '\\\\1\\\\')</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, 'ddd', '\\\\2\\\\')</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, 'dd', '\\\\3\\\\')</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, 'd', '\\\\4\\\\')</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>I began with the largest repetitive characters first, and
+worked my way down.<span style="mso-spacerun: yes">  </span>The reason these
+place holders are needed is due to the fact that some months, may contain
+recognized formats.<span style="mso-spacerun: yes">  </span>Take the month of
+“May” for example.<span style="mso-spacerun: yes">  </span>The letter “M” is
+recognized to be a format for a single and two-digit number of the month.<span
+style="mso-spacerun: yes">  </span>If I were to replace the “mmmm” format
+first, and then apply the “m” format -- I would end up with “5ay”.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Applying the Format:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Applying was much quicker and appeared like so:</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, '\\\\1\\\\', @dddd)</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, '\\\\2\\\\', @ddd)</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, '\\\\3\\\\', @dd)</p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>SET @Format
+= REPLACE(@Format, '\\\\4\\\\', @d)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>I simply reversed the process and replace the placement
+markers with the values I retrieved earlier.</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>In the end, all that was left to do was return the format
+passed –</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return(@Format)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>Next, I created a test to see if it would work</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PRINT
+dbo.FormatDate(GETDATE(), ‘MM/DD/YY HH:NN TT’)</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>And the result …</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>05/22/2002
+07:15 PM</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal>This sums up my adventure with T-SQL programming.<span
+style="mso-spacerun: yes">  </span>If you find this information useful, please
+let others know.<span style="mso-spacerun: yes">  </span>Personal information
+about myself can be found on my personal website at <a
+href="http://www.lewismoten.com/">http://www.lewismoten.com</a></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>

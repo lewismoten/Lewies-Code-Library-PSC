@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BaseConversion", "BaseConversion.vbproj", "{B79D57FF-9062-4E2D-8A96-656B23FE4680}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupBaseConversion", "..\SetupBaseConversion\SetupBaseConversion.vdproj", "{DB440FB9-4DB7-4A7A-8B4F-068B7BCA5204}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B79D57FF-9062-4E2D-8A96-656B23FE4680}.Debug.ActiveCfg = Debug|.NET
+		{B79D57FF-9062-4E2D-8A96-656B23FE4680}.Debug.Build.0 = Debug|.NET
+		{B79D57FF-9062-4E2D-8A96-656B23FE4680}.Release.ActiveCfg = Release|.NET
+		{B79D57FF-9062-4E2D-8A96-656B23FE4680}.Release.Build.0 = Release|.NET
+		{DB440FB9-4DB7-4A7A-8B4F-068B7BCA5204}.Debug.ActiveCfg = Debug
+		{DB440FB9-4DB7-4A7A-8B4F-068B7BCA5204}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

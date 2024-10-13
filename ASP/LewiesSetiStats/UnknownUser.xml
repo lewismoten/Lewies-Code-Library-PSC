@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<userstats>
+	<userinfo>
+		<name><a href="." target="new">n/a</a></name>
+		<numresults>0</numresults>
+		<cputime>0 hours</cputime>
+		<avecpu>0 sec</avecpu>
+		<resultsperday>0</resultsperday>
+		<lastresulttime>Fri Jul 23 07:34:19 2004</lastresulttime>
+		<regdate>Mon Jul  1 23:30:15 2002</regdate>
+		<usertime>    0 hours</usertime>
+		<userprofile><a href=".">View user profile</a></userprofile>
+	</userinfo>
+	<groupinfo>
+		<group><a href=".">none</a></group>
+	</groupinfo>
+	<rankinfo>
+		<rank>0</rank>
+		<ranktotalusers>0</ranktotalusers>
+		<num_samerank>0</num_samerank>
+		<top_rankpct>0</top_rankpct>
+	</rankinfo>
+	<certinfo>
+		<cert><a href=".">n/a</a></cert>
+	</certinfo>
+</userstats>

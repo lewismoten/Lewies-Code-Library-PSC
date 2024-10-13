@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EntryData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns=""
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EntryData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Entries">
+					<xs:complexType>
+						<xs:sequence></xs:sequence>
+						<xs:attribute name="Logged" type="xs:dateTime" />
+						<xs:attribute name="Date" type="xs:dateTime" />
+						<xs:attribute name="Path" type="xs:string" />
+						<xs:attribute name="Version" type="xs:int" />
+						<xs:attribute name="Action" type="xs:string" />
+						<xs:attribute name="User" type="xs:string" />
+						<xs:attribute name="Event" type="xs:string" />
+						<xs:attribute name="Comment" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="EntryDataKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//Entries" />
+			<xs:field xpath="@Date" />
+			<xs:field xpath="@Path" />
+			<xs:field xpath="@Version" />
+			<xs:field xpath="@Action" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

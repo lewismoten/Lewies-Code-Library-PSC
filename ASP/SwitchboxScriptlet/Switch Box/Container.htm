@@ -1,0 +1,135 @@
+<HTML>
+	<HEAD>
+		<TITLE>Switch Box Scriptlet</TITLE>
+		<script language=vbscript>
+			Sub window_onLoad()
+				objIceCream.max = 5
+				Call objIceCream.addSource("Vanilla", "van")
+				Call objIceCream.addSource("Chocolate", "chc")
+				Call objIceCream.addSource("Rocky Road", "rkr")
+				Call objIceCream.addSource("Strawberry", "stb")
+				Call objIceCream.addSource("Java", "jva")
+				Call objIceCream.addSource("Watermellon", "mln")
+				Call objIceCream.addSource("Walnut", "wnt")
+				Call objIceCream.addSource("Postachio", "pto")
+			End Sub
+			'---
+			Sub btnAddSource_onClick()
+				If txtAddSourceText.value <> "" And txtAddSourceValue.value <> "" Then
+					Call objIceCream.addSource(txtAddSourceText.value, txtAddSourceValue.value)
+					txtAddSourceText.value = ""
+					txtAddSourceValue.value = ""
+				End If
+			End Sub
+			'---
+			Sub btnAddTarget_onClick()
+				If txtAddTargetText.value <> "" And txtAddTargetValue.value <> "" Then
+					Call objIceCream.addTarget(txtAddTargetText.value, txtAddTargetValue.value)
+					txtAddTargetText.value = ""
+					txtAddTargetValue.value = ""
+				End If
+			End Sub
+			'---
+			Sub btnNewMax_onClick()
+				If IsNumeric(txtNewMax.value) Then
+					objIceCream.max = txtNewMax.value
+					txtNewMax.value = ""
+				End If
+			End Sub
+			'---
+			Sub btnRemoveItem_onClick()
+				If txtRemoveItemText.value <> "" And txtRemoveItemValue.value <> "" Then
+					Call objIceCream.removeItem(txtRemoveItemText.value, txtRemoveItemValue.value)
+					txtRemoveItemText.value = ""
+					txtRemoveItemValue.value = ""
+				End If
+			End Sub
+			'---
+			Sub btnRemoveSourceItem_onClick()
+				If IsNumeric(txtRemoveSourceItem.value) Then
+					Call objIceCream.removeSourceItem(txtRemoveSourceItem.value)
+					txtRemoveSourceItem.value = ""
+				End If
+			End Sub
+			'---
+			Sub btnRemoveTargetItem_onClick()
+				If IsNumeric(txtRemoveTargetItem.value) Then
+					Call objIceCream.removeTargetItem(txtRemoveTargetItem.value)
+					txtRemoveTargetItem.value = ""
+				End If
+			End Sub
+			'---
+			Sub objIceCream_onScriptletEvent(eventName, eventObject)
+				Dim tmpArray
+				Select Case eventName
+					Case "onChange"
+						tmpString1 = "<li style=display:none></li>"
+						tmpString2 = "<li style=display:none></li>"
+						tmpArray1 = objIceCream.Value
+						tmpArray2 = objIceCream.Text
+						If Not UBound(tmpArray1) = -1 Then
+							For iCount = 0 To UBound(tmpArray1)
+								tmpString1 = tmpString1 & "<li><input type=text value=""" & tmpArray1(iCount) & """ disabled></li>"
+								tmpString2 = tmpString2 & "<li><input type=text value=""" & tmpArray2(iCount) & """ disabled></li>"
+							Next
+						End If
+						lstValue.innerHTML = tmpString1
+						lstText.innerHTML = tmpString2
+						txtMax.value = objIceCream.Max
+				End Select
+			End Sub
+		</script>
+	</HEAD>
+	<BODY bgcolor=#cccccc>
+		<h1>Switch Box Scriptlet</h1>
+		<hr>
+		<hr>
+		Demonstration
+		<hr>
+		<hr>
+		Choose 5 different flavors of ice cream starting with your favorite.<br>
+		<OBJECT id=objIceCream style="HEIGHT: 201px; LEFT: 0px; TOP: 0px; WIDTH: 521px" type=text/x-scriptlet VIEWASTEXT>
+			<PARAM NAME="URL" VALUE="switchbox.sct">
+			<PARAM NAME="Scrollbar" VALUE="0">
+		</OBJECT>
+		<br>
+		<br>
+		<hr>
+		<hr>
+		Methods and Properties
+		<hr>
+		<hr>
+		<br>
+		ObjectID<input type=button id=btnAddSource value=".addSource">(<input id=txtAddSourceText > <i>[option.Text]</i>, <input id=txtAddSourceValue > <i>[option.Value]</i> )
+		<br>
+		<br>
+		ObjectID<input type=button id=btnAddTarget value=".addTarget">(<input id=txtAddTargetText > <i>[option.Text]</i>, <input id=txtAddTargetValue > <i>[option.Value]</i> )
+		<br>
+		<br>
+		ObjectID<input type=button id=btnNewMax value=".max ="> <input id=txtNewMax > <i>[Numeric Variable <b>0 To 1141</b>]</i>
+		<br>
+		<br>
+		MAXIMUM_ALLOWED <i>[Numeric Variable <b>0 To 1141</b>]</i> = ObjectID.max
+		<br>
+		NumericVariable is currently<input id=txtMax disabled>
+		<br>
+		<br>
+		ObjectID<input type=button id=btnRemoveItem value=".removeItem">(<input id=txtRemoveItemText > <i>[option.Text]</i>, <input id=txtRemoveItemValue > <i>[option.Value]</i> )
+		<br>
+		<br>
+		ObjectID<input type=button id=btnRemoveSourceItem value=".removeSourceItem">(<input id=txtRemoveSourceItem> <i>[lstSource.remove(<b>Index</b>)]</i>)
+		<br>
+		<br>
+		ObjectID<input type=button id=btnRemoveTargetItem value=".removeTargetItem">(<input id=txtRemoveTargetItem> <i>[lstTarget.remove(<b>Index</b>)]</i>)
+		<br>
+		<br>
+		OBJECT_VALUE <i>[String Array(<b>-1 | 0 To 1141</b>)]</i> = ObjectID.Value
+		<br>
+		OBJECT_VALUE is currently
+		<ol id=lstValue start="-1"></ol>
+		OBJECT_TEXT <i>[String Array(<b>-1 | 0 To 1141</b>)]</i> = ObjectID.Text
+		<br>
+		OBJECT_TEXT is currently
+		<ol id=lstText start="-1"></ol>
+	</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<%@ Language=VBScript %>
+<html>
+	<head>
+		<title>How to make Dynamic GIF Color Palettes</title>
+	</head>
+	<body>
+		<p>
+			There have been many times where I have been stomped on how I
+			can allow users to customize the look of my sites, without
+			sacraficing the quality of the site.  The main problem comes
+			when you want to allow users to change the colors, but you have
+			Anti-Aliased images.  The first thing I would usually do would be
+			to take the image down to 2 colors, and make one of them transparent.
+			This left the user with a color that they could not change, and
+			an image with blocky edges.
+		</p>
+		<p>
+			Recently, I got an idea to see if I could change the palette of
+			GIF images dynamically.  I looked into the format of GIF's and
+			got my hands on a Hex editor and found the solution was rather
+			simple.
+		</p>
+		<p>
+			In this article, I will walk you through the entire process on how
+			to property create the GIF images, and then transfer them to my custom
+			template file format.  From there, an ASP page can read these templates,
+			generate a color palette, and return a GIF image to the browser.
+		</p>
+		<hr>
+		<h3>Creating the GIF</h3>
+		<IMG SRC="OriginalGo.gif" align="right" WIDTH="16" HEIGHT="16">
+		<p>
+			For our demonstration, I will create a &quot;Go&quot; button.  These can commonly
+			be used to submit search queries and navigation drop downs.  I use 2
+			colors to make this image.  Black (000000) and White (FFFFFF).  It is
+			important to use these two colors so that we can get a full color range
+			in our palette between the two colors with the highest contrast.
+		</p>
+		<p>
+			I created an Anti-Aliased circle to prevent the blocky edges, and I
+			also created the text with Crisp Anti-Aliasing as well.  After the image
+			is finnished, we need to convert the color mode to Indexed Color (256 colors
+			or less).  I prefer to index to 8 colors.  It keeps the palette small, yet
+			retains most of the Anti-Aliasing that we need.
+		</p>
+		<center><IMG SRC="ToIndexedColor.gif" WIDTH="320" HEIGHT="275"></center>
+		<p>
+			It is important to make sure that the colors are not forced when using
+			Adobe.  This helps our color table to be indexed from the brightest color
+			to the darkest.  If we force the colors, then two colors, Black and White,
+			will prefix our gradient - making it a little harder for us to work with
+			the process.  Take a look at the color table (Image\Mode\Color Table ...).
+		</p>
+		<center><IMG SRC="ColorTable.gif" WIDTH="360" HEIGHT="333"></center>
+		<p>
+			To help me identify the colors easier later on when looking at the
+			binary data of the image, I like to change these colors to the following
+			values:
+		</p>
+		<ol>
+			<li>#FFFFFF rgb(255,255,255)
+			<li>#DCDCDC rgb(220,220,220)
+			<li>#B3B3B3 rgb(179,179,179)
+			<li>#707070 rgb(112,112,112)
+			<li>#3F3F3F rgb(63,63,63)
+			<li>#1C1C1C rgb(28,28,28)
+			<li>#070707 rgb(7,7,7)
+			<li>#000000 rgb(0,0,0)
+		</ol>
+		<h3>Creating a Template</h3>
+		<p>
+			Our image is ready to be saved.  I saved mine as &quot;GoButton.gif&quot;.  The next
+			step is the fun part.  You need to get a Hex Editor to view the binary
+			data of the image.  I like the popular program <b>Ultra Edit</b>.  When you
+			open the file, you should see information displayed simular to that in
+			the following image.
+		</p>
+		<center><IMG SRC="HexEdit.gif" WIDTH="617" HEIGHT="141"></center>
+		<p>
+			Notice that I hilighted a specific range of data.  If you look at the
+			colors that I suggested to replace the palette colors, you will see that
+			they match.  Next - open a text editor such as <b>Note Pad</b> and type
+			in all the characters as you see them.  You may want to double check to
+			make sure you didn't forget any and they are written correctly.  It is ok
+			to use spaces and new lines to help you read the text file easier.
+		</p>
+		<p>
+			Now we will start adding tags to represent each color.  The tags range
+			from [1] and incriment to the maximum color.  In my case - I chose 8 colors,
+			to I will replace each one (from lightest to darkest) with a tag.  Look
+			at the image below for a detailed representation.
+		</p>
+		<center><IMG SRC="TextEdit.gif" WIDTH="432" HEIGHT="219"></center>
+		<p>
+			You may have noticed some extra information in the header of the text file.
+			The number 8, and two colors FFFFFF and 000000 and they are all delimited
+			by the semicolin &quot;;&quot; character.  The first number represents how many colors
+			there are in the palette.  The second item represents the default color to
+			display as the first color.  And the third itme represents the last default color.
+			In this case, I chose black and white so that I will see the image in its
+			original color scheme when it rendures if I do not specify other colors.
+		</p>
+		<h3>Creating the ASP</h3>
+		<p>
+			Our ASP page will need some data passed to it from the query string so that
+			we know what image to return, and the colors to display it in.  I have also
+			set it up with a Debug flag.
+		</p>
+		<center>
+		<table border="1" width="50%">
+			<tr>
+				<td>SRC</td>
+				<td>Source of the image.  (Can be Physical &quot;C:\GoButton.txt&quot; or a URL &quot;/GoButton.txt&quot;)</td>
+			</tr>
+			<tr>
+				<td>FirstHex</td>
+				<td>Hex color to start the color range with</td>
+			</tr>
+			<tr>
+				<td>LastHex</td>
+				<td>Hex color to end the color range with</td>
+			</tr>
+			<tr>
+				<td>Debug</td>
+				<td>Set to True.  If viewing the page directly within your browser, you will be able to see custom error/success messages along with the HEX values defined in the template</td>
+			</tr>
+		</table>
+		</center>
+		<p>
+			If our ASP page comes into any errors, such as a non-existing file, a transparent
+			GIF will be returned so it will look as if the Image didn't load, but it will not
+			display the common &quot;broken-link&quot; graphics that you would normally see in browsers.
+		</p>
+		<p>
+			Our page looks for the text file and loads it into memory.  If a color was
+			not specified or invalid, (such as FirstHex or LastHex), then it will
+			replace that color with the default color.
+		</p>
+		<p>
+			Our color palette is then created.  We attempt to easily phase each part of
+			the first color (Red, Green, Blue) into the LastHex's color parts.  We then
+			loop through each of the final color range and replace the tags ([1], [2], ...)
+			that were defined in the original text file.
+		</p>
+		<p>
+			The last part is where we actually return the binary data.  We loop through each
+			hex value and convert it to the byte it represents.  The Response.BinaryWrite 
+			method is used along with defining the content type as &quot;image/gif&quot;.  The browser
+			understands the content type and rendures the image!
+		</p>
+		<h3>In Conclusion</h3>
+		<p>
+			This is an interesting approach to solving custom color problems on websites.
+			You may want to note however, that this may put a damper on the performance of
+			your website if it has a lot of traffic.  The constant reading files from the 
+			file system will be your bottleneck.  The good news is most recent browsers
+			will cache the images returned as long as the query string matches.
+		</p>
+		<p>
+			I may have been a little short comming on the workings of the ASP code.  You can
+			view the code in &quot;Image.asp&quot; for more detailed information of the process going
+			on.  Also, a demonstration is included with the zip archive that will let you
+			dynamically change the image that is loaded along with its color.  4 Other image
+			templates are included for your enjoyment.
+		</p>
+		<CENTER><IMG SRC="Demo.gif"></CENTER>
+		<p>
+			This article was written by <a href="http://www.lewismoten.com">Lewis Moten</a>
+			on April 30, 2001.
+		</p>
+	</body>
+</html>

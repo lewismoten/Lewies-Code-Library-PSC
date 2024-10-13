@@ -1,0 +1,109 @@
+<script language=vbscript>
+Dim TotalBars
+Dim Slide
+sub window_onload
+	TotalBars = 0
+	Slide=True
+end sub
+
+Public Sub Public_addBar(BarText)
+	If TotalBars = 0 Then
+		Display = "inline"
+	Else
+		Display = "none"
+	End If
+	Call Body.insertAdjacentHTML("BEFOREEND", _
+		"<span id=""Group" & TotalBars & """>" & _
+			"<DIV class=bar id=Bar>" & BarText & "</DIV>" & _
+			"<div ID=""Area" & TotalBars & """ style=""Display:" & Display & ";""></div>" & _
+		"</span>" _
+		)
+	TotalBars = TotalBars + 1
+End Sub
+
+Public Sub Public_addLink(LinkText, LinkHRef, LinkTarget)
+	For Each Key In Body.all
+		If Key.ID = "Area" & CStr(TotalBars - 1) Then
+			Call Key.insertAdjacentHTML("BEFOREEND", _
+			"<A href=""" & LinkHRef & """ Target=""" & LinkTarget & """>" & _
+				"<div class=Link id=Link>" & LinkText & "</div>" & _
+			"</A>")
+		End If
+	Next
+End Sub
+Private Sub Body_onMouseOver()
+	Select Case window.event.srcElement.id
+		Case "Link"
+			Window.event.srcElement.className = "LinkOver"
+		Case "Bar"
+			window.event.srcElement.className = "BarOver"
+	End Select
+	Window.event.cancelBubble = True
+End Sub
+Private Sub Body_onMouseOut()
+	Select Case window.event.srcElement.id
+		Case "Link"
+			Window.event.srcElement.className = "Link"
+		Case "Bar"
+			window.event.srcElement.className = "Bar"
+	End Select
+	Window.event.cancelBubble = True
+End Sub
+Private Sub Body_onClick()
+	If window.event.srcElement.id = "Bar" Then
+		If Slide Then
+			For Each Key In Body.all
+				If Key.id = "Bar" Then
+					Key.parentElement.children(1).style.display = "none"
+				End If
+			Next
+			window.event.srcElement.parentElement.children(1).style.display = "inline"
+		Else
+			If window.event.srcElement.parentElement.children(1).style.display = "inline" Then
+				window.event.srcElement.parentElement.children(1).style.display = "none"
+			Else
+				window.event.srcElement.parentElement.children(1).style.display = "inline"
+			End If
+		End If
+	End If
+End Sub
+</script>
+<style>
+	BODY{
+		Background-Color:	silver;
+		text-align:			center;
+		font-size:			10pt;
+		margin:				0px;
+		font-family:		arial;
+		font-size:			10pt;
+	}
+	A{
+		text-decoration:	none;
+	}
+	DIV{
+		margin-top:			3 px;
+		width:				100%;
+	}
+	.Link{
+		BACKGROUND-COLOR:	transparent;
+		BORDER:				silver 1px solid;
+		color:				black;
+	}
+	.LinkOver{
+		BACKGROUND-COLOR:	white;
+		BORDER:				silver 1px inset;
+		color:				red;
+	}
+	.Bar{
+		BORDER:				silver thin outset;
+		color:				Blue;
+		cursor:				hand;
+	}
+	.BarOver{
+		background-color:	white;
+		BORDER:				silver thin outset;
+		color:				Red;
+		cursor:				hand;
+	}
+</style>
+<body id=Body><b>Navigation</b></body>

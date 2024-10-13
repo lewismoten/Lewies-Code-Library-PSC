@@ -1,0 +1,35 @@
+<P>
+    I'm working on a project where the user has the option of picker what folder a document will be found in. The target platform is IE 5.5 and later. This allowed me to consider using the modal dialog box to pass and return parameters and restricting the user from navigating elseware with the parent window until the modal dialog was closed.
+    </P>
+    <P>
+    In my scenario, I'm using a database to keep the folder names and there respective paths. This code may be changed to interact directly with the file system, but I'll leave that up to you.
+    </P>
+    <P>
+    I created a file system object originally to import my folders from my website into the database so I had some real data to work with.
+    The database table is called "Folders" and contains three columns.
+    </P>
+    <OL>
+    <LI>FolderID (autonumber)
+    <LI>Folder text (63)
+    <LI>Path text(255) - allow zero length
+    </OL>
+    <P>
+    <I>FolderID</I> is not necessary for this code to work. It has been put into place for future compatability with my own project.
+    <I>Folder</I> is simply the name of the folder. The code has restrictions preventing characters such as \, /, *, ", ?, :, | (just like normal file name restrictions on the windows platform)
+    <I>Path</I> is the entire path to the folder (including the folder itself). There must not be a trailing slash "/" in order for this to work. Otherwise, you will need to modify the code accordingly to be compatable. Paths are also unique.
+    </P>
+    <P>
+    To list only the sub folders within a specified path, i perform a search on all paths with the current path - but add a trailing slash like so:
+    </P>
+    <FONT color=blue>
+    SELECT * FROM Folders WHERE Path LIKE '/Content/%'
+    </FONT>
+    <P>
+    Now, this was causing some problems at first, because it would not only list all the sub folders, but it would also list subfolders undernieth of them. The solution around this would look simular to the following:
+    </P>
+    <FONT color="blue">
+    SELECT * FROM Folders WHERE Path LIKE '/Content/%' AND NOT Path LIKE '/Content/%/%'
+    </FONT>
+    <P>
+    This method has an extra argument making sure that additional forward slashes do not appear after the subfolders.
+    </P>

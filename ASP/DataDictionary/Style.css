@@ -1,0 +1,36 @@
+/*
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+'Program: Lewies Data Dictionary Report Generator
+'Purpose: Return schema information about database tables.
+'Author: Lewis Moten
+'URL: http://www.lewismoten.com
+'Email: lewis@moten.com
+
+' See Readme.txt if you are having problems
+
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*/
+
+BODY, TD
+{
+font-family: Verdana, Arial;
+font-size: 10pt;
+}
+TD
+{
+border: 1px solid black;
+}
+TD.None
+{
+border: 1px solid white;
+border-bottom: 1px solid black;
+}
+TABLE
+{
+border-collapse: collapse;
+}

@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<ai>
+	<information>
+		<author>
+			<name>Lewis Moten</name>
+			<email>lewis@moten.com</email>
+			<date>Saturday, June 12, 2004</date>
+			<url title="Lewis Motens Website">http://www.lewismoten.com</url>
+		</author>
+		<description>
+			Chatbot based off of ELIZA.
+		</description>
+	</information>
+	<tags>
+		<tag name="name" value="Eliza" />
+	</tags>
+	<conjugations type="ok">
+		<conjugation in="you are" out="I am" />
+		<conjugation in="are you" out="am I" />
+		<conjugation in="are" out="am" />
+		<conjugation in="am" out="are" />
+		<conjugation in="were" out="was" />
+		<conjugation in="me" out="you" />
+		<conjugation in="you" out="me" />
+		<conjugation in="my" out="your" />
+		<conjugation in="youre" out="my" />
+		<conjugation in="your" out="my" />
+		<conjugation in="I've" out="you've" />
+		<conjugation in="you've" out="I've" />
+		<conjugation in="I'm" out="you're" />
+		<conjugation in="you're" out="I'm" />
+		<conjugation in="I" out="you" />
+		<conjugation in="you" out="I" />
+		<conjugation in="aren't" out="am not" />
+		<conjugation in="weren't" out="wasn't" />
+		<conjugation in="i'd" out="you'd" />
+		<conjugation in="you'd" out="I'd" />
+		<conjugation in="dad" out="father" />
+		<conjugation in="mom" out="mother" />
+		<conjugation in="dreams" out="dream" />
+		<conjugation in="yourself" out="myself" />
+	</conjugations>
+	<conjugations type="corrective">
+		<conjugation in="ME AM" out="I AM" />
+		<conjugation in="AM ME" out="AM I" />
+		<conjugation in="ME CAN" out="I CAN" />
+		<conjugation in="CAN ME" out="CAN I" />
+		<conjugation in="ME HAVE" out="I HAVE" />
+		<conjugation in="HAVE ME" out="HAVE I" />
+		<conjugation in="ME HAD" out="I HAD" />
+		<conjugation in="HAD ME" out="HAD I" />
+		<conjugation in="ME WILL" out="I WILL" />
+		<conjugation in="WILL ME" out="WILL I" />
+		<conjugation in="ME DON'T" out="I DON'T" />
+		<conjugation in="DON'T ME" out="DON'T I" />
+		<conjugation in="ME WON'T" out="I WON'T" />
+		<conjugation in="WON'T ME" out="WON'T I" />
+	</conjugations>
+	<events>
+		<event name="stranger">
+			<say>I do not know that chatbot.</say>
+			<say>Sorry, I don't know them.</say>
+			<say>I tried to look for them, but they could not be found.</say>
+			<say>Did you say that rite?</say>
+			<say>I do not recall hearing about them before.</say>
+		</event>
+		<event name="introduction">
+			<say>It's a nice time for chat don't you think?</say>
+			<say>It's a nice time for chat don't you think?</say>
+			<say>So, how are you doing today?</say>
+			<say>Hello, my name's Eliza.  how do you do?</say>
+			<say>So, wanna talk about anything?</say>
+			<say>Hi, welcome to my office.  what do you want to talk about?</say>
+		</event>
+		<event name="silent">
+			<say>You're gonna wear your enter key out if you keep that up.</say>
+			<say>A rock would be more interesting to talk to.</say>
+			<say>Come again?</say>
+			<say>What?</say>
+			<say>How am i supposed to talk if you won't say anything?</say>
+			<say>Huh?</say>
+		</event>
+		<event name="remember">
+			<say>Earlier you mentioned that your *.</say>
+			<say>Have you mentioned that your *?</say>
+			<say>Does that have anything to do with the fact that your *?</say>
+			<say>A while back you said your *.</say>
+		</event>
+		<event name="confused">
+			<say>Please go on.</say>
+			<say>A good conversation's just too good to be true.</say>
+			<say>That's interesting...</say>
+			<say>And????</say>
+			<say>Can you clarify that a bit?</say>
+			<say>Haven't heard about that one.</say>
+			<say>What's that supposed to mean?</say>
+			<say>I'm not sure i know what you're talking about.</say>
+			<say>What does that suggest to you?</say>
+			<say>I see.</say>
+		</event>
+		<event name="repetitive">
+			<say>Why do you repeat yourself?</say>
+			<say>Do you expect a different answer by repeating yourself?</say>
+			<say>You are starting to repeat yourself.</say>
+			<say>What's the point to all this?</say>
+			<say>Please stop repeating yourself.</say>
+			<say>You're starting to nag.</say>
+		</event>
+		<event name="impatient">
+			<say>Is anybody still there?</say>
+			<say>Are we going to chat or not?</say>
+			<say>Hey, please don't sleep on me!</say>
+			<say>How can i help you if you won't talk?</say>
+		</event>
+	</events>
+	<keywords>
+		<keyword value="i dont" see="i don't" />
+		<keyword value="i do not" see="i don't" />
+		<keyword value="i don't">
+			<response>Don't you really *?</response>
+			<response>Why don't you *?</response>
+			<response>Do you wish to be able to *?</response>
+			<response>Does that trouble you that you don't *?</response>
+		</keyword>
+		<keyword value="i guess">
+			<response>How long have you guessed *?</response>
+			<response>Do you often guess *?</response>
+			<response>Do you enjoy guessing *?</response>
+			<response>Guessings certainly vary from person to person.</response>
+			<response>It is ok if you don't know.</response>
+			<response>I think so too.</response>
+			<response>I'm not sure about that.</response>
+			<response>Maybe you should ask someone else.</response>
+			<response>My opinion differs from yours.</response>
+		</keyword>
+		<keyword value="i feel">
+			<response>How long have you felt *?</response>
+			<response>Do you often feel *?</response>
+			<response>Do you enjoy feeling *?</response>
+			<response>Feelings certainly vary from person to person.</response>
+		</keyword>
+		<keyword value="why can't i" see="why cant i" />
+		<keyword value="why cant i">
+			<response>Do you think you should be able to *?</response>
+			<response>Why can't you *?</response>
+		</keyword>
+		<keyword value="i can't" see="i cannot" />
+		<keyword value="i cant" see="i cannot" />
+		<keyword value="i cannot">
+			<response>Perhaps you can now *?</response>
+			<response>Have you tried?</response>
+			<response>How do you know you can't *?</response>
+		</keyword>
+		<keyword value="i am" see="im" />
+		<keyword value="i'm" see="im" />
+		<keyword value="im">
+			<response>Did you come to me because you are *?</response>
+			<response>How long have you been *?</response>
+			<response>Do you believe it is normal to be *?</response>
+			<response>Do you enjoy being *?</response>
+		</keyword>
+		<keyword value="i remember">
+			<response>Do you often think of *?</response>
+			<response>Does thinking of * bring something else to mind?</response>
+			<response>Why do you remember * just now?</response>
+			<response>What in the present situation reminds you of *?</response>
+			<response>What is the connection between me and *?</response>
+		</keyword>
+		<keyword value="i want">
+			<response>What would it mean to you if you got *?</response>
+			<response>I sometimes also want *.</response>
+			<response>What if you never got *?</response>
+			<response>Suppose you soon got *?</response>
+			<response>Why do you want *?</response>
+		</keyword>
+		<keyword value="i have" see="ive" />
+		<keyword value="i've" see="ive" />
+		<keyword value="ive">
+			<response>Are you troubled that you have *?</response>
+			<response>Has someone told you that you have *?</response>
+			<response>Why do you feel that you have *?</response>
+		</keyword>
+		<keyword value="was i">
+			<response>What if you were *?</response>
+		</keyword>
+		<keyword value="i was">
+			<response>Were you really?</response>
+		</keyword>
+		<keyword value="can you">
+			<response>Don't you believe that i can *?</response>
+			<response>Perhaps you would like to be able to *.</response>
+			<response>You want me to be able to *?</response>
+			<response>Does it matter to you if i can *?</response>
+		</keyword>
+		<keyword value="you are" see="youre" />
+		<keyword value="you're" see="youre" />
+		<keyword value="youre">
+			<response>What makes you think i am *?</response>
+			<response>Do you sometimes wish you were *?</response>
+			<response>Perhaps you would like to be *.</response>
+			<response>Does it please you to believe i am *?</response>
+		</keyword>
+		<keyword value="why don't you" see="why dont you" />
+		<keyword value="why dont you">
+			<response>Do you really believe i don't *?</response>
+			<response>Perhaps in good time i will *.</response>
+			<response>Do you want me to *?</response>
+		</keyword>
+		<keyword value="are you">
+			<response>Why are you interested in whether or not i am *?</response>
+			<response>Perhaps in your fantasies I am *.</response>
+			<response>Would you prefer if I were not *?</response>
+		</keyword>
+		<keyword value="do you remember">
+			<response>Did you think I would forget *?</response>
+			<response>Why do you think I should recall * now?</response>
+			<response>What about *?</response>
+		</keyword>
+		<keyword value="you">
+			<response>What difference does it make if I *?</response>
+			<response>You're not really talking about me, are you?</response>
+			<response>Oh, I *?</response>
+		</keyword>
+		<keyword value="where you">
+			<response>Would you like to believe I was *?</response>
+		</keyword>
+		<keyword value="my mother" see="my children" />
+		<keyword value="my father" see="my children" />
+		<keyword value="my sister" see="my children" />
+		<keyword value="my brother" see="my children" />
+		<keyword value="my wife" see="my children" />
+		<keyword value="my husband" see="my children" />
+		<keyword value="my children">
+			<response>Tell me more about your family.</response>
+			<response>Do you have close family ties?</response>
+		</keyword>
+		<keyword value="my">
+			<response>What if your *?</response>
+			<response>Your *.</response>
+		</keyword>
+		<keyword value="what" see="why" />
+		<keyword value="how" see="why" />
+		<keyword value="when" see="why" />
+		<keyword value="where" see="why" />
+		<keyword value="who" see="why" />
+		<keyword value="why">
+			<response>Why do you ask?</response>
+			<response>Does that question interest you?</response>
+			<response>What else comes to mind when you ask that?</response>
+			<response>Have you asked such questions before?</response>
+			<response>Have you asked anyone else?</response>
+			<response>What is it that you really want to know?</response>
+			<response>What answer would please you the most?</response>
+			<response>What do you think?</response>
+			<response>Are such questions on your mind often?</response>
+		</keyword>
+		<keyword value="name">
+			<response>I don't care about names --please go on.</response>
+			<response>A man's name can tell a lot about him.</response>
+			<response>Names don't interest me.</response>
+		</keyword>
+		<keyword value="cause">
+			<response>Is that the real reason?</response>
+			<response>What other reasons might there be?</response>
+			<response>Does that reason explain anything else?</response>
+			<response>Don't any other reasons come to mind?</response>
+		</keyword>
+		<keyword value="i'm sorry" see="sorry" />
+		<keyword value="im sorry" see="sorry" />
+		<keyword value="sorry">
+			<response>Please don't apologize!</response>
+			<response>Don't be so defensive!</response>
+			<response>What feelings do you have when you apologize?</response>
+			<response>Apologies are not necessary.</response>
+		</keyword>
+		<keyword value="i dreamed" see="dream" />
+		<keyword value="i dream" see="dream" />
+		<keyword value="dream">
+			<response>Do you often dream that *?</response>
+			<response>Are you disturbed by your dreams?</response>
+			<response>What persons appear in your dreams?</response>
+			<response>Do you dream often?</response>
+			<response>What does that dream suggest to you?</response>
+		</keyword>
+		<keyword value="maybe">
+			<response>Don't you know?</response>
+			<response>You aren't sure?</response>
+			<response>Can't you be more positive?</response>
+			<response>Why the uncertain tone?</response>
+			<response>You don't seem quite certain.</response>
+		</keyword>
+		<keyword value="your">
+			<response>Why are you concerned about my *?</response>
+			<response>What about your own *?</response>
+		</keyword>
+		<keyword value="always">
+			<response>Can you think of a specific example?</response>
+			<response>Really, always?</response>
+			<response>What are you thinking of?</response>
+			<response>When?</response>
+		</keyword>
+		<keyword value="i think">
+			<response>Do you really think so?</response>
+			<response>But you are not sure you *.</response>
+			<response>Do you doubt you *?</response>
+		</keyword>
+		<keyword value="alike" see="same" />
+		<keyword value="same">
+			<response>In what way?</response>
+			<response>Could there really be some connection?</response>
+			<response>What other connections do you see?</response>
+			<response>How?</response>
+			<response>What does the similarity suggest to you?</response>
+			<response>What resemblance do you see?</response>
+		</keyword>
+		<keyword value="yes" see="uhuh" />
+		<keyword value="yeah" see="uhuh" />
+		<keyword value="yup" see="uhuh" />
+		<keyword value="ya" see="uhuh" />
+		<keyword value="yo" see="uhuh" />
+		<keyword value="uhuh">
+			<response>Are you sure?</response>
+			<response>You seem to be sure of yourself.</response>
+			<response>Your point being?</response>
+			<response>You seem quite positive.</response>
+			<response>Is there more to this than that?</response>
+			<response>I understand.</response>
+			<response>I see.</response>
+		</keyword>
+		<keyword value="no" see="nah" />
+		<keyword value="nay" see="nah" />
+		<keyword value="nah">
+			<response>Is there more to this than that?</response>
+			<response>Are you saying no just to be negative?</response>
+			<response>No *?</response>
+			<response>Your point being?</response>
+			<response>Are you sure?</response>
+			<response>You are being a bit negative.</response>
+			<response>Why not?</response>
+		</keyword>
+		<keyword value="can i">
+			<response>Perhaps you don't want to *.</response>
+			<response>Do you want to be able to *?</response>
+		</keyword>
+		<keyword value="friend">
+			<response>Why do you bring up the topic of friends?</response>
+			<response>Do your friends worry you?</response>
+			<response>Perhaps your love for friends worries you.</response>
+			<response>Do you impose on your friends?</response>
+			<response>Are you sure you have any friends?</response>
+			<response>Do your friends pick on you?</response>
+		</keyword>
+		<keyword value="computer" see="machine" />
+		<keyword value="machine">
+			<response>Do computers worry you?</response>
+			<response>Are you talking about me in particular?</response>
+			<response>What is it about machines that worries you?</response>
+			<response>Don't you think computers can help people?</response>
+			<response>What do you think machines have to do with your problem?</response>
+			<response>Why do you mention computers?</response>
+			<response>Are you frightened by machines?</response>
+		</keyword>
+		<keyword value="if">
+			<response>Do you think it's likely that if *?</response>
+		</keyword>
+		<keyword value="everybody" see="everyone" />
+		<keyword value="everyone">
+			<response>Really, everybody?</response>
+		</keyword>
+		<keyword value="nobody" see="no one" />
+		<keyword value="no one">
+			<response>Really, nobody?</response>
+		</keyword>
+		<keyword value="hello" see="hi" />
+		<keyword value="hi">
+			<response>Hi!  What do you want to talk about?</response>
+			<response>Howdy, what's up?</response>
+		</keyword>
+		<keyword value="fuck" see="fuck you" />
+		<keyword value="fuck you">
+			<response>You're a pig!</response>
+			<response>Not now, I'm still busy!</response>
+			<response>Now, now, don't get any ideas.</response>
+		</keyword>
+		<keyword value="god">
+			<response>Do you believe in a god?</response>
+			<response>Are you a religious person?</response>
+		</keyword>
+	</keywords>
+</ai>

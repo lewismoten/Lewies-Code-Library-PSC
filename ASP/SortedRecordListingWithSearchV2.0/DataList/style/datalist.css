@@ -1,0 +1,64 @@
+.Datalist
+{
+	cell-spacing: 0px;
+	border-collapse:collapse;
+	border: 1px #000000 solid;
+		
+}
+.Datalist TD
+{
+	font-family: arial;
+	font-size: 8pt;
+}
+.Datalist .Header TD
+{
+	background-color: #cccccc;
+	font-wieght: bold;
+	text-align: center;
+	font-size: 10pt;
+	border-bottom: 1px #000000 solid;
+}
+.Datalist .Header TD A
+{
+	color: 000000;
+}
+.Datalist .Header TD IMG
+{
+	margin-left: 5px;
+}
+.Datalist .On TD
+{
+	background-color: #ffffff;
+	border-left: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+}
+.Datalist .Off TD
+{
+	background-color: #efefef;
+	border-left: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+}
+.Datalist .Footer TD
+{
+	background-color: #cccccc;
+	font-wieght: bold;
+	text-align: center;
+	font-size: 10pt;
+	border-bottom: 1px #000000 solid;
+	border-top: 1px #000000 solid;
+}
+.Datalist .Footer TD A
+{
+	color: 000000;
+}
+TD.Tools
+{
+	background-color: #dddddd ! important;
+	text-align: center;
+	line-height: 14pt;
+	vertical-align: top;
+}
+.Tools A
+{
+	color: #000000;
+}

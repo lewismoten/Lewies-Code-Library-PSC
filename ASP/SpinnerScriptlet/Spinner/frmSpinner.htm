@@ -1,0 +1,105 @@
+<STYLE>
+BODY
+{
+	Background-color: buttonface;
+	margin: 0px;
+	border: 0px;
+	overflow: hidden;
+}
+IMG
+{
+	position:absolute;
+}
+.ButtonUp, IMG
+{
+	border-top: 2px solid buttonhighlight;
+	border-left: 2px solid buttonhighlight;
+	border-right: 2px solid buttonshadow;
+	border-bottom: 2px solid buttonshadow;
+}
+.ButtonDown
+{
+	border-bottom: 2px solid buttonhighlight;
+	border-right: 2px solid buttonhighlight;
+	border-left: 2px solid buttonshadow;
+	border-top: 2px solid buttonshadow;
+}
+</STYLE>
+<SCRIPT language="vbScript" src="modScriptlet.vbs"></SCRIPT>
+<IMG src="Up.gif" ID="cmdUp" width="100" height="86">
+<IMG src="Down.gif" ID="cmdDown" width="100" height="86">
+
+<SCRIPT language="vbScript">
+
+Public public_Step
+Public public_Value
+Public public_Max
+Public public_Min
+
+Dim TimerID
+
+Sub window_onLoad()
+	cmdUp.style.top = "0px"
+	cmdUp.style.height = ((document.body.clientHeight - 8) \ 2) & "px"
+	cmdUp.style.left = "0px"
+	cmdUp.style.width = (document.body.clientWidth - 4) & "px"
+	
+	cmdDown.style.top = (((document.body.clientHeight - 8) \ 2) + 4) & "px"
+	cmdDown.style.height = ((document.body.clientHeight - 8) \ 2) & "px"
+	cmdDown.style.left = "0px"
+	cmdDown.style.width = (document.body.clientWidth - 4) & "px"
+	
+	public_Step = 1
+	public_Max = 100
+	public_Min = 1
+	public_Value = 1
+	
+End Sub
+Sub Document_onClick()
+	If window.event.y < (document.body.clientHeight \ 2) Then
+		cmdUp.className = "ButtonUp"
+		Incriment
+	Else
+		cmdDown.className = "ButtonUp"
+		DeIncriment
+	End If
+End Sub
+Sub Document_onMouseDown()
+'	TimerID = window.setInterval("Call Document_onClick()", 500, "vbScript")
+	If window.event.y < (document.body.clientHeight \ 2) Then
+		cmdUp.className = "ButtonDown"
+	Else
+		cmdDown.className = "ButtonDown"
+	End If
+End Sub
+Sub Document_onMouseUp()
+'	Call window.clearInterval(TimerID)
+	If window.event.y < (document.body.clientHeight \ 2) Then
+		cmdUp.className = "ButtonUp"
+	Else
+		cmdDown.className = "ButtonUp"
+	End If
+End Sub
+
+Sub Incriment()
+	Dim llngOldValue
+	llngOldValue = public_Value
+	public_Value = public_Value + public_Step
+	If public_Value > public_Max Then 
+		public_Value = public_Max
+	End If
+	If llngOldValue = public_Value Then Exit Sub
+	SendEvent "onChange()", public_Value
+End Sub
+
+Sub DeIncriment()
+	Dim llngOldValue
+	llngOldValue = public_Value
+	public_Value = public_Value - public_Step
+	If public_Value < public_Min Then 
+		public_Value = public_Min
+	End If
+	If llngOldValue = public_Value Then Exit Sub
+	SendEvent "onChange()", public_Value
+End Sub
+</SCRIPT>

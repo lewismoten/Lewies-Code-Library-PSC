@@ -1,0 +1,263 @@
+<p class=MsoNormal><span style='font-family:Arial'>A co-worker and I were
+trying to determine the use of some SQL syntax the other day and this sparked
+my imagination today when reflecting upon it.<span style="mso-spacerun: yes">&nbsp;
+</span>I am beginning to toy around with the idea of creating a web-based RPG
+game.<span style="mso-spacerun: yes">&nbsp; </span>Part of this idea is random generation
+of tile-based world maps.<span style="mso-spacerun: yes">&nbsp; </span>In order to
+do this, I needed to come up with a grid and populate it afterwards.<span
+style="mso-spacerun: yes">&nbsp; </span>I’ve tried a few ideas to do this, and found
+that some methods are slower then others.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'>The first attempt I tried
+was to create a temporary table, and insert a point individually.<span
+style="mso-spacerun: yes">&nbsp; </span>In short, it was something like this:</span></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<pre><span style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @COUNT_X <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @COUNT_Y <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @WIDTH <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @HEIGHT <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @WIDTH <span style='color:gray'>=</span> 255<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @HEIGHT <span style='color:gray'>=</span> 255<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>CREATE TABLE</span><span
+style='font-family:"Courier New"'> #GRID<span style='color:gray'>(</span>X <span
+style='color:blue'>INT</span><span style='color:gray'>,</span> Y <span
+style='color:blue'>INT</span><span style='color:gray'>)</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @COUNT_X <span style='color:gray'>=</span> 0<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>WHILE </span><span
+style='font-family:"Courier New";color:gray'>NOT</span><span style='font-family:
+"Courier New"'> @COUNT_X <span style='color:gray'>=</span> @WIDTH<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>BEGIN<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>SET</span> @COUNT_X <span style='color:gray'>=</span> @COUNT_X <span
+style='color:gray'>+</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>SET</span> @COUNT_Y <span style='color:gray'>=</span> 0<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>WHILE </span><span style='color:gray'>NOT</span> @COUNT_Y <span
+style='color:gray'>=</span> @HEIGHT<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>BEGIN<o:p></o:p></span></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='color:blue'>SET</span> @COUNT_Y <span
+style='color:gray'>=</span> @COUNT_Y <span style='color:gray'>+</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='color:blue'>INSERT INTO</span> #GRID <span
+style='color:gray'>(</span>X<span style='color:gray'>,</span> Y<span
+style='color:gray'>)</span><span style='color:blue'> VALUES</span> <span
+style='color:gray'>(</span>@COUNT_X<span style='color:gray'>,</span> @COUNT_Y<span
+style='color:gray'>)</span><o:p></o:p></span></pre><pre><span style='font-family:
+"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>END<o:p></o:p></span></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>END<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SELECT</span><span
+style='font-family:"Courier New"'> X<span style='color:gray'>,</span> Y <span
+style='color:blue'>FROM</span> #GRID<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DROP TABLE</span><span
+style='font-family:"Courier New"'> #GRID</span></pre>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='font-family:Arial'>This was great, and it
+appears to be fast.<span style="mso-spacerun: yes">&nbsp; </span>I did not like the
+idea that there were so many individual insert fields.<span
+style="mso-spacerun: yes">&nbsp; </span>It also appeared to take quite some time
+before the table of results was returned.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'>My next attempt was to
+create one row of values, and to keep selecting those same values into each
+column.<o:p></o:p></span></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<pre><span style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @COUNT_X <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @COUNT_Y <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @WIDTH <span style='color:blue'>INT</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New"'> @HEIGHT <span style='color:blue'>INT<o:p></o:p></span></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @WIDTH <span style='color:gray'>=</span> 255<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @HEIGHT <span style='color:gray'>=</span> 255<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>CREATE TABLE </span><span
+style='font-family:"Courier New"'>#GRID<span style='color:gray'>(</span>X <span
+style='color:blue'>INT</span><span style='color:gray'>,</span> Y <span
+style='color:blue'>INT</span><span style='color:gray'>)</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @COUNT_X <span style='color:gray'>=</span> 0<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>WHILE </span><span
+style='font-family:"Courier New";color:gray'>NOT</span><span style='font-family:
+"Courier New"'> @COUNT_X <span style='color:gray'>=</span> @WIDTH<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>BEGIN<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>SET</span> @COUNT_X <span style='color:gray'>=</span> @COUNT_X <span
+style='color:gray'>+</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>INSERT INTO</span> #GRID <span style='color:gray'>(</span>X<span
+style='color:gray'>,</span> Y<span style='color:gray'>)</span> <span
+style='color:blue'>VALUES</span> <span style='color:gray'>(</span>@COUNT_X<span
+style='color:gray'>,</span> 1<span style='color:gray'>)</span><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>END<o:p></o:p></span></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>END<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New"'> @COUNT_Y <span style='color:gray'>=</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>WHILE </span><span
+style='font-family:"Courier New";color:gray'>NOT</span><span style='font-family:
+"Courier New"'> @COUNT_Y <span style='color:gray'>=</span> @HEIGHT<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>BEGIN<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>SET</span> @COUNT_Y <span style='color:gray'>=</span> @COUNT_Y <span
+style='color:gray'>+</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:blue'>INSERT INTO</span> #GRID <span style='color:gray'>(</span>X<span
+style='color:gray'>,</span> Y<span style='color:gray'>)</span> <span
+style='color:blue'>SELECT</span> X<span style='color:gray'>,</span> @COUNT_Y <span
+style='color:blue'>FROM</span> #GRID <span style='color:blue'>WHERE</span> Y <span
+style='color:gray'>=</span> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>END<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SELECT</span><span
+style='font-family:"Courier New"'> X<span style='color:gray'>,</span> Y <span
+style='color:blue'>FROM</span> #GRID<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DROP TABLE</span><span
+style='font-family:"Courier New"'> #GRID</span></pre>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='font-family:Arial'>Although there are less
+individual INSERT statements being executed, the SELECT query kills processing
+time as it confirms that we are looking for records where Y = 1.<span
+style="mso-spacerun: yes">&nbsp; </span>The next idea that I came up with is to
+create two individual tables, and then do a CROSS JOIN on them.<span
+style="mso-spacerun: yes">&nbsp; </span>Cross joins are a little like quantum
+physics in that you get every possible answer possible at the same time.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'>Since this is my final
+answer, I have provided it as a stored procedure:<o:p></o:p></span></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<pre><span style='font-family:"Courier New";color:blue'>CREATE PROCEDURE</span><span
+style='font-family:"Courier New";color:black'> sprGetGrid<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:gray'>(<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>@Width </span><span
+style='font-family:"Courier New";color:blue'>INT</span><span style='font-family:
+"Courier New";color:gray'>,</span><span style='font-family:"Courier New";
+color:black'><o:p></o:p></span></pre><pre><span style='font-family:"Courier New";
+color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>@Height </span><span
+style='font-family:"Courier New";color:blue'>INT<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:gray'>)<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>AS<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DECLARE</span><span
+style='font-family:"Courier New";color:black'> @COUNT </span><span
+style='font-family:"Courier New";color:blue'>INT</span><span style='font-family:
+"Courier New";color:black'><o:p></o:p></span></pre><pre><span style='font-family:
+"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET NOCOUNT ON<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>CREATE TABLE</span><span
+style='font-family:"Courier New";color:black'> #X</span><span style='font-family:
+"Courier New";color:gray'>(</span><span style='font-family:"Courier New";
+color:black'>X </span><span style='font-family:"Courier New";color:blue'>INT</span><span
+style='font-family:"Courier New";color:gray'>)</span><span style='font-family:
+"Courier New";color:black'><o:p></o:p></span></pre><pre><span style='font-family:
+"Courier New";color:blue'>SET</span><span style='font-family:"Courier New";
+color:black'> @COUNT </span><span style='font-family:"Courier New";color:gray'>=</span><span
+style='font-family:"Courier New";color:black'> 0<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>WHILE</span><span
+style='font-family:"Courier New";color:black'> </span><span style='font-family:
+"Courier New";color:gray'>NOT</span><span style='font-family:"Courier New";
+color:black'> @COUNT </span><span style='font-family:"Courier New";color:gray'>=</span><span
+style='font-family:"Courier New";color:black'> @Width<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>BEGIN<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New";color:black'> @COUNT </span><span style='font-family:"Courier New";
+color:gray'>=</span><span style='font-family:"Courier New";color:black'> @COUNT </span><span
+style='font-family:"Courier New";color:gray'>+</span><span style='font-family:
+"Courier New";color:black'> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:"Courier New";color:blue'>INSERT INTO</span><span
+style='font-family:"Courier New";color:black'> #X </span><span
+style='font-family:"Courier New";color:blue'>VALUES</span><span
+style='font-family:"Courier New";color:gray'>(</span><span style='font-family:
+"Courier New";color:black'>@COUNT</span><span style='font-family:"Courier New";
+color:gray'>)</span><span style='font-family:"Courier New";color:black'><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>END<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>CREATE TABLE</span><span
+style='font-family:"Courier New";color:black'> #Y</span><span style='font-family:
+"Courier New";color:gray'>(</span><span style='font-family:"Courier New";
+color:black'>Y </span><span style='font-family:"Courier New";color:blue'>INT</span><span
+style='font-family:"Courier New";color:gray'>)</span><span style='font-family:
+"Courier New";color:black'><o:p></o:p></span></pre><pre><span style='font-family:
+"Courier New";color:blue'>SET</span><span style='font-family:"Courier New";
+color:black'> @COUNT </span><span style='font-family:"Courier New";color:gray'>=</span><span
+style='font-family:"Courier New";color:black'> 0<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>WHILE </span><span
+style='font-family:"Courier New";color:gray'>NOT</span><span style='font-family:
+"Courier New";color:black'> @COUNT </span><span style='font-family:"Courier New";
+color:gray'>=</span><span style='font-family:"Courier New";color:black'> @Height<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>BEGIN<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:"Courier New";color:blue'>SET</span><span style='font-family:
+"Courier New";color:black'> @COUNT </span><span style='font-family:"Courier New";
+color:gray'>=</span><span style='font-family:"Courier New";color:black'> @COUNT </span><span
+style='font-family:"Courier New";color:gray'>+</span><span style='font-family:
+"Courier New";color:black'> 1<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:"Courier New";color:blue'>INSERT INTO</span><span
+style='font-family:"Courier New";color:black'> #Y </span><span
+style='font-family:"Courier New";color:blue'>VALUES</span><span
+style='font-family:"Courier New";color:gray'>(</span><span style='font-family:
+"Courier New";color:black'>@COUNT</span><span style='font-family:"Courier New";
+color:gray'>)</span><span style='font-family:"Courier New";color:black'><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>END<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SET NOCOUNT OFF<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>SELECT</span><span
+style='font-family:"Courier New";color:black'> X</span><span style='font-family:
+"Courier New";color:gray'>,</span><span style='font-family:"Courier New";
+color:black'> Y </span><span style='font-family:"Courier New";color:blue'>FROM</span><span
+style='font-family:"Courier New";color:black'> #X </span><span
+style='font-family:"Courier New";color:gray'>CROSS JOIN</span><span
+style='font-family:"Courier New";color:black'> #Y<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DROP TABLE</span><span
+style='font-family:"Courier New";color:black'> #X<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>DROP TABLE</span><span
+style='font-family:"Courier New";color:black'> #Y<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>GO<o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+style='font-family:"Courier New";color:blue'>EXEC</span><span style='font-family:
+"Courier New";color:black'> sprGetGrid 500</span><span style='font-family:"Courier New";
+color:gray'>,</span><span style='font-family:"Courier New";color:black'>500</span><span
+style='color:black'><o:p></o:p></span></pre>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal><span style='font-family:Arial'>The speed was amazing.<span
+style="mso-spacerun: yes">&nbsp; </span>Where the first attempt at the problem would
+come back after 10 seconds, this one came back in less then 1.<span
+style="mso-spacerun: yes">&nbsp; </span>The second attempt at the problem above came
+back in 33 seconds.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-family:Arial'>In the past, I have never
+found the need for a cross join, as they always seemed primitive from the older
+days of SQL when you didn’t have the other join types.<span
+style="mso-spacerun: yes">&nbsp; </span>Now that I have my grid table, I can join it
+with other information tables to populate it.<o:p></o:p></span></p>

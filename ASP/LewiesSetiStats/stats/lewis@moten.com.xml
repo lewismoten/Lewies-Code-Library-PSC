@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+
+<userstats><cache>7/29/2004 12:07:07 AM EST</cache>
+
+<userinfo>
+	<name><a href="http://www.lewismoten.com" target="new">Lewis Moten</a></name>
+	<numresults>2317</numresults>
+	<cputime>    1.241 years</cputime>
+	<avecpu>4 hr 41 min 32.5 sec</avecpu>
+	<resultsperday>3.06</resultsperday>
+	<lastresulttime>Wed Jul 28 08:40:15 2004</lastresulttime>
+	<regdate>Mon Jul  1 23:30:15 2002</regdate>
+	<usertime>    2.077 years</usertime>
+	<userprofile><a href="http://setiathome.ssl.berkeley.edu/fcgi-bin/fcgi?cmd=view_feedback&amp;id=36152">View user profile</a></userprofile>
+</userinfo>
+<groupinfo>
+	<group><a href="http://setiathome.ssl.berkeley.edu/stats/team/team_3068.html">Computer Sciences Corporation</a></group>
+</groupinfo>
+<rankinfo>
+	<rank>122095</rank>
+	<ranktotalusers>5077028</ranktotalusers>
+	<num_samerank>44</num_samerank>
+	<top_rankpct>2.405</top_rankpct>
+</rankinfo>
+<certinfo>
+	<cert><a href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi2?email=lewis@moten.com+cmd=print_cert+certnum=1000+size=0">Download 1,000 Workunit Certificate</a></cert>
+	<cert><a href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi2?email=lewis@moten.com+cmd=print_cert+certnum=750+size=0">Download 750 Workunit Certificate</a></cert>
+	<cert><a href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi2?email=lewis@moten.com+cmd=print_cert+certnum=500+size=0">Download 500 Workunit Certificate</a></cert>
+	<cert><a href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi2?email=lewis@moten.com+cmd=print_cert+certnum=250+size=0">Download 250 Workunit Certificate</a></cert>
+	<cert><a href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi2?email=lewis@moten.com+cmd=print_cert+certnum=100+size=0">Download 100 Workunit Certificate</a></cert>
+</certinfo>
+
+</userstats>

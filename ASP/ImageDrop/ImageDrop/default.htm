@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Image Drop Demonstration</title>
+		<script language="vbscript" src="DropAPI.vbs"></script>
+		<script language="vbscript">
+			Sub window_onload()
+				Call Drop("images/" & Month(Date) & ".gif", 6)
+			end sub
+		</script>
+	</head>
+	<body scroll="no" bgcolor="#888888">
+		<H1>Image Drop Demonstration</H1>
+		<P>
+			This script allows you to specify an image to fall down the entire height of the web
+			browser.  Images drop at random speeds.  The number of images dropping may be specified
+			as well.  This particular script demonstrates how to drop an image related to the current
+			month.  This gives off an interesting effect.
+		</P>
+		<TABLE>
+			<TR><TD>January</TD><TD>Snow Flakes</TD></TR>
+			<TR><TD>February</TD><TD>Hearts (Valentines Day)</TD></TR>
+			<TR><TD>March</TD><TD>Clovers (St. Patricks Day)</TD></TR>
+			<TR><TD>April</TD><TD>Rain Drops (April showers bring may flowers)</TD></TR>
+			<TR><TD>May</TD><TD>Flowers</TD></TR>
+			<TR><TD>June</TD><TD>Smilies</TD></TR>
+			<TR><TD>July</TD><TD>United States Flags (Independance Day July 4th)</TD></TR>
+			<TR><TD>August</TD><TD>Rays of Sun</TD></TR>
+			<TR><TD>September</TD><TD>Smilies</TD></TR>
+			<TR><TD>October</TD><TD>Spider Webs (Halloween)</TD></TR>
+			<TR><TD>November</TD><TD>Turkeys (Thanksgiving)</TD></TR>
+			<TR><TD>December</TD><TD>Pine Trees (Christmas)</TD></TR>
+		</TABLE>
+		<P>
+			This demonstration was brought to you by Lewis Moten.<BR>
+			(<A href="http://www.lewismoten.com">www.lewismoten.com</A>)
+		</P>
+	</body>
+</html>

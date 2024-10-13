@@ -1,0 +1,23 @@
+<TITLE>Spinner Scriptlet Demonstration</TITLE>
+<INPUT type="text" value="1" ID="txtValue" style="width:32px;height:18px;border:1px solid black;vertical-align:middle;text-align:right;">
+<object id="frmSpinner" type="text/x-scriptlet" style="width:16px;height:18px;vertical-align:middle;">
+    <param name=url value="frmSpinner.htm">
+    <param name="Max" value="20"> 
+    
+</object>
+<SCRIPT language="vbScript">
+Sub Window_onLoad
+	frmSpinner.Max = 100
+	frmSpinner.Min = 1
+	frmSpinner.Value = 50
+	frmSpinner.Step = 5
+	txtValue.value = frmSpinner.Value
+End Sub
+
+Sub frmSpinner_onScriptletEvent(ByRef pstrEventName, ByRef pstrEventData)
+	Select Case pstrEventName
+		Case "onChange()"
+			txtValue.value = pstrEventData
+	End Select
+End Sub
+</SCRIPT>

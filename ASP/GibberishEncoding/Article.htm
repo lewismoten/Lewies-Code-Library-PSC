@@ -1,0 +1,62 @@
+<P>
+    Short story. My fiances sister came to visit and started speaking this stuff.
+    </P>
+    <P>
+    Long story - My fiances sister came to visit and started speaking this stuff. It is irritating to not know what she is saying in front of me behind my ears.
+    </P>
+    <P>
+    It is easy to catch on to what gibberish is by just listening to it. It is just english (or any language for that matter) Any time you come up on a vowel sound - you add "idig" before it. Example - GIRL translates to GidigIRL.
+    </P>
+    <P>
+    Beware of the silent "E" in words such as "love". "Love" would be "Lidigove". Because you can not hear the "E", it should not be encoded. The enclosed script does not take this into effect.
+    </P>
+    <P>
+    You do however, contintue to add more "idig"s for additional vowel sounds. Example - "Boyfriend" would be "B<B>idig</B>oyfr<B>idig</B>end".
+    </P>
+    <P>
+    Now - you may have noticed that "boyfriend" has two vowels next to each other - "I" and "E". However, these together make one vowel sound.
+    </P>
+    <P>
+    Another thing you may have noticed is that I changed the spelling of "boyfriend" to "boyfrend". This is a more of a phonetic spelling of the word. If you can spell words as you hear them, rather then spelling them correctly, you may have more success with the codes results that I have supplied.
+    </P>
+    <P>
+    Unfortunately for myself, my fiance and her sister speak a mix of English and Pig Latin with gibberish. Ugh.
+    </P>
+    <LINK rel="stylesheet" type="text/css" href="http://www.lewismoten.com/Inc_Client/vbColorCode.css">
+    <SPAN class="vbScript"><SPAN class="vbScript-Reserved">Dim</SPAN> strMessage<BR>
+    <SPAN class="vbScript-Reserved">Dim</SPAN> strGibberish<BR>
+    <BR>
+    strMessage <SPAN class="vbScript-Operator">=</SPAN> <SPAN class="vbScript-Function">InputBox</SPAN>(<SPAN class="vbScript-String">&quot;Enter a message to encode.&quot;</SPAN>, <SPAN class="vbScript-String">&quot;Gibberish&quot;</SPAN>)<BR>
+    <BR>
+    <SPAN class="vbScript-Reserved">If</SPAN> <SPAN class="vbScript-Reserved">Not</SPAN> (strMessage <SPAN class="vbScript-Operator">=</SPAN> <SPAN class="vbScript-Constant">vbCancel</SPAN> <SPAN class="vbScript-Reserved">Or</SPAN> strMessage <SPAN class="vbScript-Operator">=</SPAN> <SPAN class="vbScript-String">&quot;&quot;</SPAN>) <SPAN class="vbScript-Reserved">Then</SPAN><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;strGibberish <SPAN class="vbScript-Operator">=</SPAN> ToGibberish(strMessage)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Function">MsgBox</SPAN> strGibberish, <SPAN class="vbScript-Constant">vbOKOnly</SPAN> <SPAN class="vbScript-Operator">+</SPAN> <SPAN class="vbScript-Constant">vbInformation</SPAN>, <SPAN class="vbScript-String">&quot;Gibberish&quot;</SPAN><BR>
+    <SPAN class="vbScript-Reserved">End</SPAN> <SPAN class="vbScript-Reserved">If</SPAN><BR>
+    <BR>
+    <SPAN class="vbScript-Reserved">Function</SPAN> ToGibberish(<SPAN class="vbScript-Reserved">ByRef</SPAN> pstrMessage)<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Dim</SPAN> lstrGibberish<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Dim</SPAN> lstrLetter<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Dim</SPAN> llngLength<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Dim</SPAN> llngPosition<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;llngLength <SPAN class="vbScript-Operator">=</SPAN> <SPAN class="vbScript-Reserved">Len</SPAN>(pstrMessage)<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">For</SPAN> llngPosition <SPAN class="vbScript-Operator">=</SPAN> 1 <SPAN class="vbScript-Reserved">To</SPAN> llngLength<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstrLetter <SPAN class="vbScript-Operator">=</SPAN> <SPAN class="vbScript-Function">Mid</SPAN>(pstrMessage, llngPosition, 1)<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Select</SPAN> <SPAN class="vbScript-Reserved">Case</SPAN> <SPAN class="vbScript-Function">UCase</SPAN>(lstrLetter)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Case</SPAN> <SPAN class="vbScript-String">&quot;A&quot;</SPAN>, <SPAN class="vbScript-String">&quot;E&quot;</SPAN>, <SPAN class="vbScript-String">&quot;I&quot;</SPAN>, <SPAN class="vbScript-String">&quot;O&quot;</SPAN>, <SPAN class="vbScript-String">&quot;U&quot;</SPAN><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstrGibberish <SPAN class="vbScript-Operator">=</SPAN> lstrGibberish <SPAN class="vbScript-Operator">&</SPAN> <SPAN class="vbScript-String">&quot;idig&quot;</SPAN><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">End</SPAN> <SPAN class="vbScript-Reserved">Select</SPAN><BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstrGibberish <SPAN class="vbScript-Operator">=</SPAN> lstrGibberish <SPAN class="vbScript-Operator">&</SPAN> lstrLetter<BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="vbScript-Reserved">Next</SPAN><BR>
+    <BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;ToGibberish <SPAN class="vbScript-Operator">=</SPAN> lstrGibberish<BR>
+    <BR>
+    <SPAN class="vbScript-Reserved">End</SPAN> <SPAN class="vbScript-Reserved">Function</SPAN><BR>
+    <BR>
+    </SPAN>

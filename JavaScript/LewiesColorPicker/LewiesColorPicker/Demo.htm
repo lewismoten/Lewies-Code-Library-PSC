@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>Lewies Color Picker Demonstration</title>
+	</head>
+	<body>
+		<!--
+		-----------------------------------------------------
+		Author: Lewis E. Moten III
+		Date: May, 16, 2004
+		Homepage: http://www.lewismoten.com
+		Email: lewis@moten.com
+		-----------------------------------------------------
+		-->	
+
+		<h1>Lewies Color Picker Demonstration</h1>
+		<p>
+			Now you can give your visitors a very rich interface for choosing colors.  Never has it
+			been so easy to do this through a web page.  Users familliar with Adobe Photoshop will be
+			able to pick up on this method very quickly.  Show your users up to 65,536 colors to choose
+			from for each hue.
+		</p>
+		<p>
+			One of the greatest features is that this is all done on the client with java script.  No
+			active x controls are needed.  Gradients are done using alpha blending filters in the pages
+			style sheets.
+		</p>
+		<p>
+			Simply click on the colored box below to open the dialog form.
+		</p>
+		<div id="Color" onclick="OpenColorPicker()" style="width:100px;height:100px;border:1px solid black;background-color:#0000FF"></div>
+		
+		<p>
+			The code used to open the color picker is very simple.  Take a loook at the following:
+		</p>
+
+		<xmp>
+<script>
+function OpenColorPicker()
+{
+	var hex = new String(Color.style.backgroundColor);
+	try
+	{
+		hex = window.showModalDialog("ColorPicker.htm", hex, "dialogWidth:488px;dialogHeight:323px;help:no;center:yes;status:no;");
+		if(hex != null)
+			Color.style.backgroundColor = "#" + hex;
+	}
+	catch(e)
+	{
+		alert("Your browser does not appear to support modal dialog boxes.");
+		// insert code here to use a color picker that is more
+		// compatable accross browsers.
+	}
+}
+</script>
+		</xmp>
+		<p>
+			<b>Notice:</b> This dialog box was designed with internet explorer and may not work with other browsers.
+			Also, the Lab and CMYK values may not be accurate.  However, comparing against different resources - they
+			tend to come close.  The algorithms used to get these values is very simple.
+		</p>
+		<p>
+			Lewies website can be found at <a href="http://www.lewismoten.com">www.lewismoten.com</a>.
+		</p>
+		<script>
+		function OpenColorPicker()
+		{
+			var hex = new String(Color.style.backgroundColor);
+			try
+			{
+				hex = window.showModalDialog("ColorPicker.htm", hex, "dialogWidth:488px;dialogHeight:323px;help:no;center:yes;status:no;");
+				if(hex != null)
+					Color.style.backgroundColor = "#" + hex;
+			}
+			catch(e)
+			{
+				alert("Your browser does not appear to support modal dialog boxes.");
+				// insert code here to use a color picker that is more
+				// compatable accross browsers.
+			}
+		}
+		</script>
+	</body>
+</html>

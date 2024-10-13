@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>Lewis Seti Stats</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="header.js"></script>
+		<h2>Lewies Seti Stats</h2>
+		
+<script src="XmlHelper.js"></script>
+
+<a href='http://setiathome2.ssl.berkeley.edu/index.html'><img src=better_banner_sm.jpg border=0 alt='SETI@home' align=left></a><a href=http://setiathome.ssl.berkeley.edu/tps_page.html></a><br clear=all><br>
+
+<form>
+	<input type="text" id="txtEmail" value="lewis@moten.com">
+	<input type="button" onclick="btnLookupStats_Click();" value="Lookup Stats">
+</form>
+<TABLE BORDER=0 BGCOLOR="#303030" CELLSPACING=0 CELLPADDING=2 ID="Table1">
+	<TR BGCOLOR="#303080">
+		<TD COLSPAN=2 class="Note"><b>Your credit:</b></TD>
+	</TR>
+	<tr>
+		<td>Name (and URL)</td>
+		<td>
+			<a href="." target="new" id="lnkNameAndUrl">[lnkNameAndUrl]</a>
+			<a href="." id="lnkUserProfile2">
+			<img src="profile11x14.gif" alt="User Profile" border="0"></img></a>
+		</td>
+	</tr>
+	<tr>
+		<td>Results Received</td>
+		<td id="lblResultsReceived">[lblResultsReceived]</td>
+	</tr>
+	<tr>
+		<td>Total CPU Time</td>
+		<td id="lblTotalCpuTime">[lblTotalCpuTime]</td>
+	</tr>
+	<tr>
+		<td>Average CPU Time per work unit</td>
+		<td id="lblAverageCpuPerUnit">[lblAverageCpuPerUnit]</td>
+	</tr>
+	<tr>
+		<td>Average results received per day</td>
+		<td id="lblResultsPerDay">[lblResultsPerDay]</td>
+	</tr>
+	<tr>
+		<TD>Last result returned:</TD>
+		<TD id="lblLastResultReturned">[lblLastResultReturned]</TD>
+	</tr>
+	<TR>
+		<TD>Registered on:</TD>
+		<TD id="lblRegisteredOn">[lblRegisteredOn]</TD>
+	</tr>
+	<TR>
+		<TD>&nbsp;</TD>
+		<TD><a href=. id="lnkRegistrationClass">[lnkRegistrationClass]</a></TD>
+	</tr>
+	<TR>
+		<TD>SETI@home user for:</TD>
+		<TD id="lblSetiUserAge">[lblSetiUserAge]</TD>
+	</TR>
+	<TR>
+		<TD>&nbsp;</TD>
+		<TD><A HREF="." id="lnkUserProfile">[lnkUserProfile]</A></TD>
+	</TR>
+	<TR BGCOLOR="#303080">
+		<TD COLSPAN=2 class="Note"><b>Your group info:</b></TD>
+	</TR>
+	<tr>
+		<td>You belong to the group named:</td>
+		<td><a href="." id="lnkGroup">[lnkGroup]</a></TD>
+	</tr>
+	<tr>
+		<td colspan="2">You are not currently the founder of any teams.</td>
+	</tr>
+	<TR>
+		<TD>&nbsp;</TD>
+		<TD>&nbsp;</TD>
+	</TR>
+	<TR BGCOLOR="#303080">
+		<TD COLSPAN=2 class="Note">
+			<b>Your rank:</b> 
+			(based on current workunits received) <br>
+		</TD>
+	</TR>
+	<tr>
+		<td>Your rank out of <b><SPAN id="lblTotalUsers">[lblTotalUsers]</SPAN></b> total users is:</td>
+		<td><b><SPAN id="lblUserRank">[lblUserRank]</SPAN><sup>th</sup></b> place.</td>
+	</tr>
+	<tr>
+		<td>The number of users who have this rank:</td>
+		<td><b><SPAN id="lblUsersSharingRank">[lblUsersSharingRank]</SPAN></b></td>
+	</tr>
+	<tr>
+		<td>You have completed more work units than</td>
+		<td><b><span id="lblMoreUnitsThanPercent">[lblMoreUnitsThanPercent]</span>%</b> of our users.</td>
+	</tr>
+	<TR>
+		<TD>&nbsp;</TD>
+		<TD>&nbsp;</TD>
+	</TR>
+	<TR BGCOLOR="#303080">
+		<TD COLSPAN=2 class="Note"><B>User Certificates</B></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><span id="lblCertificates">[lblCertificates]</span></TD>
+	</TR>
+</TABLE>
+<div  class="Note">
+Cached since <span id="lblCacheDate">[lblCacheDate]</span>.
+</div>
+
+<script>
+window.onload = window_load();
+
+function btnLookupStats_Click()
+{
+	LoadUser(document.getElementById("txtEmail").value);
+}
+function window_load()
+{
+	btnLookupStats_Click();
+}
+function LoadUser(email)
+{
+	LoadXml("seti.asp?email=" + escape(email));
+}
+function Xml_Loaded(fileName)
+{
+
+	document.getElementById("lblCacheDate").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/cache")[0]);
+
+
+	document.getElementById("lnkNameAndUrl").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/name")[0]);
+	document.getElementById("lnkNameAndUrl").href = XmlNodeAttribute(XmlSelectNodes("/userstats/userinfo/name/a")[0], "href");
+	document.getElementById("lblResultsReceived").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/numresults")[0]);
+	document.getElementById("lblTotalCpuTime").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/cputime")[0]);
+	document.getElementById("lblAverageCpuPerUnit").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/avecpu")[0]);
+	document.getElementById("lblResultsPerDay").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/resultsperday")[0]);
+	document.getElementById("lblLastResultReturned").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/lastresulttime")[0]) + " UTC";
+	document.getElementById("lblRegisteredOn").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/regdate")[0]) + " UTC";
+	var Days = Date.parse(XmlNodeText(XmlSelectNodes("/userstats/userinfo/regdate")[0]) + " UTC");
+	Days = Math.floor(Days / 86400000) + 2440588;
+	document.getElementById("lnkRegistrationClass").href = "http://setiathome2.ssl.berkeley.edu/classpages/days/" + Days + ".html";
+	document.getElementById("lnkRegistrationClass").innerHTML = "View Registration Class";
+	document.getElementById("lblSetiUserAge").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/userinfo/usertime")[0]);
+	document.getElementById("lnkUserProfile").innerHTML = "View User Profile";
+	document.getElementById("lnkUserProfile").href = XmlNodeAttribute(XmlSelectNodes("/userstats/userinfo/userprofile/a")[0], "href");
+	document.getElementById("lnkUserProfile2").href = XmlNodeAttribute(XmlSelectNodes("/userstats/userinfo/userprofile/a")[0], "href");
+	document.getElementById("lnkGroup").innerHTML = "<B>" + XmlNodeText(XmlSelectNodes("/userstats/groupinfo/group")[0]) + "</B>";
+	document.getElementById("lnkGroup").href = XmlNodeAttribute(XmlSelectNodes("/userstats/groupinfo/group/a")[0], "href");
+	document.getElementById("lblTotalUsers").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/rankinfo/ranktotalusers")[0]);
+	document.getElementById("lblUserRank").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/rankinfo/rank")[0]);
+	document.getElementById("lblUsersSharingRank").innerHTML = XmlNodeText(XmlSelectNodes("/userstats/rankinfo/num_samerank")[0]);
+
+	document.getElementById("lblMoreUnitsThanPercent").innerHTML = 100 - new Number(XmlNodeText(XmlSelectNodes("/userstats/rankinfo/top_rankpct")[0]));
+	
+	document.getElementById("lblCertificates").innerHTML = "";
+	var certs = XmlSelectNodes("/userstats/certinfo/cert/a");
+	for(var i = 0; i < certs.length; i++)
+	{
+		var link = "<A href=\"";
+		link += XmlNodeAttribute(certs[i], "href");
+		link += "\">";
+		link += XmlNodeText(certs[i]);
+		link += "</A>";
+	
+		if(i != 0)
+			document.getElementById("lblCertificates").innerHTML += "<BR>";
+		
+		document.getElementById("lblCertificates").innerHTML += link;
+		
+	}
+}
+function Xml_Failed(fileName)
+{
+alert("An error occured while retrieving data.");
+}
+
+</script>
+		<script src="footer.js"></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,526 @@
+<HTML>
+	<HEAD>
+		<TITLE>Switch Box Scriptlet</TITLE>
+		<style>
+			BODY	{margin:0px}
+			TABLE	{width:100%;height:100%;}
+			TD		{text-align:center;}
+			SELECT	{width:100%;height:100%;}
+		</style>
+	</HEAD>
+	<BODY scroll="no">
+		<TABLE cellpadding="0" cellspacing="0">
+			<TR>
+				<TD rowspan="4" width="33%">
+					<SELECT id="lstSource" multiple></SELECT> 
+				</TD>
+				<TD>
+					<INPUT type="button" id="btnAddSelected" value="   >  "> 
+    
+				</TD>
+				<TD rowspan="4" width="33%">
+					<SELECT id="lstTarget" multiple></SELECT> 
+				</TD>
+				<TD rowspan="2">
+					<INPUT type="button" id="btnMoveUp" value="  Move Up  "> 
+    
+				</TD>
+			</TR>
+			<TR>
+				<TD>
+					<INPUT type="button" id="btnAddAll" value=" > > "> 
+				</TD>
+			</TR>
+			<TR>
+				<TD>
+					<INPUT type="button" id="btnRemoveAll" value=" < < "> 
+				</TD>
+				<TD rowspan="2">
+					<INPUT type="button" id="btnMoveDown" value="Move Down"> 
+    
+				</TD>
+			</TR>
+			<TR>
+				<TD>
+					<INPUT type="button" id="btnRemoveSelected" value="  <   "> 
+    
+				</TD>
+			</TR>
+		</TABLE>
+	</BODY>
+	<SCRIPT language="vbScript">
+		<!--
+'? APPLICATION
+'? ----------------------------------------------
+'? PRODUCT NAME: Switch Box Scriptlet
+'? FILE NAME: _sbox.htm
+'? VERSON: 2.1.0
+'? DATE: January 23, 1999
+'? AUTHOR: Lewis E. Moten III
+'? COMPANY NAME: Global Managment Systems, Inc.
+'? CONTACT: lewis.moten@gmsi.com
+'? COPYRIGHT: Copyright(c)1999, Lewis E Moten III.  All rights reserved.
+'? ----------------------------------------------
+'? DESCRIPTION:
+'? This Scriptlet will let you present your user
+'? with a list of options that they may choose to
+'? create there own list in any order they wish.
+'? ----------------------------------------------
+'? COMMENTS:
+'? <SELECT> element can hold a Maximum of 1141 options
+'? Optomized for vbScript.dll version 5.0
+'? MSVBVM60.DLL 6.00.8268
+'? IE4 Users may aquire version 1.0.0
+'? ----------------------------------------------
+'? CUSTOM ERRORS:
+'? 101:Sub Public_Put_Max(putMax), "_?_ = Invalid Max"
+'? 102:Sub Public_Put_Max(putMax), "Max = _?_ out of range (0 - 1141)"
+'? 103:Sub Public_removeItem(putText, putValue), "removeItem(_?_, _?_)Item not found"
+'? 104:Sub Public_removeSourceItem([putIndex]), "removeSourceItem(_?_) Invalid"
+'? 105:Sub Public_removeTargetItem([putIndex]), "removeTargetItem(_?_) Invalid"
+'? ----------------------------------------------
+'? PROPERTIES:
+'? ---------------------
+'? Value()
+'? Read | Returns an Array of all option values
+'? that user has chosen.
+'? ---------------------
+'? Text()
+'? Read | Returns an Array of all option text
+'? that user has chosen.
+'? ---------------------
+'? Max / Max(0 - 1141)
+'? Read - Returns the current maximum amount that
+'?			a user may choose.
+'? Write - Sets the maximum amount of items a
+'?			user may choose.
+'? ----------------------------------------------
+'? METHODS:
+'? ---------------------
+'? addSource(text, value)
+'? Adds an option to the original list of options.
+'? text - a string that a user can read on the
+'?			option
+'? value - a string representing the unseen value
+'?			of the option
+'? ---------------------
+'? addTarget(text, value)
+'? Adds an option to the user defined list of options.
+'? text  - a string that a user can read on the
+'?			option
+'? value - a string representing the unseen value of the option
+'? ---------------------
+'? removeItem(text, value)
+'? Removes all options in both lists matching
+'? the text and values passed to it.
+'? text - string describing the text to look for
+'? value - string describing the value to look for
+'? ---------------------
+'? removeSourceItem(index)
+'? removes an item at the specified location in
+'? the original list
+'? index - integer
+'? ---------------------
+'? removeTargetItem(index)
+'? removes an item at the specified location in
+'? the user defined list
+'? index - integer
+'? ----------------------------------------------
+'? SETUP
+'? ----------------------------------------------
+'?	<OBJECT id=objSwitch height=200 width=500 type=text/x-scriptlet VIEWASTEXT>
+'?		<PARAM NAME="Scrollbar" VALUE="0">
+'?		<PARAM NAME="URL" VALUE="http://www.domain.com/WebApp/_sbox.htm">
+'?	</OBJECT>
+'? ----------------------------------------------
+
+'----(General)----------------(Declarations)----
+Option Explicit
+
+Dim g_Max
+'++++++++++++++++++++++++++++++++++++++++++++++++
+' Internal Events
+'++++++++++++++++++++++++++++++++++++++++++++++++
+Sub Window_onLoad()
+	g_Max = 1141
+	Call toggleControls()
+	
+End Sub
+'------------------------------------------------
+Sub btnAddSelected_onClick()
+	Dim Key
+	Do Until lstSource.selectedIndex = -1
+		For Each Key In lstSource.options
+			If Key.Selected Then
+				If Not transferSourceItem(Key.Index) Then Exit Do
+				Exit For
+			End If
+		Next
+	Loop
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub btnRemoveSelected_onClick()
+	Dim Key
+	Do Until lstTarget.selectedIndex = -1
+		For Each Key In lstTarget.options
+			If Key.Selected Then
+				If Not transferTargetItem(Key.Index) Then Exit Do
+				Exit For
+			End If
+		Next
+	Loop
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub btnAddAll_onClick()
+	Do While transferSourceItem(0)
+	Loop
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub btnRemoveAll_onClick()
+	Do While transferTargetItem(0)
+	Loop
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub btnMoveDown_onClick()
+	Dim i
+	If (lstTarget.selectedIndex = -1) _
+	Or (lstTarget.selectedIndex = lstTarget.length -1) Then Exit Sub
+	i = lstTarget.selectedIndex
+	lstTarget.selectedIndex = -1
+'	If IE5
+'		Call lstTarget.children(i).swapNode(lstTarget.children(i + 1))
+'	ElseIf IE4
+		Call lstTarget.add(lstTarget.options(i), i + 2)
+		Call lstTarget.remove(i)
+'	End If
+	lstTarget.selectedIndex = i + 1
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub btnMoveUp_onClick()
+	Dim i
+	If (lstTarget.selectedIndex < 1) Then Exit Sub
+	i = lstTarget.selectedIndex
+	lstTarget.selectedIndex = -1
+'	If IE5
+'		Call lstTarget.options(i).swapNode(lstTarget.options(i -1))
+'	ElseIf IE4
+		Call lstTarget.add(lstTarget.options(i), i - 1)
+		Call lstTarget.remove(i+1)
+'	End IF
+	lstTarget.selectedIndex = i - 1
+	Call toggleControls()
+	Call ValueChanged()
+End Sub
+'------------------------------------------------
+Sub lstTarget_onFocus
+	lstSource.selectedIndex = -1
+	Call toggleControls()
+End Sub
+'------------------------------------------------
+Sub lstSource_onFocus()
+	lstTarget.selectedIndex = -1
+	Call toggleControls()
+End Sub
+'------------------------------------------------
+Sub lstTarget_onChange()
+	Call ToggleControls()
+End Sub
+'------------------------------------------------
+Sub lstSource_onChange()
+	Call ToggleControls()
+End Sub
+'++++++++++++++++++++++++++++++++++++++++++++++++
+' Internal Procedures
+'++++++++++++++++++++++++++++++++++++++++++++++++
+'------------------------------------------------
+Sub ValueChanged()
+	On Error Resume Next
+	Call window.external.raiseEvent("onChange", window.document)
+End Sub
+'------------------------------------------------
+Function transferSourceItem(putIndex)
+	Dim objOption
+	If Vacancy() Then
+		If (lstSource.options.length > 0) _
+		And (putIndex < lstSource.options.length) Then
+'			If IE4 Then
+				Set objOption = document.createElement("OPTION")
+				objOption.Text = lstSource.options(putIndex).Text
+				objOption.Value = lstSource.options(putIndex).Value
+				lstTarget.add(objOption)
+				lstSource.remove(putIndex)
+'			ElseIf IE5 Then
+'				lstTarget.appendChild(lstSource.options(putIndex))
+'			End If
+			transferSourceItem = True
+		Else
+			transferSourceItem = False
+		End If
+	Else
+		transferSourceItem = False
+	End If
+End Function
+'------------------------------------------------
+Function transferTargetItem(putIndex)
+	Dim objOption
+	If (lstTarget.options.length > 0) _
+	And (putIndex < lstTarget.options.length) Then
+'		If IE4 Then
+			Set objOption = document.createElement("OPTION")
+			objOption.Text = lstTarget.options(putIndex).Text
+			objOption.Value = lstTarget.options(putIndex).Value
+			lstSource.add(objOption)
+			lstTarget.remove(putIndex)
+'		ElseIf IE5 Then
+'			lstSource.appendChild(lstTarget.options(putIndex))
+'		End If
+		transferTargetItem = True
+	Else
+		transferTargetItem = False
+	End If
+End Function
+'------------------------------------------------
+Function transferExcess()
+	If Not Excess() Then
+		transferExcess = False
+	Else
+		While transferTargetItem(g_Max): Wend
+			'Call Public_addSource(lstTarget.options(g_Max).Text, lstTarget.options(g_Max).Value)
+			'lstTarget.remove(g_Max)
+		transferExcess = True
+	End If
+End Function
+'------------------------------------------------
+Function Excess()
+	If lstTarget.options.length - g_Max > 0 _
+	Then Excess = True Else Excess = False
+End Function
+'------------------------------------------------
+Function Vacancy()
+	If lstTarget.options.length - g_Max < 0 _
+	Then Vacancy = True Else Vacancy = False
+End Function
+'------------------------------------------------
+Sub ToggleControls()
+	Dim Selected
+	Dim SelectedIndex
+	Dim ListCount
+
+	SelectedIndex = lstTarget.selectedIndex
+	ListCount = lstTarget.options.length
+
+	If SelectedIndex > -1 Then _
+	Selected = True Else Selected = False
+
+	'Move Down
+	If Selected And SelectedIndex < (ListCount - 1) Then
+		btnMoveDown.disabled = False
+	Else
+		btnMoveDown.disabled = True
+	End If
+			
+	'Move Up
+	If Selected And SelectedIndex > 0 Then
+		btnMoveUp.disabled = False
+	Else
+		btnMoveUp.disabled = True
+	End If
+			
+	'Remove Selected
+	If Selected Then
+		btnRemoveSelected.disabled = False
+	Else
+		btnRemoveSelected.disabled = True
+	End If
+			
+	'Remove All
+	If ListCount > 0 Then
+		btnRemoveAll.disabled = False
+	Else
+		btnRemoveAll.disabled = True
+	End If
+			
+	SelectedIndex = lstSource.selectedIndex
+
+	If SelectedIndex > -1 Then _
+	Selected = True Else Selected = False
+
+	'Add Selected
+	If Selected And Vacancy() Then
+		btnAddSelected.disabled = False
+	Else
+		btnAddSelected.disabled = True
+	End If
+			
+	'Add All
+	If Vacancy() Then
+		btnAddAll.disabled = False
+	Else			
+		btnAddAll.disabled = True
+	End If
+			
+End Sub
+'++++++++++++++++++++++++++++++++++++++++++++++++
+' Exposed Procedures
+'++++++++++++++++++++++++++++++++++++++++++++++++
+Function Public_Get_Value()
+	Dim tmpString
+	Dim tmpArray
+	Dim Key
+	Dim ListCount
+	Dim Flag
+
+	ListCount = lstTarget.options.length
+
+	For Each Key In lstTarget.options
+		tmpString = tmpString & Key.Value & Chr(187)
+		Flag = True
+	Next
+	If Flag Then
+		tmpArray = Split(tmpString, Chr(187))
+		ReDim Preserve tmpArray(UBound(tmpArray) - 1)
+	Else
+		tmpArray = Array()
+	End If
+	Public_Get_Value = tmpArray
+End Function
+'------------------------------------------------
+Function Public_Get_Text()
+	Dim tmpString
+	Dim tmpArray
+	Dim Key
+	Dim ListCount
+	Dim Flag
+
+	ListCount = lstTarget.options.length
+
+	For Each Key In lstTarget.options
+		tmpString = tmpString & Key.Text & Chr(187)
+		Flag = True
+	Next
+	If Flag Then
+		tmpArray = Split(tmpString, Chr(187))
+		ReDim Preserve tmpArray(UBound(tmpArray) - 1)
+	Else
+		tmpArray = Array()
+	End If
+	Public_Get_Text = tmpArray
+End Function
+'------------------------------------------------
+Function Public_Get_Max()
+	Public_Get_Max = g_Max
+End Function
+'------------------------------------------------
+Sub Public_Put_Max(putMax)
+	Const Source = "Sub Public_Put_Max([0 - 1141])"
+	If Not IsNumeric(putMax) Then
+		Err.Raise vbObjectError + 101, Source, _
+		putMax & " = Invalid Max"
+	Else
+		If (putMax > 1141) Or (putMax < 0) Then
+			Err.Raise vbObjectError + 102, Source, _
+			"Max = " & putMax & " out of range (0 - 1141)"
+		Else
+			g_Max = CInt(putMax)
+			If transferExcess() Then Call ValueChanged()
+			Call toggleControls()
+		End If
+	End If
+End Sub
+'------------------------------------------------
+Sub Public_addSource(putText, putValue)
+	Dim objOption
+	Set objOption = document.createElement("OPTION")
+	objOption.Text = putText
+	objOption.Value = putValue
+	lstSource.add(objOption)
+	Call toggleControls()
+End Sub
+'------------------------------------------------
+Sub Public_addTarget(putText, putValue)
+	Dim objOption
+	Set objOption = document.createElement("OPTION")
+	objOption.Text = putText
+	objOption.Value = putValue
+	lstTarget.add(objOption)
+	Call transferExcess()
+	Call ValueChanged()
+	Call toggleControls()
+End Sub
+'------------------------------------------------
+Sub Public_removeItem(putText, putValue)
+	Const Source = "Sub Public_removeItem([putText], [putValue])"
+	Dim Flagged
+	Dim Key
+	For Each Key In lstSource.options
+		If (Key.Text = putText) _
+		And (Key.Value = putValue) Then
+			lstSource.remove(Key.Index)
+			Flagged = True
+		End If
+	Next
+	For Each Key In lstTarget.options
+		If (Key.Text = putText) _
+		And (Key.Value = putValue) Then
+			lstTarget.remove(Key.Index)
+			Flagged = True
+			Call ValueChanged()
+		End If
+	Next
+	If Flagged Then
+		Call toggleControls()
+	Else
+		Err.Raise vbObjectError + 103, Source, _
+		"removeItem(""" & putText & """, """ & putValue & """) not found"
+	End If
+End Sub
+'------------------------------------------------
+Sub Public_removeSourceItem(putIndex)
+	Const Source = "Sub Public_removeSourceItem([putIndex])"
+	If IsNumeric(putIndex) Then
+		putIndex = CInt(putIndex)
+		If putIndex > (lstSource.options.length - 1) _
+		Or putIndex <> Abs(putIndex) Then
+			Err.Raise vbObjectError + 104, Source, _
+			"removeSourceItem(" & putIndex & ") Invalid"
+		Else
+			lstSource.remove(putIndex)
+			Call toggleControls()
+		End If
+	Else
+		Err.Raise vbObjectError + 104, Source, _
+		"removeSourceItem(" & putIndex & ") Invalid"
+	End If
+End Sub
+'------------------------------------------------
+Sub Public_removeTargetItem(putIndex)
+	Const Source = "Sub Public_removeTargetItem([putIndex])"
+	If IsNumeric(putIndex) Then
+		If (putIndex > (lstTarget.options.length - 1)) _
+		Or putIndex <> Abs(putIndex) Then
+			Err.Raise vbObjectError + 105, Source, _
+			"removeTargetItem(" & putIndex & ") Invalid"
+		Else
+			lstTarget.remove(putIndex)
+			Call ValueChanged()
+			Call toggleControls()
+		End If
+	Else
+		Err.Raise vbObjectError + 105, Source, _
+		"removeSourceItem(" & putIndex & ") Invalid"
+	End If
+End Sub
+'------------------------------------------------
+		-->
+	</SCRIPT>
+</HTML>

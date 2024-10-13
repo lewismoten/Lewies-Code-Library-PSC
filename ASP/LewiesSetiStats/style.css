@@ -1,0 +1,299 @@
+
+BODY
+{
+	FONT-SIZE: 10pt;
+	 FONT-FAMILY: Arial;
+	 BACKGROUND-COLOR: #286844
+}
+
+.Header
+{
+	PADDING-RIGHT: 5px;
+	 PADDING-LEFT: 5px;
+	 PADDING-BOTTOM: 5px;
+	 COLOR: #bfbfbf;
+	 PADDING-TOP: 5px;
+	 BACKGROUND-COLOR: #68284c
+}
+
+.sidebar
+{
+	PADDING-RIGHT: 5px;
+	 PADDING-LEFT: 5px;
+	 PADDING-BOTTOM: 5px;
+	 COLOR: #b0b0b0;
+	 PADDING-TOP: 5px;
+	 BACKGROUND-COLOR: #4f1e39
+}
+
+.content
+{
+	PADDING-RIGHT: 5px;
+	 PADDING-LEFT: 5px;
+	 PADDING-BOTTOM: 5px;
+	 COLOR: #e8e8e8;
+	 PADDING-TOP: 5px;
+	 BACKGROUND-COLOR: #686868
+}
+
+.content A
+{
+	COLOR: #ffffff
+}
+
+.content TD
+{
+	COLOR: #e8e8e8;
+	 BACKGROUND-COLOR: #686868
+}
+
+.content A:hover
+{
+	COLOR: #1b1b1b
+}
+
+.content HR
+{
+	COLOR: #ffffff;
+	 HEIGHT: 1px
+}
+
+.content B
+{
+	COLOR: #000000
+}
+
+.content H1
+{
+	COLOR: #000000
+}
+
+.content H2
+{
+	COLOR: #000000
+}
+
+.content H3
+{
+	COLOR: #000000
+}
+
+.content H4
+{
+	COLOR: #000000
+}
+
+.content H5
+{
+	COLOR: #000000
+}
+
+.content H6
+{
+	COLOR: #000000
+}
+
+.content .note
+{
+	BORDER-RIGHT: #565656 1px solid;
+	 BORDER-TOP: #565656 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #565656 1px solid;
+	 COLOR: #e8e8e8;
+	 BORDER-BOTTOM: #565656 1px solid;
+	 BACKGROUND-COLOR: #606060
+}
+
+.content .note TD
+{
+	BORDER-RIGHT: #565656 1px solid;
+	 BORDER-TOP: #565656 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #565656 1px solid;
+	 COLOR: #e8e8e8;
+	 BORDER-BOTTOM: #565656 1px solid;
+	 BACKGROUND-COLOR: #606060
+}
+
+.header TD
+{
+	COLOR: #bfbfbf;
+	 BACKGROUND-COLOR: #68284c
+}
+
+.header A
+{
+	COLOR: #dbdbdb
+}
+
+.header A:hover
+{
+	COLOR: #e859a9
+}
+
+.header HR
+{
+	COLOR: #dbdbdb;
+	 HEIGHT: 1px
+}
+
+.header B
+{
+	COLOR: #a8a8a8
+}
+
+.header H1
+{
+	COLOR: #a8a8a8
+}
+
+.header H2
+{
+	COLOR: #a8a8a8
+}
+
+.header H3
+{
+	COLOR: #a8a8a8
+}
+
+.header H4
+{
+	COLOR: #a8a8a8
+}
+
+.header H5
+{
+	COLOR: #a8a8a8
+}
+
+.header H6
+{
+	COLOR: #a8a8a8
+}
+
+.header .note
+{
+	BORDER-RIGHT: #491c36 1px solid;
+	 BORDER-TOP: #491c36 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #491c36 1px solid;
+	 COLOR: #bfbfbf;
+	 BORDER-BOTTOM: #491c36 1px solid;
+	 BACKGROUND-COLOR: #5e2445
+}
+
+.header .note TD
+{
+	BORDER-RIGHT: #491c36 1px solid;
+	 BORDER-TOP: #491c36 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #491c36 1px solid;
+	 COLOR: #bfbfbf;
+	 BORDER-BOTTOM: #491c36 1px solid;
+	 BACKGROUND-COLOR: #5e2445
+}
+
+.sidebar TD
+{
+	COLOR: #b0b0b0;
+	 BACKGROUND-COLOR: #4f1e39
+}
+
+.sidebar A
+{
+	COLOR: #c9c9c9
+}
+
+.sidebar A:hover
+{
+	COLOR: #cf4e95
+}
+
+.sidebar HR
+{
+	COLOR: #c9c9c9;
+	 HEIGHT: 1px
+}
+
+.sidebar B
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H1
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H2
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H3
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H4
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H5
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar H6
+{
+	COLOR: #fa5fb4
+}
+
+.sidebar .note
+{
+	BORDER-RIGHT: #301223 1px solid;
+	 BORDER-TOP: #301223 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #301223 1px solid;
+	 COLOR: #b0b0b0;
+	 BORDER-BOTTOM: #301223 1px solid;
+	 BACKGROUND-COLOR: #451a32
+}
+
+.sidebar .note TD
+{
+	BORDER-RIGHT: #301223 1px solid;
+	 BORDER-TOP: #301223 1px solid;
+	 FONT-SIZE: 0.8em;
+	 BORDER-LEFT: #301223 1px solid;
+	 COLOR: #b0b0b0;
+	 BORDER-BOTTOM: #301223 1px solid;
+	 BACKGROUND-COLOR: #451a32
+}
+
+TD
+{
+	FONT-SIZE: 10pt;
+	 VERTICAL-ALIGN: top;
+	 FONT-FAMILY: Arial
+}
+
+.MainTable
+{
+	WIDTH: 640px;
+	 BACKGROUND-COLOR: #000000
+}
+
+.SampleBox
+{
+	BORDER-RIGHT: black 1px solid;
+	 BORDER-TOP: black 1px solid;
+	 OVERFLOW: hidden;
+	 BORDER-LEFT: black 1px solid;
+	 WIDTH: 13px;
+	 CURSOR: hand;
+	 BORDER-BOTTOM: black 1px solid;
+	 HEIGHT: 13px
+}

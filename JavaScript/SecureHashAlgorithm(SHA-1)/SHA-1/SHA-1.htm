@@ -1,0 +1,45 @@
+<HTML>
+	<HEAD>
+		<TITLE>Secure Hash Algorithm (SHA-1) in JavaScript</TITLE>
+	</HEAD>
+	<BODY>
+		<H2>Secure Hash Algorithm (SHA-1)</H2>
+		<H3>JavaScript</H3>
+		<P>
+			The function SecureHash generates a 160-bit 
+			(40-hex-digits representing 20 bytes) 
+			message digest for a given message (String) of any length. 
+			The digest is unique to the message. It is not possible to 
+			recover the message from the digest. The only way to find 
+			the source message for a digest is by the brute force hashing 
+			of all possible messages and comparison of their digests.
+		</P>
+		<P>
+			For a complete description see FIPS Publication 180-1 in 
+			<A href="http://www.itl.nist.gov/fipspubs/fip180-1.htm">HTML</A> or
+			<A href="http://csrc.nist.gov/fips/fip180-1.txt">plain text</A>.
+		</P>
+		<FORM name="frmDemo">
+			Message:
+			<BR>
+			<TEXTAREA name="txtMessage" cols="60" rows="4">Type your message here.</TEXTAREA>
+			<BR>
+			<BR>
+			<INPUT type="button" onclick="cmdHash_onClick()" value="Hash Message">
+			<BR>
+			<BR>
+			Message Digest:
+			<BR>
+			<INPUT type="text" name="txtDigest" value="" size="60">
+		</FORM>
+		<SCRIPT language="JavaScript">
+			<!--// hide
+				function cmdHash_onClick()
+				{
+					document.frmDemo.txtDigest.value = SHA1_Hash(document.frmDemo.txtMessage.value)
+				}
+			//-->
+		</SCRIPT>
+		<SCRIPT src="SHA-1.js" language="JavaScript"></SCRIPT>
+	</BODY>
+</HTML>

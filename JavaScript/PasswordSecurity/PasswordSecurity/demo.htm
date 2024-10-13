@@ -1,0 +1,81 @@
+<H1>Password Security Demonstration</H1>
+<P>
+	Please enter a password.
+</P>
+
+<FORM name="frmPassword">
+	<INPUT name="txtPassword" type="password" onkeyup="PWSecurity(this)" onchange="PWSecurity(this)">
+	<INPUT type="button" value="Check" name="cmdCheck" onclick="cmdCheck_onClick()">
+</FORM>
+<BR><BR>
+
+The following suggestions may help your security rating:
+<UL>
+	<LI>Make your password longer</LI>
+	<LI>Use mixed-case (upper and lower case).
+	<LI>Use Numbers
+	<LI>User special characters that are not numbers or letters.
+	<LI>Do not repeat letters</LI>
+</UL>
+<HR>
+Demonstration brought to you by <A href="http://www.lewismoten.com">www.lewismoten.com</A>.
+A web programming repository.
+<SCRIPT>
+
+	/*
+	PW Security gives a test rating how secure your password appears.
+	
+	*/
+	function cmdCheck_onClick()
+	{
+		rating = PWSecurity(document.frmPassword.txtPassword.value)
+		alert('Your password appears ' + Math.round(rating) + '% secure.')
+	}
+	function PWSecurity(password)
+	{
+		var points = 0;							// total points
+		var j = 0								// counter (points)
+		var n = '0123456789'					// numbers
+		var a = 'abcdefghijklmnopqrstuvwxyz'	// alpha letters
+		var u = 0								// upper case count
+		var l = 0								// lower case count
+		var an = a + n + a.toUpperCase()		// alpha numeric
+		
+		// Length of password - 8 characters recomended
+		points = points + (password.length * 2.5)
+		if(points > 20){points = 20}
+
+		// Amount of Numbers - 2 recomended, 3 prefered
+		j = 0
+		for(var i = 0;i<password.length;i++)
+			{if(n.indexOf(password.substring(i,i+1))!=-1){j+=6.67}}
+		if(j>20){j=20}
+		points += j
+
+		// Non-Repeating characters - 8 recomended
+		j = 0
+		for(var i=0;i<password.length-1;i++)
+			{if(password.substring(i,i+1) != password.substring(i+1, i+2)){j+= 2.86}}
+		if(j>20){j=20}
+		points += j
+
+		// Pairs of mixed-case - 2 recomended
+		for(var i=0;i<password.length;i++)
+		{
+			if(a.indexOf(password.substring(i, i+1)) != -1){l++}
+			if(a.toUpperCase().indexOf(password.substring(i, i+1)) != -1){u++}
+		}
+		if(u>l){j=l*10}else{j=u*10}
+		if(j>20){j=20}
+		points += j
+
+		// non-alpha-numeric characters - 2 recomended
+		j = 0
+		for(var i = 0;i<password.length;i++)
+			{if(j < 20){if(an.indexOf(password.substring(i,i+1)) == -1){j+=10}}}
+		if(j>20){j=20}
+		points += j
+
+		return(points)
+	}
+</SCRIPT>

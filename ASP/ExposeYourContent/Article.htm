@@ -1,0 +1,31 @@
+<P>
+    This article is here to explain how you can simulate a service through javascript. It can allow you to view your latest news from each page on your website, or let other websites display your news links.
+    </P>
+    <P>
+    Take a look at a news feed I created for <A href="http://www.theonlinegamer.com/News/Instructions.asp">The Online Gamer</A>. This is a completed service. It instructs the visitor as to the HTML they have to put into there web pages and a few options they have control over.
+    </P>
+    <P>
+    The files included within this article only start you off into the rite direction. The following files are present:
+    </P>
+    <UL>
+    <LI><B>News.asp</B> - a page to display the articles contents. (expects querystring paramter "NewsID")
+    <LI><B>FrontPage.asp</B> - page displaying news within your database. Also includes a news feed on the right hand side with the latest articles.
+    <LI><B>News.js.asp</B> - this is the javascript that you will expose to your visitors.
+    <LI><B>News.mdb</B> - this is an access database containing your news.
+    </UL>
+    <P>
+    Accross your website, you can add the latest news to your pages by including a simple SCRIPT reference like so:
+    </P>
+    <PRE>&lt;SCRIPT src="/News.js.asp"&gt;&lt;/SCRIPT&gt;</PRE>
+    <P>
+    Not only that, but you can instruct your visitors to adding news to there sites by doing the same, but pointing to your website.
+    </P>
+    <PRE>&lt;SCRIPT src="http://www.yourdomain.com/News.js.asp"&gt;&lt;/SCRIPT&gt;</PRE>
+    <P>
+    The next part is within the asp page itself. Query your database and build an HTML string rather then writing it out to your web page.
+    When the string is fully compiled, you can convert it to a javascript string and then write it out as javascript.
+    </P>
+    <PRE>document.write('&lt;%=ToJavascript(MyHTML)%&gt;');</PRE>
+    <P>
+    This is the basics of exposing your news as a service.
+    </P>

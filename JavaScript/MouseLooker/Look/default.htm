@@ -1,0 +1,63 @@
+<HTML>
+<head>
+<title>Lewie's Looking At the Mouse</title>
+</head>
+<BODY bgColor="black" text="green">
+<table width="100%" height="100%"><tr><td align="center">
+<IMG src="5.jpg" id="img"><br>
+Do you ever get that feeling ... ?
+</td></tr></table>
+
+
+
+<SCRIPT language="javascript">
+
+var imgs = new Array();
+
+function window_load()
+{
+	// images are named just like your numeric key pad
+	// look up and to the left - 7
+	// look down and to the right - 3
+	for(var i = 1; i < 10; i++)
+	{
+		imgs[i] = new Image();
+		imgs[i].src = i + '.jpg';
+	}
+	document.body.onmousemove = body_MouseMove;
+	body_MouseMove();
+}
+function body_MouseMove()
+{
+	var Height = 174;
+	var Width = 132;
+
+	var LookUp = event.y < img.offsetTop;
+	var LookLeft = event.x < img.offsetLeft;
+	var LookDown = event.y > img.offsetTop + Height;
+	var LookRight = event.x > img.offsetLeft + Width;
+
+	if(LookUp && LookLeft)
+		img.src = imgs[7].src;
+	else if(LookUp && !LookLeft && !LookRight)
+		img.src = imgs[8].src;
+	else if(LookUp && LookRight)
+		img.src = imgs[9].src;
+	else if(LookLeft && !LookUp && !LookDown)
+		img.src = imgs[4].src;
+	else if(!LookUp && !LookDown && !LookLeft && !LookRight)
+		img.src = imgs[5].src;
+	else if(LookRight && !LookUp && !LookDown)
+		img.src = imgs[6].src;
+	else if(LookDown && LookLeft)
+		img.src = imgs[1].src;
+	else if(LookDown && !LookLeft && !LookRight)
+		img.src = imgs[2].src;
+	else if(LookDown && LookRight)
+		img.src = imgs[3].src;
+}
+window.onload = window_load;
+
+</SCRIPT>
+</body>
+</HTML>
