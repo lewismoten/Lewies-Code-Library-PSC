@@ -57,7 +57,7 @@ const names = ['SQL', 'Visual Basic', 'VB.Net', 'JavaScript', 'C#', 'C/C++', 'AS
 ['SQL', 'VB', 'VBNet', 'JavaScript', 'CSharp', 'C', 'ASPNet', 'ASP']
   .forEach((topDir, i) => {
 
-    let header = `# Lewies-Code-Library-PSC
+    let header = `# Lewie's Code Library PSC
 
 ## ${names[i]}
 
