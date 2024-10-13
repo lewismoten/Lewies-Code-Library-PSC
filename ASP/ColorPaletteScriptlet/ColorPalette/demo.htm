@@ -1,0 +1,36 @@
+<HTML>
+	<HEAD>
+		<TITLE>Palette Scriptlet Demonstration</TITLE>
+		<SCRIPT language="vbScript">
+			<!--
+				Sub WebSafeColorPalette1_onScriptletEvent(ByRef psEventName, ByRef psEventData)
+					Select Case psEventName
+						Case "onColorChange"
+							window.document.bgColor = psEventData
+					End Select
+				End Sub
+			'-->
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<TABLE bgColor="FFFFFF">
+		<TR>
+		<TD>
+		
+		<H1>Palette Scriptlet Demonstration</H1>
+		Choose a color and the background will change.<BR>
+		<BR>
+		<OBJECT id="WebSafeColorPalette1" style="WIDTH: 200px; HEIGHT: 150px" type=text/x-scriptlet VIEWASTEXT>
+			<PARAM NAME="Scrollbar" VALUE="0">
+			<PARAM NAME="URL" VALUE="WebSafeColorPalette.htm">
+		</OBJECT>
+		<BR>
+		<BR>
+		Created by <A href="http://www.lewismoten.com">Lewis Moten</A>.
+		
+		</TD>
+		</TR>
+		</TABLE>
+		
+	</BODY>
+</HTML>

@@ -1,0 +1,1 @@
+var InScriptlet = (typeof(window.external.version) == 'string');

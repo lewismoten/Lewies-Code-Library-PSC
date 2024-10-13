@@ -1,0 +1,427 @@
+<html>
+    <head>
+        <title>Web-Safe Color palette Scriptlet</title>
+        <link rel="stylesheet" type="text/css" href="WindowsForm.css">
+        <style type="text/css">
+            <!--
+                .Palette
+                {
+                    cursor:hand;
+                    border-right:2px inset buttonhighlight;
+                    border-bottom:2px inset buttonhighlight;
+                    border-left:2px inset buttonshadow;
+                    border-top:2px inset buttonshadow;
+                }
+                .Saturation
+                {
+                    border-right:2px inset buttonhighlight;
+                    border-bottom:2px inset buttonhighlight;
+                    border-left:2px inset buttonshadow;
+                    border-top:2px inset buttonshadow;
+                    cursor:default;
+                }
+            -->
+        </style>
+        <script language="JavaScript" src="InScriptlet.js"></script>
+        <script language="vbScript">
+            <!--
+' ——————————————————————————————————————————————————————————————————————————————
+Dim msColor         ' Last color clicked
+Dim nStepLevel      ' Number of color values to skip over between each color
+Dim nMaxLuminance   ' Size of steps divisible by 255 (255 is max hue value)
+Dim sCurSaturation  ' Current saturation color that the palette is displaying
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Scriptlet_onInitialize()
+    ' To get the RGB version of the available palette colors, simply change the 
+    ' step level to 1.  Warning - this may cause your browser to lock up, or take
+    ' a very long time to rendure the page.  Think about it, the palette table
+    ' alone is creating 65,205 cells.  Just experiment with taking it down one
+    ' step at a time:  (255, 85, 51, 17, 15, 5, 3, 1)
+    ' It becomes really slow for me around 5
+    
+    ' A step level of 51 gives you the web-safe color palette!
+    
+    nStepLevel = 51
+    nMaxLuminance = 255 \ nStepLevel
+    'nMaxLuminance = 5
+End Sub
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Palette_onMouseDown()
+    If window.event.srcElement.tagName = "TD" Then
+        msColor = window.event.srcElement.bgColor
+        If InScriptlet Then
+        	If Not window.external.frozen Then
+        		window.external.raiseEvent "onColorChange", window.event.srcElement.bgColor
+        	End If
+        End If
+    End If
+End Sub
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Palette_onMouseOver()
+    
+    ' If the mouse moved over a table cell within the palette
+    If window.event.srcElement.tagName = "TD" Then
+    
+        ' Change the tool-tip text to the value of the color
+        window.event.srcElement.title = window.event.srcElement.bgColor
+        
+        ' Change the status of the window to reflect the value of the color
+        window.status = window.event.srcElement.bgColor
+        
+        window.event.cancelBubble = True
+    
+    End If ' window.event.srcElement.tagName = "TD"
+
+End Sub ' Palette_onMouseOver()
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Saturation_onMouseOver()
+
+    If window.event.srcElement.tagName = "TD" Then
+
+        ' Notify user how to change the palette
+        window.status = "Click to change the palette saturation"
+        window.event.cancelBubble = True
+
+    End If ' window.event.srcElement.tagName = "TD"
+
+End Sub ' Saturation_onMouseOver()
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Saturation_onMouseMove()
+
+    ' If the mouse is moving over over a table cell
+    If window.event.srcElement.tagName = "TD" Then
+
+        ' If the mouse button is down
+        If window.event.button = 1 Then
+                
+            LeftArrow.style.top = window.event.y - 7
+            window.status = "Click to change the palette saturation"
+            window.event.cancelBubble = True
+
+            ' If the saturation is not currently applied to the palette
+            If Not sCurSaturation = window.event.srcElement.bgColor Then
+                
+                ' Call the source elements onClick event
+                Call window.event.srcElement.onClick()
+            
+            End If ' Not sCurSaturation = window.event.srcElement.bgColor
+
+        End If ' window.event.button = 1
+        
+    End If ' window.event.srcElement.tagName = "TD"
+
+End Sub ' Saturation_onMouseMove()
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Saturation_onClick()
+    LeftArrow.style.top = window.event.y - 7
+End Sub
+' ——————————————————————————————————————————————————————————————————————————————
+Sub Body_onMouseOut()
+    window.status = "Done"
+End Sub
+' ——————————————————————————————————————————————————————————————————————————————
+Sub ChangePalette(ByRef pnRed, ByRef pnGreen, ByRef pnBlue)
+    
+    Dim lnColumn        ' Current column we are working with (zero based)
+    Dim lnRow           ' Current row we are working with (zero based)
+    Dim lsRedHex        ' Hex value of Red Hue
+    Dim lsGreenHex      ' Hex value of Green Hue
+    Dim lsBlueHex       ' Hex value of Blue Hue
+    Dim lsColor         ' Color value to display in table cell
+    Dim lnLuminance     ' Maximum luminance allowed for the current row
+    
+    ' If the palette is currently setup with the chosen saturation - exit the rutine
+    '   This really speads up the application when a user holds the mouse button down
+    '   and drags it over the saturation bar.
+    If sCurSaturation = "#" & getHex(pnRed) & getHex(pnGreen) & getHex(pnBlue) Then Exit Sub
+
+    ' Loop through each row
+    For lnRow = 0 to nMaxLuminance
+        
+        ' Setup the maximum luminance for the current row
+        lnLuminance = nMaxLuminance - lnRow
+        
+        ' Loop through each column
+        For lnColumn = 0 To nMaxLuminance
+            
+            ' Get the hex values for each hue in the color
+            lsRedHex = getHex(lnLuminance - SetValue(lnColumn - pnRed))
+            lsGreenHex = getHex(lnLuminance - SetValue(lnColumn - pnGreen))
+            lsBlueHex = getHex(lnLuminance - SetValue(lnColumn - pnBlue))
+            
+            ' Compile the hex values into a color hex value
+            lsColor = "#" & lsRedHex & lsGreenHex & lsBlueHex
+            
+            ' Change the background color of the selected cell
+            Call window.execScript("Palette_" & lnRow & "x" & lnColumn & ".bgColor=""" & lsColor & """", "vbScript")
+            
+        Next ' lnColumn
+    
+    Next ' lnRow
+    
+    ' Change the current saturation
+    sCurSaturation = "#" & getHex(pnRed) & getHex(pnGreen) & getHex(pnBlue)
+    
+End Sub ' ChangePalette(ByRef pnRed, ByRef pnGreen, ByRef pnBlue)
+' ——————————————————————————————————————————————————————————————————————————————
+Function GetHex(ByRef anValue)
+    If anValue >= nMaxLuminance Then
+        GetHex = "ff"
+    ElseIf anValue <= 0 Then
+        GetHex = "00"
+    Else
+        GetHex = Hex(anValue  * nStepLevel)
+    End If
+    GetHex = String(2 - Len(GetHex), "0") & GetHex
+End Function
+' ——————————————————————————————————————————————————————————————————————————————
+Function SetValue(ByRef anValue)
+    If anValue > nMaxLuminance Then
+        SetValue = nMaxLuminance
+    ElseIf anValue < 0 Then
+        SetValue = 0
+    Else
+        SetValue = anValue
+    End If
+End Function
+' ——————————————————————————————————————————————————————————————————————————————
+Function BuildPalette(ByRef pnRed, ByRef pnGreen, ByRef pnBlue)
+
+    ' Creates a palette of the color blending into white and black.
+    '   Going from left to right, white blends into the color
+    '   Going from the top to the bottom, the color blends into black
+
+    Dim lnColumn        ' Column we are working with (zero based)
+    Dim lnRow           ' Row we are working with (zero based)
+    Dim lsRedHex        ' Luminacy of Red Hue in a color
+    Dim lsGreenHex      ' Luminacy of Green Hue in a color
+    Dim lsBlueHex       ' Luminacy of Blue Hue in a color
+    Dim lsColor         ' Hex value of a color
+    Dim lsTable         ' HTML to be returned
+    Dim lnLuminance     ' The maximum luninance available for the current row
+    Dim lnRedHue        ' Hue value of red in the current color
+    Dim lnGreenHue      ' Hue value of green in the current color
+    Dim lnBlueHue       ' Hue value of blue in the current color
+    Dim lsID            ' ID of the current table cell
+      
+    ' Open that table up.
+    lsTable = "<TABLE" & _
+        " border=""0""" & _
+        " cellspacing=""0""" & _
+        " cellpadding=""0""" & _
+        " id=""Palette""" & _
+        " class=""Palette""" & _
+        " height=""100%""" & _
+        " width=""100%""" & _
+        ">"
+
+    ' Loop through each row to be displayed in the palette
+    For lnRow = 0 to nMaxLuminance
+            
+        ' Create a new row
+        lsTable = lsTable & "<TR>"
+            
+        ' Determine the maximum luminance for the current row
+        lnLuminance = nMaxLuminance - lnRow
+            
+        ' Loop through each column to be displayed in the palette
+        For lnColumn = 0 To nMaxLuminance
+                
+            ' Setup the hues for the current column
+            lnRedHue = lnLuminance - SetValue(lnColumn - pnRed)
+            lnGreenHue = lnLuminance - SetValue(lnColumn - pnGreen)
+            lnBlueHue = lnLuminance - SetValue(lnColumn - pnBlue)
+                
+            ' Convert the hue values into hex
+            lsRedHex = getHex(lnRedHue)
+            lsGreenHex = getHex(lnGreenHue)
+            lsBlueHex = getHex(lnBlueHue)
+                
+            ' Compile the color
+            lsColor = "#" & lsRedHex & lsGreenHex & lsBlueHex
+                
+            ' Complie the ID of the current cell
+            lsID = "Palette_" & lnRow & "x" & lnColumn
+            
+            ' Create the table cell
+            lsTable = lsTable & "<TD ID=""" & lsID & """ bgColor=""" & lsColor & """></TD>"
+            
+        Next ' lnColumn
+            
+        ' Close the table row
+        lsTable = lsTable & "</TR>"
+            
+    Next ' lnRow
+        
+    ' Close the table
+    lsTable = lsTable & "</TABLE>"
+        
+    ' Return the HTML results
+    Buildpalette = lsTable
+        
+End Function ' BuildPalette(ByRef pnRed, ByRef pnGreen, ByRef pnBlue)
+' ——————————————————————————————————————————————————————————————————————————————
+Function BuildSaturation()
+    
+    Dim lsTable             ' HTML to be returned from this function
+    Dim lnColorIndex        ' Determines what present color is
+    Dim lnRedLuminance      ' Stregnth of red
+    Dim lnGreenLuminance    ' Stregnth of Green
+    Dim lnBlueLuminance     ' Stregnth of Blue
+    Dim lnRedIncrimant      ' Value added/subtraced from red luminance as hue changes
+    Dim lnGreenIncriment    ' Value added/subtraced from green luminance as hue changes
+    Dim lnBlueIncriment     ' Value added/subtraced from blue luminance as hue changes
+    Dim lnTween             ' Stepping hues between major hue values
+    Dim lsRedHex            ' Hex Color value of Reds
+    Dim lsGreenHex          ' Hex Color value of Greens
+    Dim lsBlueHex           ' Hex Color value of Blues
+    Dim lsColorHex          ' Hex Color value of combined Red Green and Blue
+        
+    lsTable = "<TABLE id=""Saturation"" border=0 cellspacing=0 cellpadding=0 class=""Saturation"" height=""100%"" width=""100%"">"
+
+    ' Switch between the major color values in a spectrum
+        ' Red, Magenta, Blue, Cyan, Green, Yellow, --> Red
+    For lnColorIndex = 0 to 5
+        
+        ' Determine how to rendure colors based on the Color Index 
+        Select Case lnColorIndex
+            Case 0
+
+                ' Go from Red ...
+                lnRedLuminance = nMaxLuminance
+                lnGreenLuminance = 0
+                lnBlueLuminance = 0
+                    
+                ' ... to Purple
+                lnRedIncriment = 0
+                lnGreenIncriment = 0
+                lnBlueIncriment = 1
+                
+            Case 1
+
+                ' Go from Purple ...
+                lnRedLuminance = nMaxLuminance
+                lnGreenLuminance = 0
+                lnBlueLuminance = nMaxLuminance
+
+                ' ... to Blue
+                lnRedIncriment = -1
+                lnGreenIncriment = 0
+                lnBlueIncriment = 0
+
+            Case 2
+
+                ' Go from Blue ...
+                lnRedLuminance = 0
+                lnGreenLuminance = 0
+                lnBlueLuminance = nMaxLuminance
+
+                ' ... to Cyan
+                lnRedIncriment = 0
+                lnGreenIncriment = 1
+                lnBlueIncriment = 0
+
+            Case 3
+
+                ' Go from Cyan ...
+                lnRedLuminance = 0
+                lnGreenLuminance = nMaxLuminance
+                lnBlueLuminance = nMaxLuminance
+
+                ' ... to Green
+                lnRedIncriment = 0
+                lnGreenIncriment = 0
+                lnBlueIncriment = -1
+
+            Case 4
+
+                ' Go from Green ...
+                lnRedLuminance = 0
+                lnGreenLuminance = nMaxLuminance
+                lnBlueLuminance = 0
+
+                ' ... to Yellow
+                lnRedIncriment = 1
+                lnGreenIncriment = 0
+                lnBlueIncriment = 0
+
+            Case 5
+
+                ' Go from Yellow ...
+                lnRedLuminance = nMaxLuminance
+                lnGreenLuminance = nMaxLuminance
+                lnBlueLuminance = 0
+
+                ' ... to Red
+                lnRedIncriment = 0
+                lnGreenIncriment = -1
+                lnBlueIncriment = 0
+
+        End Select ' lnColorIndex
+
+        ' Tween between each variation of the color to blend into
+        For lnTween = 0 To (nMaxLuminance - 1)
+
+            ' Get the Hex value of each Hue
+            lsRedHex = GetHex(lnRedLuminance)
+            lsGreenHex = GetHex(lnGreenLuminance)
+            lsBlueHex = GetHex(lnBlueLuminance)
+
+            ' Combine the Hex values to form a Hex version of the resulting color
+            lsColorHex = "#" & lsRedHex & lsGreenHex & lsBlueHex
+
+            ' Open a new row
+            lsTable = lsTable & "<TR>"
+                
+            ' Create the cell displaying the saturation color
+            lsTable = lsTable & _
+                "<TD" & _
+                    " language=""vbScript""" & _
+                    " onClick=""Call ChangePalette(" & _
+                        lnRedLuminance & ", " & _
+                        lnGreenLuminance & ", " & _
+                        lnBlueLuminance & ")""" & _
+                    " bgColor=""" & lsColorHex & """" & _
+                    "></TD>"
+                
+            ' Close the row
+            lsTable = lsTable & "</TR>"
+
+            ' Incriment Hue Values towards the next major color
+            lnRedLuminance = lnRedLuminance + lnRedIncriment
+            lnGreenLuminance = lnGreenLuminance + lnGreenIncriment
+            lnBlueLuminance = lnBlueLuminance + lnBlueIncriment
+            
+        Next ' lnTween
+
+    Next ' lnColorIndex
+
+    ' Close that table
+    lsTable = lsTable & "</TABLE>"
+        
+    ' Return the results
+    BuildSaturation = lsTable
+
+End Function ' BuildSaturation()
+' ——————————————————————————————————————————————————————————————————————————————
+            '-->
+        </script>
+    </head>
+    <body id="Body">
+        <img SRC="arrowLeft.gif" ID="LeftArrow" style="position:absolute;left:90%" alt="Saturation Indicator" WIDTH="6" HEIGHT="11">
+        <script language="vbScript">
+            <!--
+
+            Call Scriptlet_onInitialize()
+            
+            document.write("<TABLE width=""100%"" height=""100%"">")
+            document.write("<TR>")
+            document.write("<TD>" & BuildPalette(nMaxLuminance, 0, 0) & "</TD>")
+            document.write("<TD width=""10%"">" & BuildSaturation() & "</TD>")
+            document.write("</TR>")
+            document.write("</TABLE>")
+
+            '-->
+        </script>
+    </body>
+</html>

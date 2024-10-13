@@ -1,0 +1,62 @@
+A
+{
+	text-decoration: underline;
+}
+BODY
+{
+	Margin: 2px;
+	font-size: 7pt;
+	font-family: Arial;
+	border-top:2px outset buttonhighlight;
+	border-left:2px outset buttonhighlight;
+	border-right:2px outset buttonshadow;
+	border-bottom:2px outset buttonshadow;
+	color:buttontext;
+	cursor:default;
+	background-color: buttonface;
+}
+TD
+{
+	font-family: Arial;
+	font-size: 7pt;
+}
+.AltNormal
+{
+	color: buttontext;
+	background-color: buttonface;
+}
+.AltHighlight
+{
+	color: highlighttext;
+	background-color: highlight;
+}
+.LineAbove TD
+{
+	border-top: 1px solid buttonshadow;
+}
+#Clickable, .Clickable
+{
+	cursor:hand;
+}
+INPUT.Checkbox
+{
+	width: 12px;
+	height: 12px;
+}
+.LineAbove .Clickable
+{
+	border-top: 1px inset buttonshadow;
+	border-left: 1px inset buttonshadow;
+	border-right: 1px inset buttonhighlight;
+	border-bottom: 1px inset buttonhighlight;
+}
+INPUT.Button
+{
+	font-family: Arial;
+	font-size: 7pt;
+}
+SELECT
+{
+	font-family: Arial;
+	font-size: 7pt;
+}
