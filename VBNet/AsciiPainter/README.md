@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Read and Edit *.ANS files.  Old BBS systems used to have Ansi files to display text as graphics before the days of the internet were popular.  This program can read just about any ansi file in ascii format and display it accurately.  It does not support Music or Animations.
 
-![Screenshot of Lewies Ansi/Ascii Painter](/screenshot.jpg)
+![Screenshot of Lewies Ansi/Ascii Painter](./screenshot.jpg)
 
 
 

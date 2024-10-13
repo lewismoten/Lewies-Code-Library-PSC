@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Expose your content through external javascript source files.
 
-![Screenshot of Expose Your Content](/screenshot.gif)
+![Screenshot of Expose Your Content](./screenshot.gif)
 
 
 

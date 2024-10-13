@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Displays a path to navigate through each subdirectory in the path to your web page. This is called bread crumb navigation. Many sites use this with the words You Are Here. It is suggested that you do not use this type of navigation alone.
 
-![Screenshot of BreadCrumbs Navigation](/screenshot.gif)
+![Screenshot of BreadCrumbs Navigation](./screenshot.gif)
 
 
 

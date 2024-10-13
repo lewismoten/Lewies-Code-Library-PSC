@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Explains how to create grids and walks through the process of optimizing the query for speed. Grid table is populated with rows containing columns of X and Y.
 
-![Screenshot of Creating Grids](/screenshot.gif)
+![Screenshot of Creating Grids](./screenshot.gif)
 
 
 

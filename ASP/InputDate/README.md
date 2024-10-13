@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This small snippet will generate 3 drop down boxes that will allow your users to choose a date.
 
-![Screenshot of Input Date](/screenshot.gif)
+![Screenshot of Input Date](./screenshot.gif)
 
 
 

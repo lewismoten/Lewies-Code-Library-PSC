@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Simulate the tab control found at the bottom of popular programs such as visual Interdev and Front Page.
 
-![Screenshot of Bottom Tabs](/screenshot.gif)
+![Screenshot of Bottom Tabs](./screenshot.gif)
 
 
 

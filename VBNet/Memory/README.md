@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This is a simple memory game. Start a new game. Wait for the squares to blink and repeat the pattern. An extra sequence is added after each round.
 
-![Screenshot of Lewies Memory Game](/screenshot.jpg)
+![Screenshot of Lewies Memory Game](./screenshot.jpg)
 
 
 

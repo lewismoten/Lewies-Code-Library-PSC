@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This script allows you to browse the file system on a remote computer through your web browser.
 
-![Screenshot of Remote File Explorer](/screenshot.gif)
+![Screenshot of Remote File Explorer](./screenshot.gif)
 
 
 

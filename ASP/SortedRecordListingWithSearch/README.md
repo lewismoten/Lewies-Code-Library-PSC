@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This script displays records retrieved from the database. You can sort each field and jump to any page in the database. You can customize the records per page and all the colors. You may also attatch a style sheet to change the colors of each class type. this script is very close to being XML compatable. (still in the works).
 
-![Screenshot of Sorted Record Listing with Search](/screenshot.gif)
+![Screenshot of Sorted Record Listing with Search](./screenshot.gif)
 
 
 

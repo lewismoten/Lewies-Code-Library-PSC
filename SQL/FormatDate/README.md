@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Dynamically convert a date to a user-defined format.
 
-![Screenshot of FormatDate](/screenshot.gif)
+![Screenshot of FormatDate](./screenshot.gif)
 
 
 

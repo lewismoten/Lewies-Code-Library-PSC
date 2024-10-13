@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Reads an Xml file from the Seti@Home projects web servers and allows you to display the information on your own website. Cache xml files for up to 8 hours and loads via. javascript. Compatible with Netscape, Mozilla, FireFox, and MSIE.
 
-![Screenshot of Lewies Seti Stats](/screenshot.gif)
+![Screenshot of Lewies Seti Stats](./screenshot.gif)
 
 
 

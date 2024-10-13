@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Allows users to navigate through each page (kinda like Google). They can click back, next, and page numbers as well. You can customize its output html through design-time. Great for beginners learning how to code web controls.
 
-![Screenshot of Page Navigation WebControl](/screenshot.jpg)
+![Screenshot of Page Navigation WebControl](./screenshot.jpg)
 
 
 

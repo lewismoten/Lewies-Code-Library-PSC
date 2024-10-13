@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Prompt your users if they wish to remove an item.
 
-![Screenshot of Remove Item Confirmation](/screenshot.jpg)
+![Screenshot of Remove Item Confirmation](./screenshot.jpg)
 
 
 

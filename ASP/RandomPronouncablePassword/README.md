@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Create a random password that is pronouncable. This helps users remember the password easier and can come up with some silly words.
 
-![Screenshot of Random Pronouncable Password](/screenshot.gif)
+![Screenshot of Random Pronouncable Password](./screenshot.gif)
 
 
 

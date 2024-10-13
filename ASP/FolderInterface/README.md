@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Give your users a nice clean interface to navigate, choose, and create new folders.
 
-![Screenshot of Folder Interface](/screenshot.gif)
+![Screenshot of Folder Interface](./screenshot.gif)
 
 
 

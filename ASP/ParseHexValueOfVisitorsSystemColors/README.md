@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Parses the hex value of users system colors. Great for creating dynamic images on the fly to blend with the users operating system.
 
-![Screenshot of Parse Hex value of visitors System Colors](/screenshot.jpg)
+![Screenshot of Parse Hex value of visitors System Colors](./screenshot.jpg)
 
 
 

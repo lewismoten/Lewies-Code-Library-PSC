@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Returns a color that is guarenteed to have contrast against the suggested color. Contrast to white is gray, contrast to light blue is dark blue, etc. Demo included.
 
-![Screenshot of Contrasting Colors](/screenshot.gif)
+![Screenshot of Contrasting Colors](./screenshot.gif)
 
 
 

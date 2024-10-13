@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Base 64 encodeing is used to convert binary files to a "safe" format for transporting files through smtp (email) and other protocols. It is also used for basic authentication. With this code, you can decode the current UserName/Password who is visiting a protected page on your site by requesting one of the serverVariables.
 
-![Screenshot of Base 64 Encode / Decode](/screenshot.gif)
+![Screenshot of Base 64 Encode / Decode](./screenshot.gif)
 
 
 

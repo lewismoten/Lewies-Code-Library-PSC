@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Gives you an interface to navigate reports by year, quarter, month, week, or day. This is just the navigation alone that I append to the top of different reports.
 
-![Screenshot of Report Navigation](/screenshot.gif)
+![Screenshot of Report Navigation](./screenshot.gif)
 
 
 

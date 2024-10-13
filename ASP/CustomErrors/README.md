@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This script interacts with COM objects that communicate with the MetaBase for Internet Information Server. You will be able to define the custom error pages for your website.
 
-![Screenshot of Add Custom Errors with MetaBase](/screenshot.gif)
+![Screenshot of Add Custom Errors with MetaBase](./screenshot.gif)
 
 
 

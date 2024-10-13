@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Encrypts and Decrypts messages using the XOR algorithm with support of unicode & method of getting pas the NULL barrier by converting messages to hex strings.
 
-![Screenshot of XOR Encryption Class](/screenshot.gif)
+![Screenshot of XOR Encryption Class](./screenshot.gif)
 
 
 

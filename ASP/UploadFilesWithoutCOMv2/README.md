@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 No need to purchase expensive components. You can do it all with what you already got. This version is an update for faster speed and reliability. Bugs have been fixed, and the entire code has been commented to walk you through the process.
 
-![Screenshot of Upload Files Without COM v2](/screenshot.gif)
+![Screenshot of Upload Files Without COM v2](./screenshot.gif)
 
 
 

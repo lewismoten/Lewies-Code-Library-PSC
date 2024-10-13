@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Demonstrates how to have alternating colors. Most people usually need just two alternating colors, but this method supports a larger list. Both a fixed loop and a conditional loop are provided as examples.
 
-![Screenshot of Unlimited Alternating Colors](/screenshot.jpg)
+![Screenshot of Unlimited Alternating Colors](./screenshot.jpg)
 
 
 

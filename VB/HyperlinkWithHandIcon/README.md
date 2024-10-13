@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Includes demonstration of how to make labels appear as hyperlinks, open the users default web browser, and uses a hand cursor when hovering over the icon. The hand.cur file is loaded seperately so that you may incorporate it into your other applications.
 
-![Screenshot of Hyperlink with Hand Icon](/screenshot.gif)
+![Screenshot of Hyperlink with Hand Icon](./screenshot.gif)
 
 
 

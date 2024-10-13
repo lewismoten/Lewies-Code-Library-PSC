@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Provides simple navigation through multiple steps that you may offer your users in an application. ie - a wizard setup program.
 
-![Screenshot of Wizard Navigation Control](/screenshot.jpg)
+![Screenshot of Wizard Navigation Control](./screenshot.jpg)
 
 
 

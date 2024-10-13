@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Drag and drop this control onto your forms so you can allow users to pick the files on there computer they want to use with your program. Pretty simple stuff.
 
-![Screenshot of Choose File User Control](/screenshot.gif)
+![Screenshot of Choose File User Control](./screenshot.gif)
 
 
 

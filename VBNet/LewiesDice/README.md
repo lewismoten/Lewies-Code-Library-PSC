@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Gives you the option to roll any sided dice as many times as you want. Predefined formats with sides of 4, 6, 8, 10, 12, & 20. Fun utility for any AD&D hobbiest.
 
-![Screenshot of Lewies Dice](/screenshot.gif)
+![Screenshot of Lewies Dice](./screenshot.gif)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 quick and dirty example to use instant messenger with windows (MSIM). Logon, Logoff, Display contact list, send a message. Great for people researching for another way other then email to authenticate users.
 
-![Screenshot of Small MSIM example](/screenshot.jpg)
+![Screenshot of Small MSIM example](./screenshot.jpg)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Let your users choose a color through a rich user interface. This color picker looks simular to Adobe Photoshop.
 
-![Screenshot of Lewies Color Picker](/screenshot.jpg)
+![Screenshot of Lewies Color Picker](./screenshot.jpg)
 
 
 

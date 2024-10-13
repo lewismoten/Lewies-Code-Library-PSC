@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Navigate through a website within a small area of the screen.
 
-![Screenshot of Web Navigation Scriptlet](/screenshot.gif)
+![Screenshot of Web Navigation Scriptlet](./screenshot.gif)
 
 
 

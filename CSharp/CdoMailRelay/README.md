@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Send email through the CDO objects that .Net interfaces with. Now you can choose your ISP's mail server and log in with username/password to relay mail to the outside world.
 
-![Screenshot of Relay email through CDO ](/screenshot.jpg)
+![Screenshot of Relay email through CDO ](./screenshot.jpg)
 
 
 

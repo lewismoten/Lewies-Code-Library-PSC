@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Allow users to choose colors from familiar interfaces that are standard to the windows operating system. This one displays a wide range of hues in a color spectrum and fades the saturation. An additional scriptlet appears to change the luminance of each color chosen.
 
-![Screenshot of Color Picker (Fallout)](/screenshot.jpg)
+![Screenshot of Color Picker (Fallout)](./screenshot.jpg)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Definately been done before. Just couldn't find specifially what I wanted. Converts text to strings in VBScript, Javascript, and T-SQL script. Simple interface, Simple code, Simple to use ...
 
-![Screenshot of Text to String Conversion](/screenshot.jpg)
+![Screenshot of Text to String Conversion](./screenshot.jpg)
 
 
 

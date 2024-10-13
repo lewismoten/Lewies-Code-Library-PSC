@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Simulates the spinner control found in visual basic on a web page. Author comments included.
 
-![Screenshot of Spinner Scriptlet](/screenshot.gif)
+![Screenshot of Spinner Scriptlet](./screenshot.gif)
 
 
 

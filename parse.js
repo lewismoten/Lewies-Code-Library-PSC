@@ -69,7 +69,7 @@ Open source projects that I had published to Planet Source Code.
 *${date}*
 
 ${description}
-${showImage(image, '', title)}
+${showImage(image, '.', title)}
 
 `;
     fs.appendFileSync(`${folder}/README.md`, markdown, 'utf8');

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Allows users to choose a color from a palette simular to Adobe's color palette.
 
-![Screenshot of Color Palette Scriptlet](/screenshot.gif)
+![Screenshot of Color Palette Scriptlet](./screenshot.gif)
 
 
 

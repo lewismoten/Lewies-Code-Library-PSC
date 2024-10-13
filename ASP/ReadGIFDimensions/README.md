@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Reads the Width and the Height of a GIF image. Really nice to have if you need to limit your users with specific image dimensions for profile images, banners, buttons, etc.
 
-![Screenshot of Read GIF Dimensions](/screenshot.gif)
+![Screenshot of Read GIF Dimensions](./screenshot.gif)
 
 
 

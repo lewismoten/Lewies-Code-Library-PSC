@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Add / Remove / Manage position of items on a list. This scriplet demonstrates how you can allow your users to pick up to 5 flavors of there best ice cream.
 
-![Screenshot of Switchbox Scriptlet](/screenshot.gif)
+![Screenshot of Switchbox Scriptlet](./screenshot.gif)
 
 
 

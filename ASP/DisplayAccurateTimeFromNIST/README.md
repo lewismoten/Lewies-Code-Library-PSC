@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Display accurate time to your visitors! This script requests the UTC time from a server that is syncronized with an atomic clock. It then adjusts the time according to timezone and if daylight savings time is in effect.
 
-![Screenshot of Display Accurate Time from NIST](/screenshot.gif)
+![Screenshot of Display Accurate Time from NIST](./screenshot.gif)
 
 
 

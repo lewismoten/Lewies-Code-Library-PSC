@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This chatbot is written in JavaScript and loads its data from Xml files. The xml file should be easy enough to understand and minipulate to make your own variation of the ELIZA chatbot.
 
-![Screenshot of Lewies Eliza Chatbot](/screenshot.jpg)
+![Screenshot of Lewies Eliza Chatbot](./screenshot.jpg)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Queries a WhoIs server for for domain information. Useful for people who want to sell domain names. This version uses the XMLHTTP component that is installed on most servers, so there is no additional need to install any extra COM objects.
 
-![Screenshot of Whois Lookup with XMLHTTP](/screenshot.gif)
+![Screenshot of Whois Lookup with XMLHTTP](./screenshot.gif)
 
 
 

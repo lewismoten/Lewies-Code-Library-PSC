@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 The assembly reader reads embedded resources as streams from any assembly you may pass to it. By default, it will read from the executing assembly. You can also read the assemblies title, description, configuration, company, product, copyright, trademark, and culture attributes.
 
-![Screenshot of AssemblyReader](/screenshot.jpg)
+![Screenshot of AssemblyReader](./screenshot.jpg)
 
 
 

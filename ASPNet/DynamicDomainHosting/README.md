@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Shows how you can host multiple domains under one IP address by mapping domain names to sites within a database.
 
-![Screenshot of Dynamic Domain Hosting](/screenshot.gif)
+![Screenshot of Dynamic Domain Hosting](./screenshot.gif)
 
 
 

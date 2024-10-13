@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Functions just like the image control except that you may also provide a navigation url. when the user clicks the image, they go off to the url you specify.
 
-![Screenshot of ImageLink WebControl](/screenshot.jpg)
+![Screenshot of ImageLink WebControl](./screenshot.jpg)
 
 
 

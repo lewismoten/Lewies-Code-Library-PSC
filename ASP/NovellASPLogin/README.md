@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 This login code validates users against a novell server and gives the look and feel of a Novell Client login screen.
 
-![Screenshot of Novell ASP Login](/screenshot.gif)
+![Screenshot of Novell ASP Login](./screenshot.gif)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Datatype conversion to change integers to unique identifier datatypes. This method is most useful when upgrading database schemas from using integers to using guids. You will still be able to "read" values by eye to match old Integers with the new GUIDs.
 
-![Screenshot of Int2GUID](/screenshot.gif)
+![Screenshot of Int2GUID](./screenshot.gif)
 
 
 

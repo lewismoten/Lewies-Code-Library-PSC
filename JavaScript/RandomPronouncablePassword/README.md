@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Allows client browser to randomly create a pronouncable password. This can be used to suggest a password to the user that is easy to remember.
 
-![Screenshot of Random Pronouncable Password](/screenshot.gif)
+![Screenshot of Random Pronouncable Password](./screenshot.gif)
 
 
 

@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Procedure made in order to create a random password that is somewhat pronouncable and easy to remember.
 
-![Screenshot of Random Pronouncable Password](/screenshot.gif)
+![Screenshot of Random Pronouncable Password](./screenshot.gif)
 
 
 

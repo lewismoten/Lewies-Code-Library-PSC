@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Retrieves the structure of your data and displays it into a nice report that you can copy & paste into word documents. Works with SQL Server 2000. Also lists any comments within the database for tables & columns.
 
-![Screenshot of Data Dictionary Report Generator](/screenshot.gif)
+![Screenshot of Data Dictionary Report Generator](./screenshot.gif)
 
 
 

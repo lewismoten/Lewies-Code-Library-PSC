@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 VMS is a windows service developed in .Net that monitors a Microsoft Visual SourceSafe (VSS) database. Customized alerts may be sent based on the defined filters.
 
-![Screenshot of Visual SourceSafe Journal Monitor Service](/screenshot.jpg)
+![Screenshot of Visual SourceSafe Journal Monitor Service](./screenshot.jpg)
 
 
 

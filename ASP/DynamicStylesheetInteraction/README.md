@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Interact with stylesheets to dynamically change properties.
 
-![Screenshot of Dynamic Stylesheet Interaction](/screenshot.gif)
+![Screenshot of Dynamic Stylesheet Interaction](./screenshot.gif)
 
 
 

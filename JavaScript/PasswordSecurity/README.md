@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Parses the password field and comes back with a percentage of how secure your password is against a hack attempt.
 
-![Screenshot of Password Security](/screenshot.gif)
+![Screenshot of Password Security](./screenshot.gif)
 
 
 

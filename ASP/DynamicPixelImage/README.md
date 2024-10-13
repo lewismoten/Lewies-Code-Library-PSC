@@ -10,7 +10,7 @@ Open source projects that I had published to Planet Source Code.
 
 Allows you to create 1x1 images of any color including transparent images. (Images can be streatched by defining height and width in image tag)
 
-![Screenshot of Dynamic Pixel Image](/screenshot.gif)
+![Screenshot of Dynamic Pixel Image](./screenshot.gif)
 
 
 
