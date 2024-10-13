@@ -1,18 +1,29 @@
 # Lewies Code Library PSC
 
-All open source projects that I had published to Planet Source Code. Many of these files range from the late 90's to the early 2000's.
+This collection showcases open-source projects I published on Planet Source Code (PSC) in the late 1990s and early 2000s. Some scripts can be found on the PSC Index maintained by 
 
-The most notable scripts are to upload files over Classic ASP, in which I had won awards for and has spread through the community. At the time, vendors would charge upwards of $700 for a COM object providing the capability. Many developers at the time had shared hosts that restricted access to uploading COM objects. I dug into the RFC and learned how to read the data. Over time, I learned how to speed up the process to parse file uploads by using the ADODB Stream, which was intended to work with database streams, but provided by Microsoft and available on most IIS server installations. Once ASP.Net came out, downloading files was built-in.
+[@Planet-Source-Code](https://github.com/Planet-Source-Code/PSCIndex/blob/master/ByAuthor/lewis-e-moten-iii.md).
 
-## Upload Files Without COM
+While many scripts are outdated due to advancements in web development, they represent the cutting edge of technology at the time.
 
-- [UploadFilesWithoutCOM](./ASP/UploadFileWithoutCOM)
-- [UploadFilesWithoutCOMv2](./ASP/UploadFileWithoutCOMv2)
-- [UploadFilesWithoutCOMv3](./ASP/UploadFileWithoutCOMv3)
+## Highlights
 
-Scripts are listed by the date they were published on Planet Source Code between July 2000 to August 2004. Some scripts were written before I had an account there. In all, there are 220 scripts that I had uploaded to PSC. A limited number are simply documents.
+**File Upload Scripts (Classic ASP):** These award-winning scripts enabled file uploads on shared hosting platforms, bypassing vendor restrictions on COM objects costing upwards of $700. Later versions leveraged the ADODB Stream to optimize file parsing, a technique later superseded by ASP.NET's built-in download functionality.
 
-PSC treated ASP, vbScript, and VBA as one "world", so server & client scripts are mixed between the two.
+- [Upload Files Without COM](./ASP/UploadFileWithoutCOM)
+- [Upload Files Without COM version 2](./ASP/UploadFileWithoutCOMv2)
+- [Upload Files Without COM version 3](./ASP/UploadFileWithoutCOMv3)
+
+**SHA-1 Hash Algorithm:** This script, available in Classic ASP and JavaScript, gained unexpected popularity. While included for historical reference, SHA-1 vulnerabilities discovered in 2005 make it unsuitable for modern security applications.
+
+- Classic ASP: [SHA-1 Hash Algorithm](./ASP/SHA-1HashAlgorithm/)
+- JavaScript: [Secure Hash Algorithm SHA-1][./JavaScript/SecureHashAlgorithm(SHA-1)/SHA-1]
+
+## Script Organization:
+
+Scripts are categorized by language and date of publication on PSC (July 2000 - August 2004). Some predate my PSC account. In total, the collection comprises 220 scripts, including a few documents.
+
+PSC grouped ASP, VBScript, and VBA as one "world," so server-side and client-side scripts may be mixed within language folders.
 
 - [Classic ASP / VBScript](./ASP/README.md) - *103*
 - [ASP.Net](./ASPNet/README.md) - *8*
