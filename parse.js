@@ -1,6 +1,9 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
 
+const topDirs = ['SQL', 'VB', 'VBNet', 'JavaScript', 'CSharp', 'C', 'ASPNet', 'ASP'];
+const names = ['SQL', 'Visual Basic', 'VB.Net', 'JavaScript', 'C#', 'C/C++', 'ASP.Net', 'Classic ASP / vbScript'];
+
 const showImage = (image, subFolder, title) => {
   if (image === undefined) return '';
   return `\n![Screenshot of ${title}](${subFolder}/screenshot.${image})\n\n`;
@@ -38,7 +41,7 @@ function createMarkdown(scripts) {
     }
     const [topDir, subFolder] = folder.split('/');
 
-    const markdown = `## [${title}](./${subFolder})
+    let markdown = `### [${title}](./${subFolder})
 
 *${date}*
 
@@ -49,19 +52,39 @@ ${showImage(image, subFolder, title)}
 
 
     fs.appendFileSync(`${topDir}/README.md`, markdown, 'utf8');
+
+    const i = topDirs.indexOf(topDir);
+
+    let header = `# [Lewie's Code Library PSC](../../README.md)
+
+Open source projects that I had published to Planet Source Code.
+
+## [${names[i]}](../README.md)
+
+`;
+
+    fs.writeFileSync(`${folder}/README.md`, header, 'utf8');
+    markdown = `### ${title}
+
+*${date}*
+
+${description}
+${showImage(image, '', title)}
+
+`;
+    fs.appendFileSync(`${folder}/README.md`, markdown, 'utf8');
   }
   console.log(stats);
 }
 
-const names = ['SQL', 'Visual Basic', 'VB.Net', 'JavaScript', 'C#', 'C/C++', 'ASP.Net', 'Classic ASP / vbScript'];
-['SQL', 'VB', 'VBNet', 'JavaScript', 'CSharp', 'C', 'ASPNet', 'ASP']
+topDirs
   .forEach((topDir, i) => {
 
-    let header = `# Lewie's Code Library PSC
-
-## ${names[i]}
+    let header = `# [Lewie's Code Library PSC](../README.md)
 
 Open source projects that I had published to Planet Source Code.
+
+## ${names[i]}
 
 `;
 

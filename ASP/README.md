@@ -1,10 +1,10 @@
-# Lewie's Code Library PSC
-
-## Classic ASP / vbScript
+# [Lewie's Code Library PSC](../README.md)
 
 Open source projects that I had published to Planet Source Code.
 
-## [Input Date](./InputDate)
+## Classic ASP / vbScript
+
+### [Input Date](./InputDate)
 
 *7/18/2000 10:42:49 AM*
 
@@ -14,35 +14,35 @@ This small snippet will generate 3 drop down boxes that will allow your users to
 
 
 
-## [Convert Bytes](./ConvertBytes)
+### [Convert Bytes](./ConvertBytes)
 
 *7/18/2000 10:48:45 AM*
 
 This code convert bytes into larger units such as kilobytes, megabytes, gigabytes, and terabytes. I use this with the FileSytemObject so that my users do not see a very large number that doesn't make any sense.
 
 
-## [Convert StringIP to NumericIP](./ConvertStringIPToNumericIP)
+### [Convert StringIP to NumericIP](./ConvertStringIPToNumericIP)
 
 *7/18/2000 10:55:26 AM*
 
 Converts a string ip address ("192.168.0.1") to a Long number (3232235521). One of the resons to do this would be to store IP addresses in databases. Numbers greatly reduce the size required to store this information.
 
 
-## [Convert LongIP to StringIP](./ConvertLongIPToStringIP)
+### [Convert LongIP to StringIP](./ConvertLongIPToStringIP)
 
 *7/18/2000 11:01:22 AM*
 
 This function converts a Long Number(3232235521) into an IP Address ("192.168.0.1").
 
 
-## [Credit Card Mod 10 Validation](./CreditCardMod10Validation)
+### [Credit Card Mod 10 Validation](./CreditCardMod10Validation)
 
 *7/18/2000 11:14:28 AM*
 
 Based on ANSI X4.13, the LUHN formula (also known as the modulus 10 -- or mod 10 -- algorithm ) is used to generate and/or validate and verify the accuracy of credit-card numbers.
 
 
-## [Base 64 Encode / Decode](./Base64EncodeDecode)
+### [Base 64 Encode / Decode](./Base64EncodeDecode)
 
 *7/18/2000 11:25:01 AM*
 
@@ -52,21 +52,21 @@ Base 64 encodeing is used to convert binary files to a "safe" format for transpo
 
 
 
-## [Strip HTML](./StripHTML)
+### [Strip HTML](./StripHTML)
 
 *7/18/2000 11:30:58 AM*
 
 Strips any HTML tags from a string and returns the results. I use this for data that users submit through forms to prevent them from using HTML.
 
 
-## [Common Database Routines](./CommonDatabaseRoutines)
+### [Common Database Routines](./CommonDatabaseRoutines)
 
 *7/18/2000 1:06:29 PM*
 
 To assist in interfacing with databases. This script can format variables and return SQL formats. Such as double quoting apposterphies and surrounding strings with quotes, Returning NULL for invalid data types, trimming strings so they do not exceed maximum lengths. This also has some functions so that you can open and close databases more conveiently with just one line of code. You can query a database and get an Array as well with some code.
 
 
-## [Remote File Explorer](./RemoteFileExplorer)
+### [Remote File Explorer](./RemoteFileExplorer)
 
 *7/19/2000 12:09:01 PM*
 
@@ -76,7 +76,7 @@ This script allows you to browse the file system on a remote computer through yo
 
 
 
-## [Total Email Validation](./TotalEmailValidation)
+### [Total Email Validation](./TotalEmailValidation)
 
 *7/21/2000 10:35:08 AM*
 
@@ -86,28 +86,28 @@ Validates email addresses. Makes sure the email addresses with IP addresses are 
 
 
 
-## [File/Path/Extension Stripping](./FilePathExtensionStripping)
+### [File/Path/Extension Stripping](./FilePathExtensionStripping)
 
 *7/21/2000 12:23:39 PM*
 
 These routines can strip a file name from a path, a directory from a path, and an extension from a path. They can also determine the parent directory path. They are fairly simple routines that I use in misc. places.
 
 
-## [Get In Frames](./GetInFrames)
+### [Get In Frames](./GetInFrames)
 
 *7/21/2000 1:59:41 PM*
 
 Search engines point users to individual web pages. If the page is supposed to be displayed within a set of frames, this code will redirect the users to a specific page using javascript. From there, the new page parses which page it should display and loads up the frames accordingly.
 
 
-## [vbScript to HTML Color Coder](./vbScriptToHTMLColorCoder)
+### [vbScript to HTML Color Coder](./vbScriptToHTMLColorCoder)
 
 *7/23/2000 12:27:13 PM*
 
 Converts vbScript to HTML to show your code on web pages. Also provides features so that clicking on keywords will create a small pop-up window explaining some details about that keyword and provide a link with more details.
 
 
-## [Novell ASP Login](./NovellASPLogin)
+### [Novell ASP Login](./NovellASPLogin)
 
 *7/28/2000 11:11:07 AM*
 
@@ -117,7 +117,7 @@ This login code validates users against a novell server and gives the look and f
 
 
 
-## [Sorted Record Listing with Search](./SortedRecordListingWithSearch)
+### [Sorted Record Listing with Search](./SortedRecordListingWithSearch)
 
 *8/1/2000 2:56:15 PM*
 
@@ -127,7 +127,7 @@ This script displays records retrieved from the database. You can sort each fiel
 
 
 
-## [Advanced SQL Query Builder](./AdvancedSQLQueryBuilder)
+### [Advanced SQL Query Builder](./AdvancedSQLQueryBuilder)
 
 *8/3/2000 10:57:26 PM*
 
@@ -137,35 +137,35 @@ This code lets visitors to your site perform complex queries. Users may choose i
 
 
 
-## [Link URLs](./LinkURLs)
+### [Link URLs](./LinkURLs)
 
 *8/4/2000 12:06:32 PM*
 
 Finds any URL found within specified text and creates a hyper link for http, https, ftp, and email addresses.
 
 
-## [Server Timezone Offset](./ServerTimezoneOffset)
+### [Server Timezone Offset](./ServerTimezoneOffset)
 
 *8/26/2000 3:25:17 PM*
 
 Returns the hour difference of the servers time from GMT.
 
 
-## [AuthenticateUser](./AuthenticateUser)
+### [AuthenticateUser](./AuthenticateUser)
 
 *1/12/2001 2:42:27 PM*
 
 Authenticates a user to make sure if they have previously logged into the site. Requires Session("UserID") to be populated. This usually represents the Users ID within a data base. (Users.UserID) If a user is not loged in, they are redirected to a page to attempt a login. This is useful when the ability to "Auto-Login" has been enabled to use previously saved login information in the users cookies. When a user is redirected to the login page, The URL they were attempting to view is passed along in the Query String along with the reason why they need to login. If the user was posting data to the protected page (perhaps a session timed out), then the previous page they were posting from is sent as the URL that the user is redirected to after they have successfully logged in. This is done to help reduce errors when visiting a page that expected posted form data.
 
 
-## [LoginNow](./LoginNow)
+### [LoginNow](./LoginNow)
 
 *1/12/2001 4:32:52 PM*
 
 Attempts to log a user into the web site through either cookies or posted form data by validating UserName and password against a database. Redirects users to originally requested pages. Saves/Refreshes/Deletes login data into cookies if requested by user.
 
 
-## [Upload Files Without COM](./UploadFilesWithoutCOM)
+### [Upload Files Without COM](./UploadFilesWithoutCOM)
 
 *1/13/2001 4:56:05 PM*
 
@@ -175,7 +175,7 @@ Allows you to upload multiple files and fields without purchasing or registering
 
 
 
-## [Sorted Record Listing with Search v2.0](./SortedRecordListingWithSearchV2.0)
+### [Sorted Record Listing with Search v2.0](./SortedRecordListingWithSearchV2.0)
 
 *1/21/2001 1:44:57 PM*
 
@@ -185,42 +185,42 @@ After getting great reviews on the previous version, I finally got time to do th
 
 
 
-## [Phone Number Conversion](./PhoneNumberConversion)
+### [Phone Number Conversion](./PhoneNumberConversion)
 
 *2/9/2001 12:53:26 PM*
 
 This class is used to interpret phone numbers to and from a database in a specific format. The format is 25 characters long and is explaied withing the script.
 
 
-## [Whois Lookup](./WhoisLookup)
+### [Whois Lookup](./WhoisLookup)
 
 *2/18/2001 1:40:49 PM*
 
 Shows how you can do a WhoIs lookup using a COM object capable of using winsock.
 
 
-## [Scripting.Decoder for Microsoft Encoding](./Scripting.DecoderForMicrosoftEncoding)
+### [Scripting.Decoder for Microsoft Encoding](./Scripting.DecoderForMicrosoftEncoding)
 
 *3/11/2001 5:15:43 PM*
 
 This code lets you decode your scripts. It comes in handy if you deleted the original file or wrote over it with the encoded version. Microsoft included a program to encode, but choose not to let us decode with a scrdec program. More details can be found on my site about this script including a live demonstration. Please leave comments here if you wish to inquire about it.
 
 
-## [SHA-1 Hash Algorithm](./SHA-1HashAlgorithm)
+### [SHA-1 Hash Algorithm](./SHA-1HashAlgorithm)
 
 *3/22/2001 12:20:44 PM*
 
 for computing a condensed representation of a message or a data file.
 
 
-## [Client Bandwidth Recorder](./ClientBandwidthRecorder)
+### [Client Bandwidth Recorder](./ClientBandwidthRecorder)
 
 *4/12/2001 11:10:52 PM*
 
 Measures the bandwidth in kbps (kilobits per second) that the client is viewing your website at. Works with modems, dsl, cable modems, network cards and any other means of connecting to the internet.
 
 
-## [Add Custom Errors with MetaBase](./CustomErrors)
+### [Add Custom Errors with MetaBase](./CustomErrors)
 
 *4/28/2001 12:12:53 PM*
 
@@ -230,7 +230,7 @@ This script interacts with COM objects that communicate with the MetaBase for In
 
 
 
-## [Color Palette Scriptlet](./ColorPaletteScriptlet)
+### [Color Palette Scriptlet](./ColorPaletteScriptlet)
 
 *4/28/2001 5:27:03 PM*
 
@@ -240,7 +240,7 @@ Allows users to choose a color from a palette simular to Adobe's color palette.
 
 
 
-## [Dynamic Pixel Image](./DynamicPixelImage)
+### [Dynamic Pixel Image](./DynamicPixelImage)
 
 *4/29/2001 11:23:59 AM*
 
@@ -250,7 +250,7 @@ Allows you to create 1x1 images of any color including transparent images. (Imag
 
 
 
-## [Color Picker 2](./ColorPicker2)
+### [Color Picker 2](./ColorPicker2)
 
 *4/29/2001 1:00:17 PM*
 
@@ -260,7 +260,7 @@ This version of the Color Picker supports just about any browser that uses javas
 
 
 
-## [Dynamic Curve Images](./DynamicCurveImages)
+### [Dynamic Curve Images](./DynamicCurveImages)
 
 *4/29/2001 2:33:00 PM*
 
@@ -270,7 +270,7 @@ The script is able to dynamically create GIF images. The 4 positions of a curve 
 
 
 
-## [Read GIF Dimensions](./ReadGIFDimensions)
+### [Read GIF Dimensions](./ReadGIFDimensions)
 
 *4/29/2001 4:37:45 PM*
 
@@ -280,7 +280,7 @@ Reads the Width and the Height of a GIF image. Really nice to have if you need t
 
 
 
-## [How to make Dynamic GIF Color Palettes](./HowToMakeDynamicGIFColorPalettes)
+### [How to make Dynamic GIF Color Palettes](./HowToMakeDynamicGIFColorPalettes)
 
 *4/30/2001 12:13:34 PM*
 
@@ -290,7 +290,7 @@ In this article, I will walk you through the entire process on how to property c
 
 
 
-## [Hex Viewer](./HexViewer)
+### [Hex Viewer](./HexViewer)
 
 *4/30/2001 10:07:08 PM*
 
@@ -300,7 +300,7 @@ Allows you to view the binary data of any file (GIF, JPG, ZIP, TXT, HTM, ASP) as
 
 
 
-## [Read Image Dimensions](./ReadImageDimensions)
+### [Read Image Dimensions](./ReadImageDimensions)
 
 *5/2/2001 2:16:32 PM*
 
@@ -310,14 +310,14 @@ Allows you to read the width and height for GIF, JPEG (JPG/JFIF), Bitmap(BMP), a
 
 
 
-## [How to destroy a Shopping Cart](./HowToDestroyAShoppingCart)
+### [How to destroy a Shopping Cart](./HowToDestroyAShoppingCart)
 
 *5/4/2001 10:31:03 AM*
 
 I often get questions on how to deal with shopping cart data stored within the database that is no longer needed after the user has logged off. The answer is simple and deals with some database calls in the Global.ASA.
 
 
-## [Parse Metadata from URLs](./ParseMetadataFromURLs)
+### [Parse Metadata from URLs](./ParseMetadataFromURLs)
 
 *5/4/2001 2:09:54 PM*
 
@@ -327,7 +327,7 @@ This class demonstrates how you can request the HTML of a URL from another websi
 
 
 
-## [Advanced HTML Encoder](./AdvancedHTMLEncoder)
+### [Advanced HTML Encoder](./AdvancedHTMLEncoder)
 
 *5/5/2001 8:36:32 AM*
 
@@ -337,7 +337,7 @@ This code demonstrates how you can convert a string to HTML text format. It goes
 
 
 
-## [Helpful Checkbox Functions](./HelpfulCheckboxFunctions)
+### [Helpful Checkbox Functions](./HelpfulCheckboxFunctions)
 
 *5/5/2001 2:27:46 PM*
 
@@ -347,7 +347,7 @@ Ok, I'm uploading something that is very simple this time - but this is one of t
 
 
 
-## [Small Pagination Navigation](./SmallPaginationNavigation)
+### [Small Pagination Navigation](./SmallPaginationNavigation)
 
 *5/6/2001 4:02:44 PM*
 
@@ -357,7 +357,7 @@ I've coded many dynamic pages that needed the support of displaying data accross
 
 
 
-## [RC4 Encryption/Decryption](./RC4EncryptionDecryption)
+### [RC4 Encryption/Decryption](./RC4EncryptionDecryption)
 
 *5/8/2001 2:01:12 AM*
 
@@ -367,7 +367,7 @@ Encrypts and Decrypts data using the RC4 algorithm and a Key/Password. Many than
 
 
 
-## [RC4 Class](./RC4Class)
+### [RC4 Class](./RC4Class)
 
 *5/8/2001 9:52:48 AM*
 
@@ -377,7 +377,7 @@ Applys Encryption/Decryption to strings. I think just about everyone who has see
 
 
 
-## [vbScript ColorCoder v2.0](./vbScriptColorCoderV2.0)
+### [vbScript ColorCoder v2.0](./vbScriptColorCoderV2.0)
 
 *5/8/2001 12:24:56 PM*
 
@@ -387,14 +387,14 @@ This script colorizes your vbScript for display on web pages. All colors can be 
 
 
 
-## [IsPrime](./IsPrime)
+### [IsPrime](./IsPrime)
 
 *5/9/2001 10:23:41 AM*
 
 Checks to see if a number is a primary number. Prime numbers are commonly found in encryption schemes that use Public/Private keys.
 
 
-## [RCA Encryption Class](./RCAEncryptionClass)
+### [RCA Encryption Class](./RCAEncryptionClass)
 
 *5/9/2001 5:33:51 PM*
 
@@ -404,7 +404,7 @@ RCA is used for most standard public key/private key encryption techniques. Due 
 
 
 
-## [Whois Lookup with XMLHTTP](./WhoisLookupWithXMLHTTP)
+### [Whois Lookup with XMLHTTP](./WhoisLookupWithXMLHTTP)
 
 *5/9/2001 7:18:18 PM*
 
@@ -414,63 +414,63 @@ Queries a WhoIs server for for domain information. Useful for people who want to
 
 
 
-## [Allow users to post "Safe" HTML](./AllowUsersToPostSafeHTML)
+### [Allow users to post "Safe" HTML](./AllowUsersToPostSafeHTML)
 
 *5/10/2001 9:11:02 AM*
 
 This code pulls out all the nasty tags that a user sholdn't use when posting content. It also pulls out any javascript events assigned to any tags. A must have if you allow people to post HTML on your site.
 
 
-## [Add E-Mail Job to SQL Server](./EmailJobForSQL)
+### [Add E-Mail Job to SQL Server](./EmailJobForSQL)
 
 *6/4/2001 5:19:22 PM*
 
 This script helps start you off to learning how to automate some of your processes with SQL . For this example, I have chosen to send Email through SQL Server using vbScript. Messages are pulled from a table and deleted once they are sent. You need to create a table in the master database called "Email" and assign the fields "To", "From", "Subject" and "Body". The script will do the rest. If you "SA" account has a password, you will need to modify the script to relflect those changes.
 
 
-## [Table Data Export](./TableDataExport)
+### [Table Data Export](./TableDataExport)
 
 *6/6/2001 3:39:36 PM*
 
 Exports data from a database int Transact-SQL Batch files. Used primarily for exporting data from an access database to an SQL Server.
 
 
-## [Lewies Coding Standards](./LewiesCodingStandards)
+### [Lewies Coding Standards](./LewiesCodingStandards)
 
 *6/7/2001 12:17:50 PM*
 
 Peer into the brains of a professional programmer to learn how to become a better coder and more easily maintain your code for management and easily allow others to understand.
 
 
-## [Membership Server v1.0](./MembershipServerv1.0)
+### [Membership Server v1.0](./MembershipServerv1.0)
 
 *6/20/2001 11:02:43 AM*
 
 Allows remote login validation of members against a centralized membership service via. ASP. (Simular to MS Passport)
 
 
-## [Cookie Debugger](./CookieDebugger)
+### [Cookie Debugger](./CookieDebugger)
 
 *6/21/2001 2:31:30 PM*
 
 Creates a list of all cookies and there crumbs along with the values assigned to each one.
 
 
-## [Form Data Debugger](./FormDataDebugger)
+### [Form Data Debugger](./FormDataDebugger)
 
 *6/21/2001 2:45:43 PM*
 
 Reads posted form data and returns an HTML formatted display of field names and the values assigned to them.
 
 
-## [Debug QueryString](./DebugQueryString)
+### [Debug QueryString](./DebugQueryString)
 
 *6/21/2001 2:55:50 PM*
 
 Just used for debugging querystring data. Creates an orderd list of field names and the values assigned to each one.
 
 
-## [Lewie's Image Gallery](./LewiesImageGallery)
+### [Lewie's Image Gallery](./LewiesImageGallery)
 
 *6/22/2001 2:44:41 AM*
 
@@ -480,28 +480,28 @@ Upload, Manage, and Display images within your own personal art gallery. This Im
 
 
 
-## [Lewies URLDecode](./LewiesURLDecode)
+### [Lewies URLDecode](./LewiesURLDecode)
 
 *6/22/2001 5:33:47 PM*
 
 Xao Xiong originally posted his version of DecodeURL and asked for a reply for a better way. I replied, but it didn't turn out too well, so i'm posting it here for him to see. The approach i took is that when you look at an encoded URL string, 2 hex characters follow a percent sign. XAO listed a few to translate into actual characters, but he didn't account for all 256 of them. Check it out! See http://www.planetsourcecode.com/xq/ASP/ txtCodeId.6728/lngWId.4/qx/vb/scripts/ ShowCode.htm
 
 
-## [Format string for Java](./FormatStringForJava)
+### [Format string for Java](./FormatStringForJava)
 
 *7/3/2001 10:51:35 AM*
 
 formats a regular string to javascript. i.e. - changes ticks (') to proceed with a back slash (\').
 
 
-## [Binary Data Manipulation](./BinaryDataManipulation)
+### [Binary Data Manipulation](./BinaryDataManipulation)
 
 *7/3/2001 1:54:31 PM*
 
 These two functions allow you to convert between Unicode and Ascii strings. This is great if you are working with the Request.BinaryRead/BinaryWrite methods or binary data within a database.
 
 
-## [Unlimited Alternating Colors](./UnlimitedAlternatingColors)
+### [Unlimited Alternating Colors](./UnlimitedAlternatingColors)
 
 *7/13/2001 9:54:32 AM*
 
@@ -511,56 +511,56 @@ Demonstrates how to have alternating colors. Most people usually need just two a
 
 
 
-## [Catching Bogus Addresses](./CatchingBogusAddresses)
+### [Catching Bogus Addresses](./CatchingBogusAddresses)
 
 *7/25/2001 10:48:04 AM*
 
 This article teaches how you can catch bogus email addresses before you register your members on your site. It also demonstrates how you can continue to verify the addresses over a period of time.
 
 
-## [Hex/String Conversion](./HexStringConversion)
+### [Hex/String Conversion](./HexStringConversion)
 
 *7/25/2001 10:50:32 AM*
 
 These functions allow you to easily convert a string to its hex value and back again.
 
 
-## [Find Available File Name](./FindAvailableFileName)
+### [Find Available File Name](./FindAvailableFileName)
 
 *8/6/2001 12:42:36 AM*
 
 When a user uploads a file, this function looks for duplicate file names. It incriments the file until an available name is provided and returns that name.
 
 
-## [HTMLDecode](./HTMLDecode)
+### [HTMLDecode](./HTMLDecode)
 
 *8/6/2001 11:31:07 AM*
 
 This function decodes HTML Encoded strings. I found that when some browsers post data, it converts double-byte characters to html encoded characters. This script searches for all numerical entities as well as a few popular named entities. You will need to tell the server and the web browser that you are working with Unicode characters. The code has been included for working with the UTF-7 character set. Enjoy!
 
 
-## [HTML2Word](./HTML2Word)
+### [HTML2Word](./HTML2Word)
 
 *1/30/2002 4:44:40 PM*
 
 Convert HTML web pages into Word documents. This is great for creating word documents on the fly. Can be used to email documents after finnished converting. This code is in various places on the web. I'm supprised I didn't find it on PSC. This is my own version for you to modify as you wish. Larger files take longer to process. My waiting period is not good! System resources will be pegged. Seems to have problems with Website URLs, but files on the same server don't give me as many problems.
 
 
-## [Site Post Check](./SitePostCheck)
+### [Site Post Check](./SitePostCheck)
 
 *2/14/2002 10:58:19 PM*
 
 Checks the HTTP Referer header to ensure people are not posting from other websites. You can include this file if you use templates on your website, or just include it on the pages that receive form data posts. Warning - someone who knows there stuff can get around this by modifying there HOST file. this isn't 100% fool proof, but it may deter most from posting data from other websites.
 
 
-## [ANSI to Unicode](./AnsiToUnicode)
+### [ANSI to Unicode](./AnsiToUnicode)
 
 *2/25/2002 12:08:12 PM*
 
 Converts from ANSI to Unicode very fast. Inspired by code found in UltraFastAspUpload by Cakkie (on PSC). This should work slightly faster then Cakkies due to how some of the code has been arranged.
 
 
-## [Color Wheel Picker](./ColorWheelPicker)
+### [Color Wheel Picker](./ColorWheelPicker)
 
 *2/27/2002 11:38:27 PM*
 
@@ -570,7 +570,7 @@ I was working on a scriptlet to allow users to choose a color. A color wheel is 
 
 
 
-## [Color Picker (Fallout)](./ColorPicker(Fallout))
+### [Color Picker (Fallout)](./ColorPicker(Fallout))
 
 *2/28/2002 10:35:56 PM*
 
@@ -580,7 +580,7 @@ Allow users to choose colors from familiar interfaces that are standard to the w
 
 
 
-## [Bottom Tabs](./BottomTabs)
+### [Bottom Tabs](./BottomTabs)
 
 *3/1/2002 7:44:12 PM*
 
@@ -590,7 +590,7 @@ Simulate the tab control found at the bottom of popular programs such as visual 
 
 
 
-## [Spinner Scriptlet](./SpinnerScriptlet)
+### [Spinner Scriptlet](./SpinnerScriptlet)
 
 *3/2/2002 11:21:58 PM*
 
@@ -600,7 +600,7 @@ Simulates the spinner control found in visual basic on a web page. Author commen
 
 
 
-## [Expose Your Content](./ExposeYourContent)
+### [Expose Your Content](./ExposeYourContent)
 
 *3/4/2002 1:39:30 PM*
 
@@ -610,7 +610,7 @@ Expose your content through external javascript source files.
 
 
 
-## [Gibberish Encoding](./GibberishEncoding)
+### [Gibberish Encoding](./GibberishEncoding)
 
 *3/13/2002 9:37:00 PM*
 
@@ -620,7 +620,7 @@ Quick way to learn how to speak gibberish. It is sometimes known as "girl-speak"
 
 
 
-## [Folder Interface](./FolderInterface)
+### [Folder Interface](./FolderInterface)
 
 *3/16/2002 2:27:14 PM*
 
@@ -630,21 +630,21 @@ Give your users a nice clean interface to navigate, choose, and create new folde
 
 
 
-## [Forced Download](./ForcedDownload)
+### [Forced Download](./ForcedDownload)
 
 *3/18/2002 10:14:53 PM*
 
 Forces users to have choice of downloading a binary file. This was becomming a problem with Word documents - as they would either open within the browser or open externally. You may need to change the FileName variable.
 
 
-## [Oppisite Colour2 (HEX)](./OppisiteColour2(HEX))
+### [Oppisite Colour2 (HEX)](./OppisiteColour2(HEX))
 
 *3/19/2002 12:15:50 PM*
 
 Grab the opposite 6 character HEX color. This sums up David Weirs Color invert script with just one line of code. See his original code at http://www.pscode.com/vb/scripts/showcode.asp?txtCodeId=7176 Be careful when comming close to middle gray scale (808080). opposites are same.
 
 
-## [Upload Files Without COM v2](./UploadFilesWithoutCOMv2)
+### [Upload Files Without COM v2](./UploadFilesWithoutCOMv2)
 
 *3/20/2002 11:50:28 AM*
 
@@ -654,28 +654,28 @@ No need to purchase expensive components. You can do it all with what you alread
 
 
 
-## [Universal Email Interface](./UniversalEmailInterface)
+### [Universal Email Interface](./UniversalEmailInterface)
 
 *3/20/2002 7:54:42 PM*
 
 Lays down a universal interface to sending email. Easier to port to other servers that use different COM objects to send email. Even exposes a list of ProgID's that are installed on the server. (This is the beginnig. But I am sure you can see where the benefit of this code is going)
 
 
-## [IIS Authentication](./IISAuthentication)
+### [IIS Authentication](./IISAuthentication)
 
 *3/21/2002 11:46:28 AM*
 
 Requests users to login to website with NT Account.
 
 
-## [ADODBTypeName](./ADODBTypeName)
+### [ADODBTypeName](./ADODBTypeName)
 
 *4/21/2002 8:52:45 PM*
 
 Quickly find out the type of variables returned from your adodb recordset. TypeName() function doesn't do the trick. Databases offer additional data types. This script helps solve type problems without having to lookup the name of the numbers returned.
 
 
-## [Display Accurate Time from NIST](./DisplayAccurateTimeFromNIST)
+### [Display Accurate Time from NIST](./DisplayAccurateTimeFromNIST)
 
 *5/4/2002 11:02:45 PM*
 
@@ -685,14 +685,14 @@ Display accurate time to your visitors! This script requests the UTC time from a
 
 
 
-## [Image Directory Listing](./ImageDirectoryListing)
+### [Image Directory Listing](./ImageDirectoryListing)
 
 *5/6/2002 1:49:37 PM*
 
 Lists thumbnail images within the current directory. Very simple beginner stuff dealing with file scripting object. Handy for viewing your images quickly. Just copy the code and paste it a file called default.asp. Then view the directory on your website.
 
 
-## [Random Pronouncable Password](./RandomPronouncablePassword)
+### [Random Pronouncable Password](./RandomPronouncablePassword)
 
 *5/14/2002 10:39:56 PM*
 
@@ -702,7 +702,7 @@ Create a random password that is pronouncable. This helps users remember the pas
 
 
 
-## [Contrasting Colors](./ContrastingColors)
+### [Contrasting Colors](./ContrastingColors)
 
 *6/17/2002 11:15:48 PM*
 
@@ -712,14 +712,14 @@ Returns a color that is guarenteed to have contrast against the suggested color.
 
 
 
-## [Calculate Color Fading](./CalculateColorFading)
+### [Calculate Color Fading](./CalculateColorFading)
 
 *7/1/2002 10:59:56 PM*
 
 Shows an example of how to fade from one color to another. This is a bare-bones example to help you get started with calculating a fade across 16 colors.
 
 
-## [Zip File Viewer](./ZipFileViewer)
+### [Zip File Viewer](./ZipFileViewer)
 
 *7/5/2002 11:40:32 PM*
 
@@ -729,14 +729,14 @@ Display a list of files within a zip files archive along with the compressed/unc
 
 
 
-## [DOS Date/Time Functions](./DOSDateTimeFunctions)
+### [DOS Date/Time Functions](./DOSDateTimeFunctions)
 
 *7/5/2002 11:54:59 PM*
 
 DOS stores date and time with 4 bytes. 2 for date, 2 for time. These functions convert those bytes to appropriate vbScript date and time values. I used these within my WinZip file viewer scripts because winzip stored dates in this format.
 
 
-## [Image Drop](./ImageDrop)
+### [Image Drop](./ImageDrop)
 
 *7/6/2002 11:28:59 AM*
 
@@ -746,7 +746,7 @@ This script allows you to specify an image to fall down the entire height of the
 
 
 
-## [Switchbox Scriptlet](./SwitchboxScriptlet)
+### [Switchbox Scriptlet](./SwitchboxScriptlet)
 
 *7/6/2002 11:45:57 AM*
 
@@ -756,7 +756,7 @@ Add / Remove / Manage position of items on a list. This scriplet demonstrates ho
 
 
 
-## [Web Navigation Scriptlet](./WebNavigationScriptlet)
+### [Web Navigation Scriptlet](./WebNavigationScriptlet)
 
 *7/6/2002 12:05:19 PM*
 
@@ -766,7 +766,7 @@ Navigate through a website within a small area of the screen.
 
 
 
-## [BreadCrumbs Navigation](./BreadCrumbsNavigation)
+### [BreadCrumbs Navigation](./BreadCrumbsNavigation)
 
 *7/8/2002 7:40:28 PM*
 
@@ -776,14 +776,14 @@ Displays a path to navigate through each subdirectory in the path to your web pa
 
 
 
-## [Deny Website Copiers](./DenyWebsiteCopiers)
+### [Deny Website Copiers](./DenyWebsiteCopiers)
 
 *7/9/2002 1:29:41 AM*
 
 Prevents web caching programs from accessing your website. Helps increase performance of your website against these programs that may cause DOS attacks on websites with slow internet connections - such as the upstream of a cable modem.
 
 
-## [Report Navigation](./ReportNavigation)
+### [Report Navigation](./ReportNavigation)
 
 *7/9/2002 1:59:31 AM*
 
@@ -793,14 +793,14 @@ Gives you an interface to navigate reports by year, quarter, month, week, or day
 
 
 
-## [encrypt4.asp](./encrypt4)
+### [encrypt4.asp](./encrypt4)
 
 *8/2/2002 10:39:53 AM*
 
 Encrypts text using the enigma algotithm used in World War II. This security is easily breakable, but people seem to be using this. The next step is XOR encryption - which is also easily breakable. Use this only to get an idea behind how security algorithms have evolved over time and identify its weakenesses. This code is an improvement in clarity and support of characters such as NULLs to encrypt2.asp by Barry Beatti - http://www.planet-source-code.com/vb/scripts/ShowCode.asp?lngWId=4&txtCodeId=7211
 
 
-## [vbScript ColorCoder v3.0](./vbScriptColorCoderV3.0)
+### [vbScript ColorCoder v3.0](./vbScriptColorCoderV3.0)
 
 *8/9/2002 9:28:33 PM*
 
@@ -810,7 +810,7 @@ Upgraded by popular demand for its third generation. Converts vbScript to HTML a
 
 
 
-## [Parse Hex value of visitors System Colors](./ParseHexValueOfVisitorsSystemColors)
+### [Parse Hex value of visitors System Colors](./ParseHexValueOfVisitorsSystemColors)
 
 *8/13/2002 11:19:40 AM*
 
@@ -820,7 +820,7 @@ Parses the hex value of users system colors. Great for creating dynamic images o
 
 
 
-## [Dynamic Stylesheet Interaction](./DynamicStylesheetInteraction)
+### [Dynamic Stylesheet Interaction](./DynamicStylesheetInteraction)
 
 *9/2/2002 12:46:59 PM*
 
@@ -830,7 +830,7 @@ Interact with stylesheets to dynamically change properties.
 
 
 
-## [Upload Files Without COM v3](./UploadFilesWithoutCOMv3)
+### [Upload Files Without COM v3](./UploadFilesWithoutCOMv3)
 
 *9/1/2003 11:19:59 PM*
 
@@ -840,28 +840,28 @@ Allows you to upload multiple files and fields without purchasing or registering
 
 
 
-## [Forced Download 2](./ForcedDownload2)
+### [Forced Download 2](./ForcedDownload2)
 
 *9/4/2003 11:07:34 AM*
 
 Allows you to force a file to be downloaded rather then displayed within the users browser. This can be used with Word documents, Excel Spreadsheets, Adobe PDF's, and other files. Script has been optimized to support large downloads and be dynamically called to download any file (except ASP, ASPX, ASA, ASAX, MDB files). Also clears up some problems with currupt files users had been having by clearing all previouse content and headers.
 
 
-## [Dynamic DNS Update IP Parser](./DynamicDNSUpdateIPParser)
+### [Dynamic DNS Update IP Parser](./DynamicDNSUpdateIPParser)
 
 *9/4/2003 1:52:03 PM*
 
 Has ability to go out on the internet and determine what your current IP address is. Also allows you ability to update namecheap.com with your current IP address. Can be modified to use with other dynamic dns services. Thanks goes to Kenny for letting me know about this cheap DNS host!
 
 
-## [StrConv Unicode/Ascii](./StrConvUnicodeAscii)
+### [StrConv Unicode/Ascii](./StrConvUnicodeAscii)
 
 *9/4/2003 11:26:21 PM*
 
 Converts between unicode and ANSI using ADODB Streams and recordsets. I was pressing myself to the limit to find a faster way to convert strings back and forth between unicode and ANSI during file uploads. This version goes the distance and has great speed.
 
 
-## [Data Dictionary Report Generator](./DataDictionary)
+### [Data Dictionary Report Generator](./DataDictionary)
 
 *7/28/2004 10:12:34 PM*
 
@@ -871,7 +871,7 @@ Retrieves the structure of your data and displays it into a nice report that you
 
 
 
-## [Lewies Seti Stats](./LewiesSetiStats)
+### [Lewies Seti Stats](./LewiesSetiStats)
 
 *7/29/2004 12:14:57 AM*
 

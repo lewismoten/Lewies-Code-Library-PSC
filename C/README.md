@@ -1,10 +1,10 @@
-# Lewie's Code Library PSC
-
-## C/C++
+# [Lewie's Code Library PSC](../README.md)
 
 Open source projects that I had published to Planet Source Code.
 
-## [Convert 16Bit to 32Bit Color](./Convert16Bitto32BitColor)
+## C/C++
+
+### [Convert 16Bit to 32Bit Color](./Convert16Bitto32BitColor)
 
 *1/13/2001 5:01:11 PM*
 
