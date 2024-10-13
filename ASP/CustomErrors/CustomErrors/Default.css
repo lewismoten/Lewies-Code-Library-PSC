@@ -1,0 +1,31 @@
+TD
+{
+	font-family:Arial;
+	font-size: 10pt;
+}
+TABLE
+{
+	width: 100%;
+}
+.Header TD
+{
+	text-align:center;
+	font-weight: 600;
+}
+.HighlightTrue TD
+{
+	background-color: #ffffff;
+}
+.HighlightFalse TD
+{
+	background-color: #e0e0e0;
+}
+.TableFrame
+{
+	background-color: #000000;
+	border-collapse: collapse;
+}
+.CustomPath
+{
+	width: 100%;
+}
