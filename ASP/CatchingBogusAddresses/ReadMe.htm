@@ -1,0 +1,93 @@
+<html><body>
+    <P>
+    There are a few ways to verify email adresses. 
+    Some companies have created COM objets to perform this task for you.
+    One such company is <A href="http://www.serverobjects.com/">ServerObjects</A>
+    that offers the
+    <A href="http://www.serverobjects.com/products.htm#aspmx">AspMX</A>
+    component.
+    </P>
+    <P>
+    It first does an mx record lookup for the domain located within the 
+    email address provided. Then the component attempts to connect to 
+    that domain's incoming mail server.The component attempts to 
+    verify whether the domain mail server will accept mail for the specified
+    email address and returns true or false.
+    </P>
+    <P>
+    Unfortunatly, some email servers do not respond if the account exists
+    or not. Some of these popular servers would be AOL, Yahoo! & Hotmail
+    addresses.
+    </P>
+    <P>
+    If you have SQL Server, you can continue to verify the email addresses over a period of time by setting up Jobs in the SQL Agent using WScript.
+    </P>
+    <P>
+    The next way to verify email addresses is to send an HTML message to the
+    email address. Included in this message is an image located on your server.
+    For example:
+    </P>
+    <XMP><IMG src="http://www.lewismoten.com/verify.asp?lewis@moten.com"></XMP>
+    <P>
+    This points to an ASP page. Just say 
+    </P>
+    <XMP>Email = Request.QueryString</XMP>
+    <P>
+    You can do a lookup on your members table and update the record accordingly.
+    After doing so, you should return an image with a Response.BinaryWrite statement
+    or just redirect them to the proper image.
+    </P>
+    <P>
+    If you want to get really tricky, convert the email address to 
+    Hex characters (lewis@moten.com = "6C65776973406D6F74656E2E636F6D")
+    This way, it doesn't really look like an email address.
+    </P>
+    <P>
+    Next, rather then sending it via. a query string, send it as the name of the
+    image.
+    </P>
+    <XMP><IMG src="http://www.lewismoten.com/email/6C65776973406D6F74656E2E636F6D.gif"></XMP>
+    <P>
+    Now this will result in your server redirecting to a 404 page.
+    If you have the correct permission to the server, you can setup a 
+    custom 404 page to check the URL that was invalid. 
+    In this case, you would see that the image resides in the email 
+    subdirectory. Parse that hex string into an email address, look 
+    for it in the database, and update the "Last Verified" date on the account. 
+    After that, you can either redirect the request to a real image, or do a
+    response.binarywrite of an existing image.
+    </P>
+    <P>
+    Here is some code to convert between hex and strings.
+    </P>
+    <XMP>
+    <%
+    email = "lewis@moten.com"
+    Response.Write "Original value: " & email & "<BR>"
+    email = StringToHex(email)
+    Response.Write "Hex value: " & email & "<BR>"
+    email = HexToString(email)
+    Response.Write "Back to string value: " & email & "<BR>"
+    Function StringToHex(ByRef pstrString)
+    	Dim llngIndex
+    	Dim llngMaxIndex
+    	Dim lstrHex
+    	llngMaxIndex = Len(pstrString)
+    	For llngIndex = 1 To llngMaxIndex
+    		lstrHex = lstrHex & Right("0" & Hex(Asc(Mid(pstrString, llngIndex, 1))), 2)
+    	Next
+    	StringToHex = lstrHex
+    End Function
+    Function HexToString(ByRef pstrHex)
+    	Dim llngIndex
+    	Dim llngMaxIndex
+    	Dim lstrString
+    	llngMaxIndex = Len(pstrHex)
+    	For llngIndex = 1 To llngMaxIndex Step 2
+    		lstrString = lstrString & Chr("&h" & Mid(pstrHex, llngIndex, 2))
+    	Next
+    	HexToString = lstrString
+    End Function
+    %>
+    </XMP>
+</body></html>
