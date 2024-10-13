@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <title>Color Picker</title>
+        <script language="JavaScript">
+			<!--
+var msColor              // Last color clicked
+var nStepLevel           // Number of color values to skip over between each color
+var nMaxLuminance        // Size of steps divisible by 255 (255 is max hue value)
+var sCurSaturation = ''  // Current saturation color that the palette is displaying
+// -----------------------------------------------------------------------------
+function SetValue(anValue)
+{
+    if(anValue > nMaxLuminance){return(nMaxLuminance)}
+    if(anValue < 0){return(0)}
+    return(anValue)
+}
+// -----------------------------------------------------------------------------
+function ColorPicker_onInitialize()
+{
+	/*
+		To get the RGB version of the available palette colors, simply
+		change the step level to 1.  Warning - this may cause your 
+		browser to lock up, or take a very long time to rendure the 
+		page.  Think about it, the palette table alone is creating 
+		65,205 cells.  Just experiment with taking it down one step
+		at a time:  (255, 85, 51, 17, 15, 5, 3, 1) It becomes really
+		slow for me around 5
+	*/
+			
+	nStepLevel = 51
+	nMaxLuminance = 255 / nStepLevel // =5
+}
+// -----------------------------------------------------------------------------
+function BuildPalette(pnRed, pnGreen, pnBlue)
+{
+	/*
+	Creates a palette of the color blending into white and black.
+    Going from left to right, white blends into the color
+    Going from the top to the bottom, the color blends into black
+    */
+
+    var lnColumn        // Column we are working with (zero based)
+    var lnRow           // Row we are working with (zero based)
+    var lsRedHex        // Luminacy of Red Hue in a color
+    var lsGreenHex      // Luminacy of Green Hue in a color
+    var lsBlueHex       // Luminacy of Blue Hue in a color
+    var lsColor         // Hex value of a color
+    var lsTable = ''    // HTML to be returned
+    var lnLuminance     // The maximum luninance available for the current row
+    var lnRedHue        // Hue value of red in the current color
+    var lnGreenHue      // Hue value of green in the current color
+    var lnBlueHue       // Hue value of blue in the current color
+    var lsID            // ID of the current table cell
+			      
+    // Loop through each row to be displayed in the palette
+    for(lnRow=0;lnRow<=nMaxLuminance;lnRow++)
+    {
+			    
+        // Determine the maximum luminance for the current row
+        lnLuminance = nMaxLuminance - lnRow
+			         
+        // Loop through each column to be displayed in the palette
+        for(lnColumn=0;lnColumn<=nMaxLuminance;lnColumn++)
+        {
+			                
+            // Setup the hues for the current column
+            lnRedHue = lnLuminance - SetValue(lnColumn - pnRed)
+            lnGreenHue = lnLuminance - SetValue(lnColumn - pnGreen)
+            lnBlueHue = lnLuminance - SetValue(lnColumn - pnBlue)
+			                
+            // Convert the hue values into hex
+            lsRedHex = getHex(lnRedHue)
+            lsGreenHex = getHex(lnGreenHue)
+            lsBlueHex = getHex(lnBlueHue)
+			                
+            // Compile the color
+            lsColor = '' + lsRedHex + lsGreenHex + lsBlueHex
+			                
+            // Complie the ID of the current cell
+            lsID = 'Palette_' + lnRow + 'x' + lnColumn
+			            
+            // Create the table cell
+            lsTable += 
+				'<A href="javascript:NewColor(document.images[\'' + lsID + '\'].alt)">' +
+				'<IMG ' + 
+					'src="Pixel.asp?Color=' + lsColor + '" ' + 
+					'width="' + (128 / (nMaxLuminance +1)) + '" ' + 
+					'height="' + (128 / (nMaxLuminance +1)) + '" ' +
+					'name="' + lsID + '" ' +
+					'border="0" ' +
+					'alt="' + lsColor + '">' + 
+				'</A>'
+			            
+        } // lnColumn
+			            
+        // Close the table row
+        if(lnRow<nMaxLuminance)
+        {
+			lsTable += '<BR>'
+        }
+			            
+    } // lnRow
+			        
+    // Return the HTML results
+    return(lsTable)
+			        
+} // BuildPalette(ByRef pnRed, ByRef pnGreen, ByRef pnBlue)
+// -----------------------------------------------------------------------------
+function BuildSaturation()
+{
+			    
+    var lsTable = ''        // HTML to be returned from this function
+    var lnColorIndex        // Determines what present color is
+    var lnRedLuminance      // Stregnth of red
+    var lnGreenLuminance    // Stregnth of Green
+    var lnBlueLuminance     // Stregnth of Blue
+    var lnRedIncrimant      // Value added/subtraced from red luminance as hue changes
+    var lnGreenIncriment    // Value added/subtraced from green luminance as hue changes
+    var lnBlueIncriment     // Value added/subtraced from blue luminance as hue changes
+    var lnTween             // Stepping hues between major hue values
+    var lsRedHex            // Hex Color value of Reds
+    var lsGreenHex          // Hex Color value of Greens
+    var lsBlueHex           // Hex Color value of Blues
+    var lsColorHex          // Hex Color value of combined Red Green and Blue
+			        
+    var lvRedLuminance   = new Array()
+    var lvGreenLuminance = new Array()
+    var lvBlueLuminance  = new Array()
+    var lvRedIncriment   = new Array()
+    var lvGreenIncriment = new Array()
+    var lvBlueIncriment  = new Array()
+
+    // Switch between the major color values in a spectrum
+        // Red, Magenta, Blue, Cyan, Green, Yellow back to Red
+			    
+    // Go from Red ...
+    lvRedLuminance[0]   = nMaxLuminance
+    lvGreenLuminance[0] = 0
+    lvBlueLuminance[0]  = 0
+    // ... to Purple
+    lvRedIncriment[0]   = 0
+    lvGreenIncriment[0] = 0
+    lvBlueIncriment[0]  = 1
+			    
+    // Go from Purple ...
+    lvRedLuminance[1]   = nMaxLuminance
+    lvGreenLuminance[1] = 0
+    lvBlueLuminance[1]  = nMaxLuminance
+    // ... to Blue
+    lvRedIncriment[1]   = -1
+    lvGreenIncriment[1] = 0
+    lvBlueIncriment[1]  = 0
+
+    // Go from Blue ...
+    lvRedLuminance[2]   = 0
+    lvGreenLuminance[2] = 0
+    lvBlueLuminance[2]  = nMaxLuminance
+    // ... to Cyan
+    lvRedIncriment[2]   = 0
+    lvGreenIncriment[2] = 1
+    lvBlueIncriment[2]  = 0
+			    
+    // Go from Cyan ...
+    lvRedLuminance[3]   = 0
+    lvGreenLuminance[3] = nMaxLuminance
+    lvBlueLuminance[3]  = nMaxLuminance
+    // ... to Green
+    lvRedIncriment[3]   = 0
+    lvGreenIncriment[3] = 0
+    lvBlueIncriment[3]  = -1
+
+    // Go from Green ...
+    lvRedLuminance[4]   = 0
+    lvGreenLuminance[4] = nMaxLuminance
+    lvBlueLuminance[4]  = 0
+    // ... to Yellow
+    lvRedIncriment[4]   = 1
+    lvGreenIncriment[4] = 0
+    lvBlueIncriment[4]  = 0
+
+    // Go from Yellow ...
+    lvRedLuminance[5]   = nMaxLuminance
+    lvGreenLuminance[5] = nMaxLuminance
+    lvBlueLuminance[5]  = 0
+    // ... to Red
+    lvRedIncriment[5]   = 0
+    lvGreenIncriment[5] = -1
+    lvBlueIncriment[5]  = 0
+
+    for(lnColorIndex=0;lnColorIndex<=5;lnColorIndex++)
+    {
+        // Determine how to rendure colors based on the Color Index 
+			        
+        // Go from Source Color ...
+        lnRedLuminance = lvRedLuminance[lnColorIndex]
+        lnGreenLuminance = lvGreenLuminance[lnColorIndex]
+        lnBlueLuminance = lvBlueLuminance[lnColorIndex]
+        // ... to Target Color
+        lnRedIncriment = lvRedIncriment[lnColorIndex]
+        lnGreenIncriment = lvGreenIncriment[lnColorIndex]
+        lnBlueIncriment = lvBlueIncriment[lnColorIndex]
+			                
+        // Tween between each variation of the color to blend into
+        for(lnTween=0;lnTween<nMaxLuminance;lnTween++)
+        {
+            // Get the Hex value of each Hue
+            lsRedHex = getHex(lnRedLuminance)
+            lsGreenHex = getHex(lnGreenLuminance)
+            lsBlueHex = getHex(lnBlueLuminance)
+
+            // Combine the Hex values to form a Hex version of the resulting color
+            lsColorHex = '' + lsRedHex + lsGreenHex + lsBlueHex
+
+            // Create the cell displaying the saturation color
+            lsTable +=
+                '<A href="javascript:ChangePalette(' +
+                    lnRedLuminance + ', ' +
+                    lnGreenLuminance + ', ' +
+                    lnBlueLuminance + ');NewColor(\'' + lsColorHex + '\')"">' +
+					'<IMG ' + 
+						'src="Pixel.asp?Color=' + lsColorHex + '" ' +
+						'width="20" ' +
+						'height="' + ((128 / (nStepLevel + 1)) * 2) + '" ' +
+						'border="0" ' +
+						'alt="' + lsColorHex + '" ' +
+						'>' +
+				'</A>'
+			if(lnTween<nMaxLuminance-1 || lnColorIndex < 5)
+			{
+				lsTable += '<BR>'
+			}
+            // Incriment Hue Values towards the next major color
+            lnRedLuminance = lnRedLuminance + lnRedIncriment
+            lnGreenLuminance = lnGreenLuminance + lnGreenIncriment
+            lnBlueLuminance = lnBlueLuminance + lnBlueIncriment
+			            
+        } // lnTween
+
+    } // lnColorIndex
+
+    // Return the results
+    return(lsTable)
+
+}
+// -----------------------------------------------------------------------------
+function getHex(anValue)
+{
+    if(anValue >= nMaxLuminance)
+    {
+        return('FF')
+	}
+    if(anValue <= 0)
+    {
+		return('00')
+	}
+
+	lsHex = Hex(anValue * nStepLevel)
+	if(lsHex.length == 1){lsHex = '0' + lsHex}
+	return(lsHex)
+}
+// -----------------------------------------------------------------------------
+function Hex(pLngDecimal)
+{
+	var digits = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F')
+	if(pLngDecimal < digits.length)
+	{
+		return(digits[pLngDecimal])
+	}
+	var prefix = '' + Math.floor(pLngDecimal / digits.length)
+	var suffix = pLngDecimal - prefix * digits.length
+	if (prefix > digits.length)
+	{
+		return(Hex(prefix) + digits[suffix])
+	}
+	return(digits[prefix] + digits[suffix])
+}
+// -----------------------------------------------------------------------------
+function ChangePalette(pnRed, pnGreen, pnBlue)
+{
+			    
+    var lnColumn        // Current column we are working with (zero based)
+    var lnRow           // Current row we are working with (zero based)
+    var lsRedHex        // Hex value of Red Hue
+    var lsGreenHex      // Hex value of Green Hue
+    var lsBlueHex       // Hex value of Blue Hue
+    var lsColor         // Color value to display in table cell
+    var lnLuminance     // Maximum luminance allowed for the current row
+			    
+    // If the palette is currently setup with the chosen saturation - exit the rutine
+    //   This really speads up the application when a user holds the mouse button down
+    //   and drags it over the saturation bar.
+			    
+    if(sCurSaturation == '' + getHex(pnRed) + getHex(pnGreen) + getHex(pnBlue))
+    {
+		return
+	}
+    // Loop through each row
+    for(lnRow=0;lnRow<=nMaxLuminance;lnRow++)
+    {
+			        
+        // Setup the maximum luminance for the current row
+        lnLuminance = nMaxLuminance - lnRow
+			        
+        // Loop through each column
+        for(lnColumn=0;lnColumn<=nMaxLuminance;lnColumn++)
+        {
+            // Get the hex values for each hue in the color
+            lsRedHex = getHex(lnLuminance - SetValue(lnColumn - pnRed))
+            lsGreenHex = getHex(lnLuminance - SetValue(lnColumn - pnGreen))
+            lsBlueHex = getHex(lnLuminance - SetValue(lnColumn - pnBlue))
+			            
+            // Compile the hex values into a color hex value
+            lsColor = '' + lsRedHex + lsGreenHex + lsBlueHex
+			            
+            // Change the background color of the selected cell
+            //document.images['Palette_' + lnRow + 'x' + lnColumn].parentElement.parentElement.bgColor = lsColor
+            //window.execScript('document.all.Palette_' + lnRow + 'x' + lnColumn + '.bgColor=\'' + lsColor + '\'')
+			document.images['Palette_' + lnRow + 'x' + lnColumn].src = 'Pixel.asp?Color=' + lsColor
+			document.images['Palette_' + lnRow + 'x' + lnColumn].alt = lsColor
+        } // lnColumn
+			    
+    } // lnRow
+			    
+    // Change the current saturation
+    sCurSaturation = '' + getHex(pnRed) + getHex(pnGreen) + getHex(pnBlue)
+			    
+} // ChangePalette(pnRed, pnGreen, pnBlue)
+// -----------------------------------------------------------------------------
+function NewColor(color)
+{
+	document.images['imgColor'].src = 'Pixel.asp?Color=' + color
+	document.images['imgColor'].alt = color
+	document.frmColor.txtColor.value = color
+	document.bgColor = color
+}
+			// -->
+        </script>
+    </head>
+    <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0">
+		<CENTER>
+			<script language="JavaScript">
+			    <!--
+
+			    ColorPicker_onInitialize()
+			    
+			    document.write('<TABLE border="0" bgColor="#ffffff">')
+			    document.write('<TR>')
+			    document.write('<TD bgColor="#ffffff">' + BuildPalette(nMaxLuminance, 0, 0) + '</TD>')
+			    document.write('<TD bgColor="#ffffff">' + BuildSaturation() + '</TD>')
+			    document.write('</TR>')
+			    document.write('<TR>')
+			    document.write('<TD colspan="2" bgColor="#ffffff">')
+			    document.write('<TABLE border="0">')
+				document.write('<FORM name="frmColor">')
+				document.write('<TR>')
+				document.write('<TD><IMG name="imgColor" src="Pixel.asp?Color=000000" width="50" height="25" border="1" align="absmiddle"></TD>')
+				document.write('<TD>')
+				document.write('<INPUT name="txtColor" value="000000" size="6" maxlength="6">')
+				document.write('<INPUT type="button" value="OK">')
+				document.write('</TD>')
+				document.write('</TR>')
+				document.write('</FORM>')
+				document.write('</TABLE>')
+			    document.write('</TD>')
+			    document.write('</TR>')
+			    document.write('</TABLE>')
+			    
+			    //-->
+			</script>
+		</CENTER>
+    </body>
+</html>
