@@ -1,0 +1,123 @@
+BODY
+{
+	margin: 0px;
+	background-color: buttonface;
+	border: 0px;
+}
+HR
+{
+	height: 1px;
+	color: black;
+	position: absolute;
+	top: 0px;
+}
+DIV.Out SPAN.Frame
+{
+	position: absolute;
+	z-index: 1;
+}
+DIV.Over SPAN.Frame
+{
+	position: absolute;
+	z-index: 20;
+}
+DIV.Out SPAN.Frame SPAN
+{
+	position: absolute;
+	background-color: black;
+	font-size: 0pt;
+	z-index: 1;
+}
+DIV.Over SPAN.Frame SPAN
+{
+	position: absolute;
+	background-color: black;
+	font-size: 0pt;
+	z-index: 20;
+}
+DIV.Out SPAN.Button
+{
+	position: absolute;
+	z-index: 1;
+}
+DIV.Over SPAN.Button
+{
+	position: absolute;
+	z-index: 20;
+}
+DIV
+{
+	postiont:absolute;
+}
+DIV.Out
+{
+	z-index: 1;
+}
+DIV.Over
+{
+	z-index: 20;
+}
+DIV.Out SPAN.Button SPAN
+{
+	position: absolute;
+	background-color: buttonshadow;
+	font-size: 0pt;
+	z-index: 1;
+}
+DIV.Over SPAN.Button SPAN
+{
+	position: absolute;
+	background-color: buttonface;
+	font-size: 0pt;
+	z-index: 20;
+}
+DIV.Out SPAN.Button SPAN.TopLine
+{
+	position: absolute;
+	background-color: black;
+	font-size: 0pt;
+	z-index: 1;
+	overflow:hidden;
+}
+DIV.Over SPAN.Button SPAN.TopLine
+{
+	position: absolute;
+	background-color: buttonface;
+	font-size: 0pt;
+	z-index: 20;
+	overflow:hidden;
+}
+DIV SPAN.Button SPAN.BottomLine
+{
+	position: absolute;
+	background-color: black;
+	font-size: 0pt;
+	overflow:hidden;
+}
+DIV.Out SPAN.Text
+{
+	position: absolute;
+	font-family: Arial;
+	font-size: 8pt;
+	color: window;
+	text-align: center;
+	vertical-align: middle;
+	top: 0px;
+	height: 18px;
+	padding-top: 2px;
+	z-index: 1;
+}
+DIV.Over SPAN.Text
+{
+	position: absolute;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: buttontext;
+	text-align: center;
+	vertical-align: middle;
+	top: 0px;
+	height: 18px;
+	padding-top: 2px;
+	z-index: 20;
+}
