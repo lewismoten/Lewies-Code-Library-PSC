@@ -41,7 +41,7 @@ function createMarkdown(scripts) {
     }
     const [topDir, subFolder] = folder.split('/');
 
-    let markdown = `### [${title}](./${subFolder})
+    let markdown = `### [${title}](./${subFolder}/README.md)
 
 *${date}*
 

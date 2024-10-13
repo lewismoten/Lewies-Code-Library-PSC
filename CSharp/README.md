@@ -4,7 +4,7 @@ Open source projects that I had published to Planet Source Code.
 
 ## C#
 
-### [AssemblyReader](./AssemblyReader)
+### [AssemblyReader](./AssemblyReader/README.md)
 
 *6/19/2004 1:26:38 AM*
 
@@ -14,7 +14,7 @@ The assembly reader reads embedded resources as streams from any assembly you ma
 
 
 
-### [Lewies Mini Hex Editor](./MiniHexEdit)
+### [Lewies Mini Hex Editor](./MiniHexEdit/README.md)
 
 *8/1/2004 12:00:20 AM*
 
@@ -24,7 +24,7 @@ This small utility aids programmers into viewing and editing the data within bin
 
 
 
-### [Lewies ID3v1.1 Tag Editor](./ID3v1TagEditor)
+### [Lewies ID3v1.1 Tag Editor](./ID3v1TagEditor/README.md)
 
 *8/1/2004 11:15:00 AM*
 
@@ -34,7 +34,7 @@ This program can edit MP3 files to include the Song Title, Album, Artist, Year, 
 
 
 
-### [Relay email through CDO ](./CdoMailRelay)
+### [Relay email through CDO ](./CdoMailRelay/README.md)
 
 *8/2/2004 9:20:31 PM*
 
@@ -44,7 +44,7 @@ Send email through the CDO objects that .Net interfaces with. Now you can choose
 
 
 
-### [Lewies RSA Encryption Example](./RsaExample)
+### [Lewies RSA Encryption Example](./RsaExample/README.md)
 
 *8/3/2004 10:35:10 PM*
 
@@ -54,7 +54,7 @@ Create new key pairs for asymmetric encryption or copy/paste strings into text f
 
 
 
-### [Get Embedded Text Files](./EmbeddedText)
+### [Get Embedded Text Files](./EmbeddedText/README.md)
 
 *8/5/2004 11:55:55 PM*
 
@@ -64,7 +64,7 @@ Load an embedded text from from within your assembly and assign it to a variable
 
 
 
-### [Ultima Player Administration](./PlayerAdmin)
+### [Ultima Player Administration](./PlayerAdmin/README.md)
 
 *8/8/2004 12:43:11 AM*
 

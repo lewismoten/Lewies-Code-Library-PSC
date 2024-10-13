@@ -4,56 +4,56 @@ Open source projects that I had published to Planet Source Code.
 
 ## VB.Net
 
-### [clsRandomString](./clsRandomString)
+### [clsRandomString](./clsRandomString/README.md)
 
 *11/7/2002 3:01:42 PM*
 
 Creates a variable length random string according to parameters you specify. MinLength, MaxLength, CharacterSet. Uses a Cryptography RandomNumberGenerator object to ensure an accurately random string.
 
 
-### [BitmapTo/FromBase64](./BitmapToFromBase64)
+### [BitmapTo/FromBase64](./BitmapToFromBase64/README.md)
 
 *2/5/2003 12:18:16 AM*
 
 Allows you to convert bitmap images to base64 and back for storage and retrieval in XML files.
 
 
-### [GetResource](./GetResource)
+### [GetResource](./GetResource/README.md)
 
 *2/7/2003 7:23:44 PM*
 
 Reads embeded files from your executable programs (such as xml, images, etc.) Allows you to distribute one program - the exe, but still access your data and images needed with the program.
 
 
-### [Play WAV Files](./PlayWAVFiles)
+### [Play WAV Files](./PlayWAVFiles/README.md)
 
 *2/15/2003 11:06:05 AM*
 
 Allows you to effortlessly play wave files in a seperate thread while your application continues to operate. Now supports playing embedded resource files and Streams.
 
 
-### [Bitmap to Hue](./BitmapToHue)
+### [Bitmap to Hue](./BitmapToHue/README.md)
 
 *2/18/2003 9:35:59 PM*
 
 Supply a bitmap and color and the bitmap is magically transformed to show colors from black to your color. Works with GIF images. Great for greyscale backgrounds that need to keep image but only change shades of color.
 
 
-### [EnumerationList](./EnumerationList)
+### [EnumerationList](./EnumerationList/README.md)
 
 *4/12/2003 10:39:12 AM*
 
 List the string values of any enumerated item that is flagged in your enumeration.
 
 
-### [Crop Image](./CropImage)
+### [Crop Image](./CropImage/README.md)
 
 *4/24/2003 11:07:59 PM*
 
 Crops an image passed to the function. Returns resized image as a new bitmap.
 
 
-### [Image Details Dialog](./ImageDetailsDialog)
+### [Image Details Dialog](./ImageDetailsDialog/README.md)
 
 *4/27/2003 2:21:09 AM*
 
@@ -63,7 +63,7 @@ Dialog box displays an image, its' file name, path, image dimensions, and file s
 
 
 
-### [Wizard Navigation Control](./WizardNavigationControl)
+### [Wizard Navigation Control](./WizardNavigationControl/README.md)
 
 *6/22/2003 12:31:47 PM*
 
@@ -73,14 +73,14 @@ Provides simple navigation through multiple steps that you may offer your users 
 
 
 
-### [Image 2 HTML](./Image2HTML)
+### [Image 2 HTML](./Image2HTML/README.md)
 
 *9/4/2003 12:44:35 PM*
 
 Converts an image to HTML table cells. Probably done many times before. This one also creates javascript to invert the image 1 pixel at a time.
 
 
-### [Choose File User Control](./ChooseFileUserControl)
+### [Choose File User Control](./ChooseFileUserControl/README.md)
 
 *9/13/2003 1:27:17 PM*
 
@@ -90,14 +90,14 @@ Drag and drop this control onto your forms so you can allow users to pick the fi
 
 
 
-### [CalcBytes](./CalcBytes)
+### [CalcBytes](./CalcBytes/README.md)
 
 *11/27/2003 6:53:04 PM*
 
 converts number of bytes to a lower number, but changes measurement. (can changed kb's to gb's)
 
 
-### [Small MSIM example](./SmallMsimExample)
+### [Small MSIM example](./SmallMsimExample/README.md)
 
 *1/17/2004 10:54:07 AM*
 
@@ -107,7 +107,7 @@ quick and dirty example to use instant messenger with windows (MSIM). Logon, Log
 
 
 
-### [Visual SourceSafe Journal Monitor Service](./VSSMonitorService)
+### [Visual SourceSafe Journal Monitor Service](./VSSMonitorService/README.md)
 
 *1/23/2004 12:13:14 AM*
 
@@ -117,14 +117,14 @@ VMS is a windows service developed in .Net that monitors a Microsoft Visual Sour
 
 
 
-### [ID3v1.1 Reader](./ID3v1.1Reader)
+### [ID3v1.1 Reader](./ID3v1.1Reader/README.md)
 
 *1/25/2004 12:14:40 PM*
 
 Class reads ID3v1.1 tags - Artist, Sont Title, Track, Comment, Year, Album and year. Smaller code and reads more efficiently then other code I've seen on PSC as of today.
 
 
-### [Base Conversion Utility](./BaseConversionUtility)
+### [Base Conversion Utility](./BaseConversionUtility/README.md)
 
 *3/17/2004 11:21:54 PM*
 
@@ -134,7 +134,7 @@ Converts a value from one customized base set to another. No longer are you boun
 
 
 
-### [Lewies Dice](./LewiesDice)
+### [Lewies Dice](./LewiesDice/README.md)
 
 *7/30/2004 1:30:18 AM*
 
@@ -144,7 +144,7 @@ Gives you the option to roll any sided dice as many times as you want. Predefine
 
 
 
-### [Lewies Ansi/Ascii Painter](./AsciiPainter)
+### [Lewies Ansi/Ascii Painter](./AsciiPainter/README.md)
 
 *8/3/2004 12:58:28 AM*
 
@@ -154,7 +154,7 @@ Read and Edit *.ANS files.  Old BBS systems used to have Ansi files to display t
 
 
 
-### [Lewies Memory Game](./Memory)
+### [Lewies Memory Game](./Memory/README.md)
 
 *8/4/2004 12:30:19 AM*
 
