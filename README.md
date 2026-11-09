@@ -10,9 +10,9 @@ While many scripts are outdated due to advancements in web development, they rep
 
 **File Upload Scripts (Classic ASP):** These award-winning scripts enabled file uploads on shared hosting platforms, bypassing vendor restrictions on COM objects costing upwards of $700. Later versions leveraged the ADODB Stream to optimize file parsing, a technique later superseded by ASP.NET's built-in download functionality.
 
-- [Upload Files Without COM](./ASP/UploadFileWithoutCOM)
-- [Upload Files Without COM version 2](./ASP/UploadFileWithoutCOMv2)
-- [Upload Files Without COM version 3](./ASP/UploadFileWithoutCOMv3)
+- [Upload Files Without COM](./ASP/UploadFilesWithoutCOM)
+- [Upload Files Without COM version 2](./ASP/UploadFilesWithoutCOMv2)
+- [Upload Files Without COM version 3](./ASP/UploadFilesWithoutCOMv3)
 
 **SHA-1 Hash Algorithm:** This port of SHA-1, available in Classic ASP and JavaScript, gained unexpected popularity. While included for historical reference, SHA-1 vulnerabilities discovered in 2005 make it unsuitable for modern security applications.
 
