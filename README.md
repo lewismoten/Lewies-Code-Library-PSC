@@ -1,3 +1,5 @@
+![Lewies-Code-Library-PSC: Late-1990s code archive: beige web-1.0 pages, floppy disks, ASP/VB code](docs/images/social-preview.png)
+
 # Lewies Code Library PSC
 
 This collection showcases open-source projects I published on Planet Source Code (PSC) in the late 1990s and early 2000s. Some scripts can be found on the PSC Index maintained by 
